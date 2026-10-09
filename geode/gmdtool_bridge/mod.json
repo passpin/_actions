@@ -5,7 +5,7 @@
   },
   "id": "gmdtool.runtime-bridge",
   "name": "gmdtool Runtime Bridge",
-  "version": "v0.1.5",
+  "version": "v0.1.6",
   "developer": "passpin",
   "description": "Opt-in localhost runtime bridge with optional GitHub Releases auto-updates. Does not force gameplay or focus.",
   "settings": {
@@ -18,7 +18,7 @@
     "auto-update": {
       "type": "bool",
       "name": "Check for updates automatically",
-      "description": "At the main menu, check GitHub Releases, download and verify a newer mod, and offer Restart. Requires public releases.",
+      "description": "At the main menu, check GitHub Releases every five minutes, download and verify a newer mod, then offer Restart. Requires public releases.",
       "default": true
     }
   }

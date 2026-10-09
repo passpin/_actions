@@ -36,6 +36,11 @@ constexpr auto ASSET_BASE = "https://github.com/passpin/for_build/releases/downl
 constexpr auto MOD_ID = "gmdtool.runtime-bridge";
 constexpr std::size_t MAX_BYTES = 32 * 1024 * 1024;
 constexpr std::size_t MIN_BYTES = 1024;
+// An open main menu checks for new releases again without restarting GD.
+// The menu polls cheaply every 30 seconds; at most one GitHub API request
+// is made every five minutes while it is open.
+constexpr auto CHECK_INTERVAL = std::chrono::minutes(5);
+constexpr auto PROMPT_SNOOZE = std::chrono::minutes(10);
 
 // Return only canonical stable semvers: we explicitly do not install prereleases.
 std::optional<std::array<int, 3>> parseVersion(std::string s) {
@@ -135,24 +140,39 @@ bool inspectPackage(fs::path const& staged, std::string const& version) {
 class Updater {
     geode::async::TaskHolder<web::WebResponse> m_check;
     geode::async::TaskHolder<web::WebResponse> m_download;
-    bool m_started = false;
+    bool m_checking = false;
     bool m_busy = false;
     bool m_prompted = false;
+    std::chrono::steady_clock::time_point m_lastCheck{};
+    std::chrono::steady_clock::time_point m_promptAfter{};
     std::optional<Release> m_release;
     fs::path m_staged;
 
+    bool isMainMenuActive() const {
+        auto* scene = cocos2d::CCDirector::sharedDirector()->getRunningScene();
+        return scene && scene->getChildByType<MenuLayer>(0) != nullptr;
+    }
+
     void showRestartPrompt() {
-        if (m_prompted || m_staged.empty() || !fs::exists(m_staged)) return;
+        if (m_prompted || !m_release || m_staged.empty() || !fs::exists(m_staged)) return;
+        // Don't interrupt a level if the asynchronous download finished after
+        // the player left the menu; the prompt appears on returning to it.
+        if (!isMainMenuActive()) return;
+        if (std::chrono::steady_clock::now() < m_promptAfter) return;
         m_prompted = true;
-        auto text = fmt::format(
-            "gmdtool Runtime Bridge {} is ready.\\nRestart Geometry Dash to apply it?",
-            m_release->version
-        );
+        // One short line; do not include a literal \n or force manual wrapping.
+        auto text = fmt::format("{} ready. Restart?", m_release->version);
         geode::createQuickPopup("gmdtool Update", text, "Later", "Restart", [this](auto, bool yes) {
-            if (!yes) { m_prompted = false; return; }
+            if (!yes) {
+                m_prompted = false;
+                m_promptAfter = std::chrono::steady_clock::now() + PROMPT_SNOOZE;
+                return;
+            }
             if (!this->apply()) {
+                m_prompted = false;
+                m_promptAfter = std::chrono::steady_clock::now() + PROMPT_SNOOZE;
                 FLAlertLayer::create("Update failed",
-                    "The current mod was kept. Check Geode logs.", "OK")->show();
+                    "Original mod kept. See Geode logs.", "OK")->show();
                 return;
             }
             geode::utils::game::restart(true, false);
@@ -197,13 +217,18 @@ public:
             geode::queueInMainThread([this] { this->showRestartPrompt(); });
             return;
         }
-        if (m_started || m_busy) return;
-        m_started = true;
+        if (m_checking || m_busy) return;
+        auto now = std::chrono::steady_clock::now();
+        if (m_lastCheck.time_since_epoch().count() != 0 &&
+            now - m_lastCheck < CHECK_INTERVAL) return;
+        m_lastCheck = now;
+        m_checking = true;
         auto req = web::WebRequest();
         req.userAgent("gmdtool-runtime-bridge/passpin")
             .header("Accept", "application/vnd.github+json")
             .timeout(std::chrono::seconds(15));
         m_check.spawn(req.get(API_URL), [this](web::WebResponse response) {
+            m_checking = false;
             if (!response.ok() || response.data().size() > 1024 * 1024) {
                 log::warn("Updater: GitHub release check failed (HTTP {})", response.code());
                 return;
@@ -244,8 +269,15 @@ public:
 
 Updater& updater() { static Updater u; return u; }
 class $modify(GmdtoolUpdateMenuLayer, MenuLayer) {
+    void pollForUpdates(float) {
+        updater().onMenu();
+    }
+
     bool init() {
         if (!MenuLayer::init()) return false;
+        // The original one-shot check meant GD had to be restarted to detect
+        // releases published after menu creation. Re-check while it is open.
+        this->schedule(schedule_selector(GmdtoolUpdateMenuLayer::pollForUpdates), 30.0f);
         geode::queueInMainThread([] { updater().onMenu(); });
         return true;
     }
