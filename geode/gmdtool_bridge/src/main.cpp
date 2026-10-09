@@ -3,6 +3,8 @@
 #include <Geode/Geode.hpp>
 #include <Geode/DefaultInclude.hpp>
 #include <Geode/binding/PlayLayer.hpp>
+#include <Geode/binding/MenuLayer.hpp>
+#include <Geode/modify/MenuLayer.hpp>
 #include <Geode/modify/PlayLayer.hpp>
 #include <Geode/binding/PlayerObject.hpp>
 #include <Geode/binding/GJEffectManager.hpp>
@@ -22,6 +24,11 @@
 #include <string>
 #include <thread>
 #include <memory>
+#include <mutex>
+#include <deque>
+#include <functional>
+#include <Windows.h> // Win32 window/message queries only; Winsock remains in bridge_transport.cpp
+#include <commctrl.h> // Windows supported subclassing; hooks on the UI/game thread
 
 using namespace geode::prelude;
 
@@ -42,6 +49,141 @@ struct DispatchCounters {
     std::atomic<std::uint64_t> postUpdates{0};
 };
 DispatchCounters counters;
+
+// The Geode main-thread task queue normally runs from Cocos's frame loop.
+// GD can suspend that loop while not focused, even while the Win32 window
+// thread continues processing messages. Install a Windows window subclass
+// on that SAME thread in MenuLayer::init; it can service authenticated
+// requests without requiring foreground focus or running a fake game frame.
+// This does not keep gameplay/physics advancing when GD is suspended.
+constexpr UINT_PTR PUMP_SUBCLASS_ID = 0x676d6454; // "gmdT"
+std::atomic<HWND> pumpWindow{nullptr};
+std::atomic<DWORD> pumpThreadId{0};
+std::atomic<UINT> pumpMessage{0};
+std::atomic<std::uint64_t> pumpDeliveries{0};
+std::atomic<std::uint64_t> pumpCommands{0};
+std::mutex mailboxMutex;
+std::deque<std::weak_ptr<std::function<void()>>> mailbox;
+
+void drainMailbox() {
+    std::deque<std::weak_ptr<std::function<void()>>> jobs;
+    {
+        std::lock_guard guard(mailboxMutex);
+        jobs.swap(mailbox);
+    }
+    for (auto& weak : jobs) {
+        if (auto job = weak.lock()) {
+            ++pumpCommands;
+            (*job)(); // Same GD/Win32 UI thread; runOnce atomic prevents duplicates.
+        }
+    }
+}
+
+LRESULT CALLBACK bridgeSubclassProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp,
+                                     UINT_PTR subclassId, DWORD_PTR) {
+    if (msg && msg == pumpMessage.load()) {
+        // Never run game/Cocos code on a worker. The subclass is installed
+        // only after verifying the calling thread owns GD's HWND.
+        if (::GetCurrentThreadId() == pumpThreadId.load()) {
+            ++pumpDeliveries;
+            drainMailbox();
+        }
+        return 0;
+    }
+    if (msg == WM_NCDESTROY) {
+        pumpWindow.store(nullptr);
+        pumpThreadId.store(0);
+        ::RemoveWindowSubclass(hwnd, bridgeSubclassProc, subclassId);
+    }
+    return ::DefSubclassProc(hwnd, msg, wp, lp);
+}
+
+BOOL CALLBACK findOwnedThreadWindow(HWND hwnd, LPARAM value) {
+    if (::GetWindow(hwnd, GW_OWNER) == nullptr &&
+        (::IsWindowVisible(hwnd) || ::IsIconic(hwnd))) {
+        *reinterpret_cast<HWND*>(value) = hwnd;
+        return FALSE;
+    }
+    return TRUE;
+}
+
+void installMainThreadPump() {
+    // MUST be invoked from game main thread (MenuLayer::init or Geode queue).
+    auto const tid = ::GetCurrentThreadId();
+    auto current = pumpWindow.load();
+    if (current && ::IsWindow(current) && pumpThreadId.load() == tid) return;
+    HWND hwnd = nullptr;
+    ::EnumThreadWindows(tid, findOwnedThreadWindow, reinterpret_cast<LPARAM>(&hwnd));
+    if (!hwnd || ::GetWindowThreadProcessId(hwnd, nullptr) != tid) {
+        log::warn("gmdtool bridge: cannot find a game window on main thread");
+        return;
+    }
+    auto message = ::RegisterWindowMessageW(L"gmdtool.runtime-bridge.main-pump.v1");
+    if (!message || !::SetWindowSubclass(hwnd, bridgeSubclassProc, PUMP_SUBCLASS_ID, 0)) {
+        log::warn("gmdtool bridge: Win32 main-thread subclass installation failed");
+        return;
+    }
+    pumpThreadId.store(tid);
+    pumpMessage.store(message);
+    pumpWindow.store(hwnd);
+    log::info("gmdtool bridge: Windows message pump installed (no focus change)");
+}
+
+// Win32 window operations are the only things the socket thread does besides
+// transport and JSON. No Cocos / GD pointers cross threads. In particular,
+// WM_NULL does NOT foreground the game or force physics/rendering to run.
+struct WindowProbe {
+    HWND hwnd = nullptr;
+    bool visible = false;
+    bool minimized = false;
+    bool foreground = false;
+};
+
+BOOL CALLBACK findGameWindow(HWND candidate, LPARAM result) {
+    DWORD processId = 0;
+    ::GetWindowThreadProcessId(candidate, &processId);
+    if (processId == ::GetCurrentProcessId() &&
+        ::GetWindow(candidate, GW_OWNER) == nullptr &&
+        (::IsWindowVisible(candidate) || ::IsIconic(candidate))) {
+        *reinterpret_cast<HWND*>(result) = candidate;
+        return FALSE;
+    }
+    return TRUE;
+}
+
+WindowProbe probeWindow() {
+    WindowProbe probe;
+    ::EnumWindows(&findGameWindow, reinterpret_cast<LPARAM>(&probe.hwnd));
+    if (!probe.hwnd) return probe;
+    probe.visible = ::IsWindowVisible(probe.hwnd) != FALSE;
+    probe.minimized = ::IsIconic(probe.hwnd) != FALSE;
+    DWORD foregroundProcess = 0;
+    if (auto foreground = ::GetForegroundWindow())
+        ::GetWindowThreadProcessId(foreground, &foregroundProcess);
+    probe.foreground = foregroundProcess == ::GetCurrentProcessId();
+    return probe;
+}
+
+matjson::Value windowAsJson(WindowProbe const& window) {
+    return matjson::makeObject({
+        {"found", window.hwnd != nullptr},
+        {"foreground", window.foreground},
+        {"minimized", window.minimized},
+        {"visible", window.visible}
+    });
+}
+
+bool requestNonActivatingWakeup() {
+    // Prefer our registered, authenticated-command mailbox on GD's UI HWND;
+    // unlike WM_NULL it actually runs the queued task from its WndProc.
+    auto hwnd = pumpWindow.load();
+    auto msg = pumpMessage.load();
+    if (hwnd && msg && ::IsWindow(hwnd) &&
+        ::PostMessageW(hwnd, msg, 0, 0) != FALSE) return true;
+    // Before the subclass has been installed only a no-op wake is possible.
+    auto window = probeWindow();
+    return window.hwnd && ::PostMessageW(window.hwnd, WM_NULL, 0, 0) != FALSE;
+}
 
 std::int64_t monotonicMilliseconds() {
     return std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -67,6 +209,14 @@ matjson::Value transportDiagnostics() {
         {"timed_out", static_cast<std::int64_t>(counters.timedOut.load())},
         {"post_update_count", static_cast<std::int64_t>(counters.postUpdates.load())}
     });
+    result["main_thread_checked"] = counters.completed.load() > 0;
+    result["main_thread_recent"] = completedAt > 0 && now - completedAt < 5000;
+    result["window"] = windowAsJson(probeWindow());
+    result["window_pump_installed"] = pumpWindow.load() != nullptr;
+    result["window_pump_deliveries"] = static_cast<std::int64_t>(pumpDeliveries.load());
+    result["window_pump_commands"] = static_cast<std::int64_t>(pumpCommands.load());
+    result["main_thread_dispatch"] = "Geode queue + Win32 UI-thread message (at-most-once)";
+    result["background_behavior"] = "no foreground focus; no forced game-loop";
     result["last_completed_ago_ms"] = completedAt ? matjson::Value(now - completedAt) : matjson::Value(nullptr);
     result["last_post_update_ago_ms"] = updatedAt ? matjson::Value(now - updatedAt) : matjson::Value(nullptr);
     return result;
@@ -122,6 +272,16 @@ class $modify(GmdtoolBridgePlayLayer, PlayLayer) {
     void onExit() {
         if (state.owner == this) state = RuntimeState{};
         PlayLayer::onExit();
+    }
+};
+
+// The menu is created with the game active, so this reliably captures the
+// real GD UI thread and avoids assuming $on_mod(Loaded) runs on that thread.
+class $modify(GmdtoolBridgeMenuLayer, MenuLayer) {
+    bool init() {
+        if (!MenuLayer::init()) return false;
+        installMainThreadPump();
+        return true;
     }
 };
 
@@ -294,7 +454,7 @@ matjson::Value onRequest(matjson::Value const& request, std::string const& token
     // *started* is not cancellable; callers must treat timeouts as uncertain.
     auto pending = std::make_shared<std::atomic_bool>(true);
     ++counters.queued;
-    geode::queueInMainThread([request, promise, pending] {
+    auto job = std::make_shared<std::function<void()>>([request, promise, pending] {
         if (!pending->exchange(false)) return; // timeout cancelled before start
         ++counters.started;
         matjson::Value result;
@@ -309,10 +469,33 @@ matjson::Value onRequest(matjson::Value const& request, std::string const& token
         ++counters.completed;
         promise->set_value(std::move(result));
     });
+    // Two *same-thread* execution opportunities. The mailbox can be drained
+    // by our Win32 subclass even when Cocos's frame scheduler is suspended.
+    // The atomic pending bit makes both execution paths at-most-once.
+    {
+        std::lock_guard guard(mailboxMutex);
+        // Bound the fallback mailbox even if Cocos keeps holding canceled
+        // jobs in its frozen main-thread queue. Any displaced job can still
+        // complete on Cocos's original queue, or time out safely.
+        if (mailbox.size() >= 128) mailbox.clear();
+        mailbox.emplace_back(job);
+    }
+    geode::queueInMainThread([job] { (*job)(); });
+    // Attempt to wake the host's Windows message pump without stealing focus.
+    // Both the Geode queue and Windows message callback execute on the
+    // verified game/UI thread; the socket thread never executes game code.
+    const bool wakePosted = requestNonActivatingWakeup();
     if (future.wait_for(std::chrono::seconds(3)) != std::future_status::ready) {
         pending->store(false);
         ++counters.timedOut;
-        reply["error"] = "main thread response timed out (game may be unfocused, paused, or blocked; check bridge_health)";
+        auto window = probeWindow();
+        std::string reason = "main-thread queue not serviced";
+        if (window.minimized) reason += "; GD window minimized";
+        else if (window.hwnd && !window.foreground) reason += "; GD window is not foreground";
+        else if (!window.hwnd) reason += "; game window not found";
+        reason += pumpWindow.load() ? "; UI message pump registered" : "; UI message pump not installed";
+        reason += wakePosted ? "; window message posted" : "; window message not posted";
+        reply["error"] = reason + "; use bridge-health for diagnostics";
         return reply;
     }
     auto result = future.get();
@@ -326,7 +509,8 @@ matjson::Value onRequest(matjson::Value const& request, std::string const& token
 }
 
 // Only protocol parsing and authentication run on the worker thread.
-// Every GD / Cocos call happens in resultFor() via queueInMainThread.
+// Every GD / Cocos call happens in resultFor() on the game main thread,
+// either through Geode's normal queue or the verified Windows UI callback.
 std::string handleWireRequest(std::string const& line, std::string const& token) {
     matjson::Value reply = matjson::makeObject({
         {"id", nullptr}, {"ok", false}, {"error", "malformed request"}
@@ -348,6 +532,9 @@ std::jthread serverThread;
 } // anonymous namespace
 
 $on_mod(Loaded) {
+    // If Loaded executes before MenuLayer is created this task gets another
+    // chance to install the pump when the main-thread scheduler is live.
+    geode::queueInMainThread([] { installMainThreadPump(); });
     if (!Mod::get()->getSettingValue<bool>("enabled")) return;
     auto token = makeToken();
     auto session = Mod::get()->getSaveDir() / "bridge-session.json";

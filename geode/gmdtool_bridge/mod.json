@@ -5,7 +5,7 @@
   },
   "id": "gmdtool.runtime-bridge",
   "name": "gmdtool Runtime Bridge",
-  "version": "v0.1.4",
+  "version": "v0.1.5",
   "developer": "passpin",
   "description": "Opt-in localhost runtime bridge with optional GitHub Releases auto-updates. Does not force gameplay or focus.",
   "settings": {
