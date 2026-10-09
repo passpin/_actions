@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gmdtool-ai"
+version = "0.4.0.dev0"
+description = "AI-first, data-driven Geometry Dash .gmd toolkit"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "gmdtool contributors"}]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.scripts]
+gmdtool = "gmdtool.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["gmdtool*"]
+
+[tool.setuptools.package-data]
+"gmdtool.data" = ["*.json"]
+"gmdtool" = ["py.typed", "*.pyi"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

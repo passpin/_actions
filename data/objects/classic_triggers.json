@@ -1,0 +1,2316 @@
+{
+  "$schema": "../schema/object-catalog.schema.json",
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": 899,
+      "name": "Color Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "red",
+          "key": 7,
+          "type": "int",
+          "constraints": {
+            "min": 0,
+            "max": 255
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "green",
+          "key": 8,
+          "type": "int",
+          "constraints": {
+            "min": 0,
+            "max": 255
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "blue",
+          "key": 9,
+          "type": "int",
+          "constraints": {
+            "min": 0,
+            "max": 255
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "tint_ground",
+          "key": 14,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_color_1",
+          "key": 15,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_color_2",
+          "key": 16,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "blending",
+          "key": 17,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "copied_color_id",
+          "key": 50,
+          "type": "int",
+          "aliases": [
+            "copy_color_id"
+          ],
+          "semantic": {
+            "kind": "reference",
+            "namespace": "color"
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "copied_color_hsv",
+          "key": 49,
+          "type": "raw",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "copy_opacity",
+          "key": 60,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "opacity",
+          "key": 35,
+          "type": "real",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_color",
+          "key": 23,
+          "type": "int",
+          "aliases": [
+            "target_color_id"
+          ],
+          "semantic": {
+            "kind": "reference",
+            "namespace": "color"
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "easing",
+          "key": 30,
+          "type": "enum",
+          "enum": "EasingType",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "easing_rate",
+          "key": 85,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 901,
+      "name": "Move Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "move_x",
+          "key": 28,
+          "type": "real",
+          "sources": [
+            "fixture-2048",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "move_y",
+          "key": 29,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "lock_to_player_x",
+          "key": 58,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "lock_to_player_y",
+          "key": 59,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "lock_to_camera_x",
+          "key": 141,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "lock_to_camera_y",
+          "key": 142,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "use_target",
+          "key": 100,
+          "type": "bool",
+          "aliases": [
+            "enable_use_target"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_mode",
+          "key": 101,
+          "type": "enum",
+          "enum": "MoveTargetType",
+          "aliases": [
+            "target_pos_coordinates"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "move_mod_x",
+          "key": 143,
+          "type": "real",
+          "aliases": [
+            "mod_x"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "move_mod_y",
+          "key": 144,
+          "type": "real",
+          "aliases": [
+            "mod_y"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "small_step",
+          "key": 393,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "direction_follow_snap_360",
+          "key": 394,
+          "type": "bool",
+          "aliases": [
+            "direction_mode"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_mod_center_group",
+          "key": 395,
+          "type": "group_id",
+          "aliases": [
+            "mode_center_group"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "direction_mode_distance",
+          "key": 396,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "dynamic_mode",
+          "key": 397,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "special_target",
+          "key": 538,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "silent",
+          "key": 544,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "control_id",
+          "key": 534,
+          "type": "control_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_control_id",
+          "key": 535,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_position_group",
+          "key": 71,
+          "type": "group_id",
+          "aliases": [
+            "mode_target_group"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "fixture-2048",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "sources": [
+            "fixture-2048",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_player_1",
+          "key": 138,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_player_2",
+          "key": 200,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1006,
+      "name": "Pulse Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "red",
+          "key": 7,
+          "type": "int",
+          "constraints": {
+            "min": 0,
+            "max": 255
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "green",
+          "key": 8,
+          "type": "int",
+          "constraints": {
+            "min": 0,
+            "max": 255
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "blue",
+          "key": 9,
+          "type": "int",
+          "constraints": {
+            "min": 0,
+            "max": 255
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_color_1",
+          "key": 15,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_color_2",
+          "key": 16,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "blending",
+          "key": 17,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "fade_in",
+          "key": 45,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "hold",
+          "key": 46,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "fade_out",
+          "key": 47,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "pulse_mode",
+          "key": 48,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "copied_color_hsv",
+          "key": 49,
+          "type": "raw",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "copied_color_id",
+          "key": 50,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "color"
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "copy_opacity",
+          "key": 60,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "pulse_target_type",
+          "key": 52,
+          "type": "int",
+          "aliases": [
+            "target_type"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "main_only",
+          "key": 65,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "detail_only",
+          "key": 66,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "exclusive",
+          "key": 86,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "legacy_hsv",
+          "key": 210,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_id",
+          "key": 51,
+          "type": "int",
+          "variants": [
+            {
+              "when": {
+                "property": "pulse_target_type",
+                "equals": 1
+              },
+              "semantic": {
+                "kind": "reference",
+                "namespace": "group"
+              }
+            },
+            {
+              "default": true,
+              "semantic": {
+                "kind": "reference",
+                "namespace": "color"
+              }
+            }
+          ],
+          "sources": [
+            "gd-docs",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1007,
+      "name": "Alpha Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "opacity",
+          "key": 35,
+          "type": "real",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1049,
+      "name": "Toggle Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "activate_group",
+          "key": 56,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1268,
+      "name": "Spawn Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "delay",
+          "key": 63,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "delay_pm",
+          "key": 556,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "editor_disable",
+          "key": 102,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "spawn_ordered",
+          "key": 441,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "reset_remap",
+          "key": 581,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "group_remaps",
+          "key": 442,
+          "type": "remap_list",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1346,
+      "name": "Rotate Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "degrees",
+          "key": 68,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "times_360",
+          "key": 69,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "center_group",
+          "key": 71,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "aim_mode",
+          "key": 100,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_mode",
+          "key": 394,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "rotation_target_id",
+          "key": 401,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "rotation_offset",
+          "key": 402,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "dynamic_mode",
+          "key": 397,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "dynamic_mode_easing",
+          "key": 403,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "lock_object_rotation",
+          "key": 70,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "min_x_group",
+          "key": 516,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "min_y_group",
+          "key": 517,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_x_group",
+          "key": 518,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_y_group",
+          "key": 519,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "easing",
+          "key": 30,
+          "type": "enum",
+          "enum": "EasingType",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "easing_rate",
+          "key": 85,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_player_1",
+          "key": 138,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_player_2",
+          "key": 200,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1347,
+      "name": "Follow Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "x_mod",
+          "key": 72,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "y_mod",
+          "key": 73,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_group",
+          "key": 71,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "aliases": [
+            "move_time"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1520,
+      "name": "Shake Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "strength",
+          "key": 75,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "interval",
+          "key": 84,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1585,
+      "name": "Animate Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "animation_id",
+          "key": 76,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1595,
+      "name": "Touch Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "hold_mode",
+          "key": 81,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "toggle_mode",
+          "key": 82,
+          "type": "enum",
+          "enum": "TouchTriggerType",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_mode",
+          "key": 198,
+          "type": "enum",
+          "enum": "TouchTriggerControl",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "dual_mode",
+          "key": 89,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1611,
+      "name": "Count Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "target_count",
+          "key": 77,
+          "type": "int",
+          "aliases": [
+            "count"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "multi_activate",
+          "key": 104,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "item_id",
+          "key": 80,
+          "type": "item_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "activate_group",
+          "key": 56,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "pickup_trigger_mode",
+          "key": 88,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "override",
+          "key": 139,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "multiplier",
+          "key": 449,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1612,
+      "name": "Hide Player Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1613,
+      "name": "Show Player Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1616,
+      "name": "Stop Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "use_control_id",
+          "key": 535,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "command",
+          "key": 580,
+          "type": "enum",
+          "enum": "ActionCommand",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_id",
+          "key": 51,
+          "type": "int",
+          "variants": [
+            {
+              "when": {
+                "property": "use_control_id",
+                "equals": true
+              },
+              "semantic": {
+                "kind": "reference",
+                "namespace": "control"
+              }
+            },
+            {
+              "default": true,
+              "semantic": {
+                "kind": "reference",
+                "namespace": "group"
+              }
+            }
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1811,
+      "name": "Instant Count Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "target_count",
+          "key": 77,
+          "type": "int",
+          "aliases": [
+            "count"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "comparison",
+          "key": 88,
+          "type": "int",
+          "aliases": [
+            "pickup_trigger_mode"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "multi_activate",
+          "key": 104,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "item_id",
+          "key": 80,
+          "type": "item_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "activate_group",
+          "key": 56,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "override",
+          "key": 139,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "multiplier",
+          "key": 449,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1812,
+      "name": "On Death Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "group_id",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "activate_group",
+          "key": 56,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1814,
+      "name": "Follow Player Y Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "speed",
+          "key": 90,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_delay",
+          "key": 91,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "y_offset",
+          "key": 92,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_speed",
+          "key": 105,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "aliases": [
+            "move_time"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1815,
+      "name": "Collision Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "block_a",
+          "key": 80,
+          "type": "int",
+          "aliases": [
+            "block_id_1"
+          ],
+          "semantic": {
+            "kind": "reference",
+            "namespace": "block"
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "block_b",
+          "key": 95,
+          "type": "int",
+          "aliases": [
+            "block_id_2"
+          ],
+          "semantic": {
+            "kind": "reference",
+            "namespace": "block"
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "trigger_on_exit",
+          "key": 93,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "activate_group",
+          "key": 56,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_1",
+          "key": 138,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_2",
+          "key": 200,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "both_players",
+          "key": 201,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1817,
+      "name": "Pickup Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "count",
+          "key": 77,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "override",
+          "key": 139,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "pickup_mode",
+          "key": 88,
+          "type": "int",
+          "aliases": [
+            "multiply_divide",
+            "pickup_trigger_mode"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "multiplier",
+          "key": 449,
+          "type": "real",
+          "aliases": [
+            "modifier"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "item_id",
+          "key": 80,
+          "type": "item_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "multi_activate",
+          "key": 104,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1818,
+      "name": "Background Effect On Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1819,
+      "name": "Background Effect Off Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1912,
+      "name": "Random Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "group_id_1",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "group_id_2",
+          "key": 71,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "chance",
+          "key": 10,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1915,
+      "name": "No Enter Effect Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1917,
+      "name": "Reverse Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "reverse",
+          "key": 117,
+          "type": "bool",
+          "aliases": [
+            "reversed"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1931,
+      "name": "Old End Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "group_id",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "lock_y",
+          "key": 59,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "reversed",
+          "key": 118,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1932,
+      "name": "Player Control Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "player_1",
+          "key": 138,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_2",
+          "key": 200,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "stop_jump",
+          "key": 540,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "stop_move",
+          "key": 541,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "stop_rotation",
+          "key": 542,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "stop_slide",
+          "key": 543,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1934,
+      "name": "Song Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "sfx_id",
+          "key": 392,
+          "type": "int",
+          "aliases": [
+            "song_id"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "prep",
+          "key": 399,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "load_prep",
+          "key": 400,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "song_channel",
+          "key": 432,
+          "type": "int",
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "song_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "preview",
+          "key": 13,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "audio_common"
+      ]
+    },
+    {
+      "id": 1935,
+      "name": "TimeWarp Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "time_mod",
+          "key": 120,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 2066,
+      "name": "Gravity Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "gravity",
+          "key": 148,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_1",
+          "key": 138,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_2",
+          "key": 200,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "player_touch",
+          "key": 201,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 2067,
+      "name": "Scale Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "scale_x",
+          "key": 150,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "scale_y",
+          "key": 151,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "div_x",
+          "key": 153,
+          "type": "bool",
+          "aliases": [
+            "divide_x"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "div_y",
+          "key": 154,
+          "type": "bool",
+          "aliases": [
+            "divide_y"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "center_group",
+          "key": 71,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "transform_value_450",
+          "key": 450,
+          "type": "real",
+          "aliases": [
+            "property_450"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "transform_value_451",
+          "key": 451,
+          "type": "real",
+          "aliases": [
+            "property_451"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "only_move",
+          "key": 133,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "relative_scale",
+          "key": 577,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "relative_rotation",
+          "key": 452,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 2068,
+      "name": "Advanced Random Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "weighted_groups",
+          "key": 152,
+          "type": "weighted_groups",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    }
+  ],
+  "category": "classic_triggers"
+}

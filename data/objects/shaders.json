@@ -1,0 +1,394 @@
+{
+  "$schema": "../schema/object-catalog.schema.json",
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": 2903,
+      "name": "Gradient Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "blending_layer",
+          "key": 202,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "blending_mode",
+          "key": 174,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "gradient_id",
+          "key": 209,
+          "type": "int",
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "gradient"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed",
+          "constraints": {
+            "min": 0,
+            "max": 999
+          }
+        },
+        {
+          "name": "bottom_left_id",
+          "key": 203,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "group"
+          },
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "bottom_right_id",
+          "key": 204,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "group"
+          },
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "top_left_id",
+          "key": 205,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "group"
+          },
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "top_right_id",
+          "key": 206,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "group"
+          },
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "vertex_mode",
+          "key": 207,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "disable",
+          "key": 208,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "disable_all",
+          "key": 508,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "preview_opacity",
+          "key": 456,
+          "type": "real",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 2904,
+      "name": "Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2905,
+      "name": "Shock Wave Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2907,
+      "name": "Shock Line Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2909,
+      "name": "Glitch Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2910,
+      "name": "Chromatic Aberration Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2911,
+      "name": "Chromatic Glitch Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2912,
+      "name": "Pixelate Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2913,
+      "name": "Lens Circle Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2914,
+      "name": "Radial Blur Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2915,
+      "name": "Motion Blur Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2916,
+      "name": "Bulge Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2917,
+      "name": "Pinch Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2919,
+      "name": "Grayscale Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2920,
+      "name": "Sepia Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2921,
+      "name": "Invert Color Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2922,
+      "name": "Hue Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2923,
+      "name": "Edit Color Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    },
+    {
+      "id": 2924,
+      "name": "Split Screen Shader Trigger",
+      "base": "trigger",
+      "properties": [],
+      "tags": [
+        "shader",
+        "trigger"
+      ],
+      "mixins": [
+        "shader_common"
+      ]
+    }
+  ],
+  "category": "shaders"
+}

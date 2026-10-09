@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "namespaces", "references"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": 1},
+    "namespaces": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-z][a-z0-9_]*$": {
+          "type": "object",
+          "required": ["description"],
+          "properties": {
+            "description": {"type": "string", "minLength": 1},
+            "allocatable": {"type": "boolean"},
+            "notes": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "references": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z][a-z0-9_]*$": {"$ref": "#/$defs/map"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "map": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 0},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

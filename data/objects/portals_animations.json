@@ -1,0 +1,86 @@
+{
+  "$schema": "../schema/object-catalog.schema.json",
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": 2064,
+      "name": "Unlinked Orange Teleport Portal",
+      "base": "object",
+      "cpp_class": "TeleportPortalObject",
+      "mixins": [
+        "teleport_portal_common"
+      ],
+      "properties": [],
+      "sources": [
+        "flowvix-object-ids",
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 2902,
+      "name": "Unlinked Blue Teleport Portal",
+      "base": "object",
+      "cpp_class": "TeleportPortalObject",
+      "mixins": [
+        "teleport_portal_common"
+      ],
+      "properties": [],
+      "sources": [
+        "flowvix-object-ids",
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 2046,
+      "name": "Fireball Particle Animation 1",
+      "base": "object",
+      "cpp_class": "SpecialAnimGameObject",
+      "mixins": [
+        "special_animation_common"
+      ],
+      "properties": [],
+      "sources": [
+        "flowvix-object-ids",
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 2047,
+      "name": "Fireball Particle Animation 2",
+      "base": "object",
+      "cpp_class": "SpecialAnimGameObject",
+      "mixins": [
+        "special_animation_common"
+      ],
+      "properties": [],
+      "sources": [
+        "flowvix-object-ids",
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 2055,
+      "name": "Explosion Animation",
+      "base": "object",
+      "cpp_class": "SpecialAnimGameObject",
+      "mixins": [
+        "special_animation_common"
+      ],
+      "properties": [],
+      "sources": [
+        "flowvix-object-ids",
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    }
+  ]
+}

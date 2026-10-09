@@ -1,0 +1,319 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "fragments"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "fragments": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "properties"
+        ],
+        "properties": {
+          "properties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "key",
+                "type"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "aliases": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true
+                },
+                "key": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "type": {
+                  "enum": [
+                    "raw",
+                    "real",
+                    "int",
+                    "bool",
+                    "groups",
+                    "text",
+                    "enum",
+                    "group_id",
+                    "item_id",
+                    "control_id",
+                    "particle",
+                    "weighted_groups",
+                    "sequence",
+                    "remap_list"
+                  ]
+                },
+                "enum": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "semantic_domain": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "description": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "sources": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "uniqueItems": true
+                    }
+                  ]
+                },
+                "confidence": {
+                  "enum": [
+                    "confirmed",
+                    "observed",
+                    "inferred",
+                    "unknown"
+                  ]
+                },
+                "constraints": {
+                  "type": "object",
+                  "properties": {
+                    "min": {
+                      "type": "number"
+                    },
+                    "max": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "semantic": {
+                  "type": "object",
+                  "required": [
+                    "kind",
+                    "namespace"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "reference",
+                        "membership",
+                        "identifier",
+                        "structured_reference"
+                      ]
+                    },
+                    "namespace": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "additionalProperties": true
+                },
+                "variants": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "semantic"
+                    ],
+                    "properties": {
+                      "when": {
+                        "type": "object",
+                        "required": [
+                          "property",
+                          "equals"
+                        ],
+                        "properties": {
+                          "property": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "equals": {}
+                        },
+                        "additionalProperties": false
+                      },
+                      "default": {
+                        "const": true
+                      },
+                      "semantic": {
+                        "type": "object",
+                        "required": [
+                          "kind",
+                          "namespace"
+                        ],
+                        "properties": {
+                          "kind": {
+                            "enum": [
+                              "reference",
+                              "membership",
+                              "identifier",
+                              "structured_reference"
+                            ]
+                          },
+                          "namespace": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    },
+                    "oneOf": [
+                      {
+                        "required": [
+                          "when"
+                        ],
+                        "not": {
+                          "required": [
+                            "default"
+                          ]
+                        }
+                      },
+                      {
+                        "required": [
+                          "default"
+                        ],
+                        "not": {
+                          "required": [
+                            "when"
+                          ]
+                        }
+                      }
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "enum"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "enum"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "sources": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "confirmed",
+              "observed",
+              "inferred",
+              "unknown"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "source": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      ]
+    },
+    "sources": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "confirmed",
+        "observed",
+        "inferred",
+        "unknown"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

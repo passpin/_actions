@@ -1,0 +1,13 @@
+Please configure github.com/passpin/for_build to automatically build and PUBLISH
+Windows Geode mod releases using Geode SDK 5.9.0 for Geometry Dash 2.2081.
+
+Constraints:
+- Do not break the existing build.yml CI or change the mod's ID/developer.
+- Publish a public, non-prerelease GitHub Release per semantic-version tag
+  (e.g. v0.1.4). Tag MUST match mod.json.version exactly.
+- Attach the compiled .geode file to Releases with exact asset filename
+  gmdtool.runtime-bridge.geode (not an Actions artifact zip).
+- Confirm the GitHub REST release/latest endpoint exposes the asset with
+  browser_download_url, size, and digest="sha256:<64-hex>".
+- Do not overwrite an existing published Release asset; produce new releases.
+- Preserve v0.1.4 code and give build logs plus the public latest release URL.

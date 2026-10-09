@@ -1,0 +1,848 @@
+{
+  "$schema": "schema/fragments.schema.json",
+  "schema_version": 1,
+  "fragments": {
+    "area_effect_common": {
+      "properties": [
+        {
+          "name": "enter_type",
+          "key": 217,
+          "type": "int"
+        },
+        {
+          "name": "length",
+          "key": 222,
+          "type": "int"
+        },
+        {
+          "name": "length_variance",
+          "key": 223,
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "key": 220,
+          "type": "int"
+        },
+        {
+          "name": "offset_variance",
+          "key": 221,
+          "type": "int"
+        },
+        {
+          "name": "offset_y",
+          "key": 252,
+          "type": "int"
+        },
+        {
+          "name": "offset_y_variance",
+          "key": 253,
+          "type": "int"
+        },
+        {
+          "name": "move_distance",
+          "key": 218,
+          "type": "int"
+        },
+        {
+          "name": "move_distance_variance",
+          "key": 219,
+          "type": "int"
+        },
+        {
+          "name": "area_scale_x",
+          "key": 233,
+          "type": "real"
+        },
+        {
+          "name": "area_scale_x_variance",
+          "key": 234,
+          "type": "real"
+        },
+        {
+          "name": "area_scale_y",
+          "key": 235,
+          "type": "real"
+        },
+        {
+          "name": "area_scale_y_variance",
+          "key": 236,
+          "type": "real"
+        },
+        {
+          "name": "move_angle",
+          "key": 231,
+          "type": "int"
+        },
+        {
+          "name": "move_angle_variance",
+          "key": 232,
+          "type": "int"
+        },
+        {
+          "name": "relative",
+          "key": 287,
+          "type": "bool"
+        },
+        {
+          "name": "relative_fade",
+          "key": 288,
+          "type": "real"
+        },
+        {
+          "name": "easing_in",
+          "key": 242,
+          "type": "enum",
+          "enum": "EasingType"
+        },
+        {
+          "name": "easing_in_rate",
+          "key": 243,
+          "type": "real"
+        },
+        {
+          "name": "easing_out",
+          "key": 248,
+          "type": "enum",
+          "enum": "EasingType"
+        },
+        {
+          "name": "easing_out_rate",
+          "key": 249,
+          "type": "real"
+        },
+        {
+          "name": "move_x",
+          "key": 237,
+          "type": "int"
+        },
+        {
+          "name": "move_x_variance",
+          "key": 238,
+          "type": "int"
+        },
+        {
+          "name": "move_y",
+          "key": 239,
+          "type": "int"
+        },
+        {
+          "name": "move_y_variance",
+          "key": 240,
+          "type": "int"
+        },
+        {
+          "name": "tint_channel_id",
+          "key": 260,
+          "type": "int"
+        },
+        {
+          "name": "property_224",
+          "key": 224,
+          "type": "int"
+        },
+        {
+          "name": "direction_type",
+          "key": 262,
+          "type": "int"
+        },
+        {
+          "name": "xy_mode",
+          "key": 241,
+          "type": "bool"
+        },
+        {
+          "name": "ease_out_enabled",
+          "key": 261,
+          "type": "bool"
+        },
+        {
+          "name": "mod_front",
+          "key": 263,
+          "type": "real"
+        },
+        {
+          "name": "mod_back",
+          "key": 264,
+          "type": "real"
+        },
+        {
+          "name": "area_tint",
+          "key": 265,
+          "type": "real"
+        },
+        {
+          "name": "property_285",
+          "key": 285,
+          "type": "real"
+        },
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int"
+        },
+        {
+          "name": "area_rotation",
+          "key": 270,
+          "type": "real"
+        },
+        {
+          "name": "area_rotation_variance",
+          "key": 271,
+          "type": "real"
+        },
+        {
+          "name": "to_opacity",
+          "key": 275,
+          "type": "real",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          }
+        },
+        {
+          "name": "from_opacity",
+          "key": 286,
+          "type": "real",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          }
+        },
+        {
+          "name": "inbound",
+          "key": 276,
+          "type": "bool"
+        },
+        {
+          "name": "hsv_enabled",
+          "key": 278,
+          "type": "bool"
+        },
+        {
+          "name": "deadzone",
+          "key": 282,
+          "type": "real"
+        },
+        {
+          "name": "two_directions",
+          "key": 283,
+          "type": "bool"
+        },
+        {
+          "name": "dont_edit_area_parent",
+          "key": 539,
+          "type": "bool"
+        },
+        {
+          "name": "priority",
+          "key": 341,
+          "type": "int"
+        },
+        {
+          "name": "enter_channel",
+          "key": 344,
+          "type": "int"
+        },
+        {
+          "name": "use_effect_id",
+          "key": 355,
+          "type": "bool"
+        }
+      ],
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    "shader_common": {
+      "properties": [
+        {
+          "name": "speed",
+          "key": 175,
+          "type": "real"
+        },
+        {
+          "name": "strength",
+          "key": 176,
+          "type": "real"
+        },
+        {
+          "name": "outer",
+          "key": 191,
+          "type": "real"
+        },
+        {
+          "name": "time_offset",
+          "key": 177,
+          "type": "real"
+        },
+        {
+          "name": "wave_width",
+          "key": 179,
+          "type": "real"
+        },
+        {
+          "name": "target_x",
+          "key": 180,
+          "type": "real"
+        },
+        {
+          "name": "target_y",
+          "key": 189,
+          "type": "real"
+        },
+        {
+          "name": "fade_in",
+          "key": 181,
+          "type": "real"
+        },
+        {
+          "name": "fade_out",
+          "key": 182,
+          "type": "real"
+        },
+        {
+          "name": "screen_offset_x",
+          "key": 290,
+          "type": "real"
+        },
+        {
+          "name": "screen_offset_y",
+          "key": 291,
+          "type": "real"
+        },
+        {
+          "name": "invert",
+          "key": 184,
+          "type": "bool"
+        },
+        {
+          "name": "inner",
+          "key": 183,
+          "type": "real"
+        },
+        {
+          "name": "max_size",
+          "key": 512,
+          "type": "real"
+        },
+        {
+          "name": "flip",
+          "key": 185,
+          "type": "bool"
+        },
+        {
+          "name": "rotate",
+          "key": 186,
+          "type": "bool"
+        },
+        {
+          "name": "dual",
+          "key": 187,
+          "type": "bool"
+        },
+        {
+          "name": "use_x",
+          "key": 188,
+          "type": "bool"
+        },
+        {
+          "name": "use_y",
+          "key": 190,
+          "type": "bool"
+        },
+        {
+          "name": "snap_grid",
+          "key": 194,
+          "type": "bool"
+        },
+        {
+          "name": "hard_edges",
+          "key": 515,
+          "type": "bool"
+        },
+        {
+          "name": "disable_all",
+          "key": 192,
+          "type": "bool"
+        },
+        {
+          "name": "z_layer_min",
+          "key": 196,
+          "type": "int"
+        },
+        {
+          "name": "z_layer_max",
+          "key": 197,
+          "type": "int"
+        },
+        {
+          "name": "animate",
+          "key": 513,
+          "type": "bool"
+        },
+        {
+          "name": "relative",
+          "key": 514,
+          "type": "bool"
+        },
+        {
+          "name": "editor_disabled",
+          "key": 531,
+          "type": "bool"
+        }
+      ],
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    "audio_common": {
+      "properties": [
+        {
+          "name": "speed",
+          "key": 404,
+          "type": "int"
+        },
+        {
+          "name": "pitch",
+          "key": 405,
+          "type": "int"
+        },
+        {
+          "name": "volume",
+          "key": 406,
+          "type": "real"
+        },
+        {
+          "name": "reverb",
+          "key": 407,
+          "type": "bool"
+        },
+        {
+          "name": "audio_start",
+          "key": 408,
+          "type": "int"
+        },
+        {
+          "name": "fade_in",
+          "key": 409,
+          "type": "int"
+        },
+        {
+          "name": "audio_end",
+          "key": 410,
+          "type": "int"
+        },
+        {
+          "name": "fade_out",
+          "key": 411,
+          "type": "int"
+        },
+        {
+          "name": "fft",
+          "key": 412,
+          "type": "bool"
+        },
+        {
+          "name": "loop",
+          "key": 413,
+          "type": "bool"
+        },
+        {
+          "name": "stop_loop",
+          "key": 414,
+          "type": "bool"
+        },
+        {
+          "name": "unique",
+          "key": 415,
+          "type": "bool"
+        },
+        {
+          "name": "unique_id",
+          "key": 416,
+          "type": "int"
+        },
+        {
+          "name": "stop",
+          "key": 417,
+          "type": "bool"
+        },
+        {
+          "name": "change_speed",
+          "key": 418,
+          "type": "bool"
+        },
+        {
+          "name": "change_volume",
+          "key": 419,
+          "type": "bool"
+        },
+        {
+          "name": "override",
+          "key": 420,
+          "type": "bool"
+        },
+        {
+          "name": "volume_near",
+          "key": 421,
+          "type": "real"
+        },
+        {
+          "name": "volume_medium",
+          "key": 422,
+          "type": "real"
+        },
+        {
+          "name": "volume_far",
+          "key": 423,
+          "type": "real"
+        },
+        {
+          "name": "min_distance_near",
+          "key": 424,
+          "type": "int"
+        },
+        {
+          "name": "min_distance_medium",
+          "key": 425,
+          "type": "int"
+        },
+        {
+          "name": "min_distance_far",
+          "key": 426,
+          "type": "int"
+        },
+        {
+          "name": "camera_distance",
+          "key": 428,
+          "type": "bool"
+        },
+        {
+          "name": "preload",
+          "key": 433,
+          "type": "bool"
+        },
+        {
+          "name": "min_interval",
+          "key": 434,
+          "type": "real"
+        },
+        {
+          "name": "sfx_group",
+          "key": 455,
+          "type": "int"
+        },
+        {
+          "name": "group_id",
+          "key": 457,
+          "type": "int"
+        },
+        {
+          "name": "proximity_mode",
+          "key": 458,
+          "type": "int"
+        },
+        {
+          "name": "ignore_volume_test",
+          "key": 489,
+          "type": "bool"
+        },
+        {
+          "name": "sound_duration",
+          "key": 490,
+          "type": "real"
+        },
+        {
+          "name": "reverb_type",
+          "key": 502,
+          "type": "int"
+        },
+        {
+          "name": "reverb_enable",
+          "key": 503,
+          "type": "bool"
+        },
+        {
+          "name": "dont_reset",
+          "key": 595,
+          "type": "bool"
+        },
+        {
+          "name": "speed_variance",
+          "key": 596,
+          "type": "int"
+        },
+        {
+          "name": "pitch_variance",
+          "key": 597,
+          "type": "int"
+        },
+        {
+          "name": "volume_variance",
+          "key": 598,
+          "type": "real"
+        },
+        {
+          "name": "pitch_steps",
+          "key": 599,
+          "type": "bool"
+        }
+      ],
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    "timer_common": {
+      "properties": [
+        {
+          "name": "start_time",
+          "key": 467,
+          "type": "real"
+        },
+        {
+          "name": "item_id",
+          "key": 80,
+          "type": "item_id"
+        },
+        {
+          "name": "start_paused",
+          "key": 471,
+          "type": "bool"
+        },
+        {
+          "name": "dont_override",
+          "key": 468,
+          "type": "bool"
+        },
+        {
+          "name": "multi_activate",
+          "key": 475,
+          "type": "bool"
+        },
+        {
+          "name": "control_type",
+          "key": 472,
+          "type": "int",
+          "sources": [
+            "geode-2.2081"
+          ],
+          "confidence": "confirmed",
+          "aliases": [
+            "start_stop"
+          ]
+        }
+      ],
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    "teleport_portal_common": {
+      "properties": [
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081",
+            "gd-docs"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_y_offset",
+          "key": 54,
+          "type": "real",
+          "sources": [
+            "gd-docs"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_ease",
+          "key": 55,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081",
+            "gd-docs"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_static_force_enabled",
+          "key": 345,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_static_force_value",
+          "key": 346,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_redirect_force_enabled",
+          "key": 347,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_redirect_force_min",
+          "key": 348,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_redirect_force_max",
+          "key": 349,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_redirect_force_mod",
+          "key": 350,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_save_offset",
+          "key": 351,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_ignore_x",
+          "key": 352,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_ignore_y",
+          "key": 353,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_gravity",
+          "key": 354,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_static_force_additive",
+          "key": 443,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_instant_camera",
+          "key": 464,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_snap_ground",
+          "key": 510,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "teleport_redirect_dash",
+          "key": 591,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    },
+    "special_animation_common": {
+      "properties": [
+        {
+          "name": "disable_animation_shine",
+          "key": 127,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "confidence": "confirmed"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "schema/sources.schema.json",
+  "schema_version": 1,
+  "sources": {
+    "flowvix": {
+      "title": "GD Info Explorer property reference",
+      "kind": "community-reference",
+      "url": "https://flowvix.github.io/gd-info-explorer/props",
+      "description": "Geometry Dash object-property reference used to corroborate serialized property mappings."
+    },
+    "geode-2.2081": {
+      "title": "Geode Geometry Dash 2.2081 bindings",
+      "kind": "reverse-engineered-binding",
+      "url": "https://github.com/geode-sdk/bindings/blob/5c8d88305bfe2e1e1189cfed73b494b8bfdd3a4e/bindings/2.2081/GeometryDash.bro",
+      "description": "Reverse-engineered class/member bindings for Geometry Dash 2.2081."
+    },
+    "fixture-2048": {
+      "title": "2048 game preview.gmd",
+      "kind": "observed-fixture",
+      "description": "Real user-provided Geometry Dash level used for round-trip and typed-decoding checks."
+    },
+    "fixture-object-ids": {
+      "title": "Object_IDs.gmd.txt",
+      "kind": "observed-fixture",
+      "description": "Real in-game object catalog fixture used to verify object IDs and lossless handling."
+    },
+    "executable-2.2081": {
+      "title": "Geometry Dash 2.2081 Windows executable static analysis",
+      "kind": "implementation-analysis",
+      "description": "PE SHA256 fc5a16c292278bc2e8e078fb1d5023c2bd658322dd72712767ea70c2dd9ec6d0; version corroborated by local Geode logs. Factory switch/RTTI, parser vector accesses, serializer instructions. Evidence committed under tools/reverse/evidence."
+    },
+    "gd-docs": {
+      "title": "GD Docs object-string reference",
+      "kind": "community-reference",
+      "url": "https://github.com/gd-programming/gd.docs/blob/main/docs/resources/client/level-components/level-object.md",
+      "description": "Documented client object-string property keys and meanings."
+    },
+    "gdcs-ids": {
+      "title": "GD Creator School - Using IDs",
+      "kind": "community-reference",
+      "url": "https://github.com/GDCreatorSchool/gdcs2/blob/main/content/docs/guides/the-editor/using-ids.md",
+      "description": "Editor-facing semantics for 2.2 ID namespaces and relationships."
+    },
+    "flowvix-object-ids": {
+      "title": "GD Info Explorer Object IDs",
+      "kind": "community-reference",
+      "url": "https://flowvix.github.io/gd-info-explorer/ids",
+      "description": "Community-maintained human-readable Geometry Dash Object ID names; used as naming knowledge, not as property-schema evidence."
+    }
+  }
+}

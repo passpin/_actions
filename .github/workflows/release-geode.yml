@@ -1,0 +1,66 @@
+name: Build and Release gmdtool Geode Bridge (Windows)
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: windows-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Build the Geode mod
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          path: geode/gmdtool_bridge
+          target: Win64
+          build-config: RelWithDebInfo
+
+      - name: Locate and rename built package
+        id: locate
+        shell: pwsh
+        run: |
+          $out = "${{ steps.build.outputs.build-output }}"
+          Write-Host "build-output: $out"
+          if (Test-Path $out -PathType Leaf) {
+            $pkg = Get-Item $out
+          } else {
+            $pkg = Get-ChildItem -Path $out -Recurse -Filter '*.geode' |
+              Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          }
+          if (-not $pkg) { throw "No .geode package produced" }
+          Write-Host "package: $($pkg.FullName)"
+          # The auto-updater requires the exact asset name.
+          $renamed = Join-Path $pkg.DirectoryName "gmdtool.runtime-bridge.geode"
+          if (Test-Path $renamed) { Remove-Item $renamed -Force }
+          Copy-Item $pkg.FullName $renamed -Force
+          "path=$renamed" | Out-File -Encoding utf8 $env:GITHUB_OUTPUT
+          "version=$env:GITHUB_REF_NAME" | Out-File -Encoding utf8 -Append $env:GITHUB_OUTPUT
+
+      - name: Verify package version matches tag
+        shell: pwsh
+        run: |
+          $modJson = Get-Content -Raw "geode/gmdtool_bridge/mod.json" | ConvertFrom-Json
+          $tag = "${{ steps.locate.outputs.version }}"
+          if ($modJson.version -ne $tag) {
+            throw "mod.json version ($($modJson.version)) does not match tag ($tag)"
+          }
+          Write-Host "mod.json version matches tag $tag"
+
+      - name: Create GitHub Release with compiled .geode
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.locate.outputs.version }}
+          name: gmdtool Runtime Bridge ${{ steps.locate.outputs.version }}
+          files: ${{ steps.locate.outputs.path }}
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,25 @@
+{
+  "geode": "5.9.0",
+  "gd": {
+    "win": "2.2081"
+  },
+  "id": "gmdtool.runtime-bridge",
+  "name": "gmdtool Runtime Bridge",
+  "version": "v0.1.4",
+  "developer": "passpin",
+  "description": "Opt-in localhost runtime bridge with optional GitHub Releases auto-updates. Does not force gameplay or focus.",
+  "settings": {
+    "enabled": {
+      "type": "bool",
+      "name": "Enable local API (restart required)",
+      "description": "Start a 127.0.0.1 server on port 18731 for Python gmdtool.",
+      "default": false
+    },
+    "auto-update": {
+      "type": "bool",
+      "name": "Check for updates automatically",
+      "description": "At the main menu, check GitHub Releases, download and verify a newer mod, and offer Restart. Requires public releases.",
+      "default": true
+    }
+  }
+}

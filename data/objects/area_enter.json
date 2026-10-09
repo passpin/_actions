@@ -1,0 +1,1856 @@
+{
+  "$schema": "../schema/object-catalog.schema.json",
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": 22,
+      "name": "No Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 23,
+      "name": "Fade Bottom Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 24,
+      "name": "Fade Top Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 25,
+      "name": "Fade Left Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 26,
+      "name": "Fade Right Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 27,
+      "name": "Small to Big Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 28,
+      "name": "Big to Small Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 55,
+      "name": "Chaotic Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids",
+        "flowvix-object-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 56,
+      "name": "Halve Left Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids",
+        "flowvix-object-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 57,
+      "name": "Halve Right Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids",
+        "flowvix-object-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 58,
+      "name": "Halve Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids",
+        "flowvix-object-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 59,
+      "name": "Inverse Halve Enter Effect",
+      "base": "object",
+      "cpp_class": "EnterEffectObject",
+      "properties": [
+        {
+          "name": "target_enter_channel",
+          "key": 344,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "sources": [
+        "executable-2.2081",
+        "geode-2.2081",
+        "gdcs-ids",
+        "flowvix-object-ids"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "id": 3006,
+      "name": "Area Move Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3007,
+      "name": "Area Rotate Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3008,
+      "name": "Area Scale Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3009,
+      "name": "Area Fade Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3010,
+      "name": "Area Tint Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3011,
+      "name": "Edit Area Move Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3012,
+      "name": "Edit Area Rotate Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3013,
+      "name": "Edit Area Scale Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3014,
+      "name": "Edit Area Fade Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3015,
+      "name": "Edit Area Tint Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3016,
+      "name": "Advanced Follow Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_group",
+          "key": 71,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "priority",
+          "key": 365,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "x_only",
+          "key": 306,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "y_only",
+          "key": 307,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_player_1",
+          "key": 138,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_player_2",
+          "key": 200,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_center",
+          "key": 201,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "rotation_offset",
+          "key": 340,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "rotation_easing",
+          "key": 363,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "rotation_deadzone",
+          "key": 364,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "delay",
+          "key": 292,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "delay_variance",
+          "key": 293,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "start_speed",
+          "key": 300,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "start_speed_variance",
+          "key": 301,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "start_speed_reference",
+          "key": 560,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "start_direction",
+          "key": 563,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "start_direction_variance",
+          "key": 564,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "start_direction_reference",
+          "key": 565,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_speed",
+          "key": 298,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_speed_variance",
+          "key": 299,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_range",
+          "key": 308,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_range_variance",
+          "key": 309,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "property_310",
+          "key": 310,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "property_311",
+          "key": 311,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "acceleration",
+          "key": 334,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "acceleration_variance",
+          "key": 335,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "property_312",
+          "key": 312,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "property_313",
+          "key": 313,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "property_314",
+          "key": 314,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "property_315",
+          "key": 315,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "steer_force",
+          "key": 316,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "steer_force_variance",
+          "key": 317,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "steer_force_low_enabled",
+          "key": 337,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "steer_force_low",
+          "key": 318,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "steer_force_low_variance",
+          "key": 319,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "steer_force_high_enabled",
+          "key": 338,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "steer_force_high",
+          "key": 320,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "steer_force_high_variance",
+          "key": 321,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "speed_range_low",
+          "key": 322,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "speed_range_low_variance",
+          "key": 323,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "speed_range_high",
+          "key": 324,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "speed_range_high_variance",
+          "key": 325,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "break_force",
+          "key": 326,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "break_force_variance",
+          "key": 327,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "break_angle",
+          "key": 328,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "break_angle_variance",
+          "key": 329,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "break_steer_force",
+          "key": 330,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "break_steer_force_variance",
+          "key": 331,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "break_steer_speed_limit",
+          "key": 332,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "break_steer_speed_limit_variance",
+          "key": 333,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_direction",
+          "key": 305,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "ignore_disabled",
+          "key": 336,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "rotate_direction",
+          "key": 339,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "near_acceleration",
+          "key": 357,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "near_acceleration_variance",
+          "key": 358,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "near_distance",
+          "key": 359,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "near_distance_variance",
+          "key": 360,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "near_friction",
+          "key": 561,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "near_friction_variance",
+          "key": 562,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "friction",
+          "key": 558,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "friction_variance",
+          "key": 559,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_easing",
+          "key": 361,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_easing_variance",
+          "key": 362,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_range_reference",
+          "key": 366,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_mode",
+          "key": 367,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "exclusive",
+          "key": 571,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "start_mode",
+          "key": 572,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 3017,
+      "name": "Enter Move Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "enter_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "enter_channel",
+          "key": 344,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3018,
+      "name": "Enter Rotate Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "enter_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "enter_channel",
+          "key": 344,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3019,
+      "name": "Enter Scale Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "enter_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "enter_channel",
+          "key": 344,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3020,
+      "name": "Enter Fade Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "enter_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "enter_channel",
+          "key": 344,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3021,
+      "name": "Enter Tint Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 225,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "enter_effect"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "enter_channel",
+          "key": 344,
+          "type": "int",
+          "override": true,
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_channel"
+          },
+          "sources": [
+            "geode-2.2081",
+            "gdcs-ids",
+            "executable-2.2081"
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ],
+      "mixins": [
+        "area_effect_common"
+      ]
+    },
+    {
+      "id": 3022,
+      "name": "Teleport Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "aliases": [
+            "target_group_id"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "smooth_ease",
+          "key": 55,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "static_force_enabled",
+          "key": 345,
+          "type": "bool",
+          "aliases": [
+            "use_static_force"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "static_force",
+          "key": 346,
+          "type": "real",
+          "aliases": [
+            "static_force_value"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_force_enabled",
+          "key": 347,
+          "type": "bool",
+          "aliases": [
+            "use_redirect_force"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_force_min",
+          "key": 348,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_force_max",
+          "key": 349,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_force_mod",
+          "key": 350,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "save_offset",
+          "key": 351,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "ignore_x",
+          "key": 352,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "ignore_y",
+          "key": 353,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "gravity_mode",
+          "key": 354,
+          "type": "enum",
+          "enum": "TeleportGravity",
+          "aliases": [
+            "exit_gravity"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "static_force_additive",
+          "key": 443,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "instant_camera",
+          "key": 464,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "snap_ground",
+          "key": 510,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_dash",
+          "key": 591,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 3023,
+      "name": "Enter Stop Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 51,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "enter_effect"
+          },
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 3024,
+      "name": "Area Stop Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "effect_id",
+          "key": 51,
+          "type": "int",
+          "semantic": {
+            "kind": "reference",
+            "namespace": "area_effect"
+          },
+          "sources": [
+            "gdcs-ids",
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    }
+  ],
+  "category": "area_enter"
+}

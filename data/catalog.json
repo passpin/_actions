@@ -1,0 +1,16 @@
+{
+  "$schema": "schema/catalog.schema.json",
+  "schema_version": 1,
+  "object_files": [
+    "objects/area_enter.json",
+    "objects/audio_time_control.json",
+    "objects/camera.json",
+    "objects/classic_triggers.json",
+    "objects/environment_keyframes.json",
+    "objects/gameplay_2_2.json",
+    "objects/implementation_objects.json",
+    "objects/objects.json",
+    "objects/portals_animations.json",
+    "objects/shaders.json"
+  ]
+}

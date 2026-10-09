@@ -1,0 +1,210 @@
+{
+  "$schema": "schema/references.schema.json",
+  "schema_version": 1,
+  "namespaces": {
+    "group": {
+      "description": "Geometry Dash Group ID",
+      "allocatable": true
+    },
+    "item": {
+      "description": "Geometry Dash Item ID",
+      "allocatable": true
+    },
+    "control": {
+      "description": "Geometry Dash Control ID",
+      "allocatable": true
+    },
+    "color": {
+      "description": "Geometry Dash Color Channel ID",
+      "allocatable": false,
+      "notes": "Built-in/special color channels make generic next-free allocation unsafe until their rules are modeled."
+    },
+    "block": {
+      "description": "Geometry Dash Collision Block ID",
+      "allocatable": false,
+      "notes": "Semantic support is available; automatic allocation is intentionally deferred."
+    },
+    "force": {
+      "description": "Geometry Dash Force ID",
+      "allocatable": false,
+      "notes": "Assigned to force blocks; blocks sharing a nonzero ID do not stack."
+    },
+    "song_channel": {
+      "description": "Geometry Dash Song Channel ID",
+      "allocatable": false,
+      "notes": "Used by Song/Edit Song triggers."
+    },
+    "trigger_channel": {
+      "description": "Geometry Dash Trigger Channel",
+      "allocatable": false,
+      "notes": "Limits which triggers are active."
+    },
+    "material": {
+      "description": "Geometry Dash Material ID",
+      "allocatable": false,
+      "notes": "Assigned to objects and matched by material-sensitive events."
+    },
+    "gradient": {
+      "description": "Geometry Dash Gradient ID",
+      "allocatable": false,
+      "notes": "Identifies a Gradient trigger; documented maximum 999."
+    },
+    "area_effect": {
+      "description": "Geometry Dash Area Effect ID",
+      "allocatable": false,
+      "notes": "Area-effect namespace; intentionally distinct from Enter Effect IDs."
+    },
+    "enter_effect": {
+      "description": "Geometry Dash Enter Effect ID",
+      "allocatable": false,
+      "notes": "Enter-effect namespace; intentionally distinct from Area Effect IDs."
+    },
+    "enter_channel": {
+      "description": "Geometry Dash Enter Channel ID",
+      "allocatable": false,
+      "notes": "Objects belong to Enter Channels; Enter effects target channels."
+    },
+    "sfx_group": {
+      "description": "Geometry Dash SFX Group ID",
+      "allocatable": false,
+      "notes": "Groups SFX instances for Edit SFX targeting."
+    },
+    "sfx_unique": {
+      "description": "Geometry Dash SFX Unique ID",
+      "allocatable": false,
+      "notes": "Unique within an SFX Group, not globally scoped."
+    }
+  },
+  "references": {
+    "group": {
+      "901": [
+        51,
+        71,
+        395
+      ],
+      "1007": [
+        51
+      ],
+      "1049": [
+        51
+      ],
+      "1268": [
+        51
+      ],
+      "1346": [
+        51,
+        71,
+        516,
+        517,
+        518,
+        519
+      ],
+      "1347": [
+        51,
+        71
+      ],
+      "1585": [
+        51
+      ],
+      "1595": [
+        51
+      ],
+      "1611": [
+        51
+      ],
+      "1616": [
+        51
+      ],
+      "1811": [
+        51
+      ],
+      "1812": [
+        51
+      ],
+      "1814": [
+        51
+      ],
+      "1815": [
+        51
+      ],
+      "1912": [
+        51,
+        71
+      ],
+      "1914": [
+        71
+      ],
+      "2062": [
+        51
+      ],
+      "2067": [
+        51,
+        71
+      ],
+      "3604": [
+        51
+      ],
+      "3608": [
+        51,
+        71
+      ],
+      "3615": [
+        51
+      ],
+      "3618": [
+        51
+      ],
+      "3620": [
+        51,
+        71
+      ]
+    },
+    "item": {
+      "1611": [
+        80
+      ],
+      "1615": [
+        80
+      ],
+      "1811": [
+        80
+      ],
+      "1817": [
+        80
+      ],
+      "3619": [
+        80,
+        95,
+        51
+      ],
+      "3620": [
+        80,
+        95
+      ],
+      "3641": [
+        80
+      ]
+    },
+    "control": {
+      "901": [
+        534
+      ],
+      "3655": [
+        534
+      ],
+      "3661": [
+        534
+      ]
+    },
+    "force": {},
+    "song_channel": {},
+    "trigger_channel": {},
+    "material": {},
+    "gradient": {},
+    "area_effect": {},
+    "enter_effect": {},
+    "enter_channel": {},
+    "sfx_group": {},
+    "sfx_unique": {}
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "format": "gmdtool-implementation-catalog-report-v1",
+  "object_id_mappings": 4073,
+  "factory_classes": 44,
+  "confirmed_parser_class_key_pairs": 7048,
+  "compatible_scalar_declarations": 4313,
+  "verified_serializer_class_key_pairs": 6841,
+  "verified_property_field_records": 697,
+  "verified_header_field_records": 45,
+  "scalar_type_conflicts": [],
+  "unverified_field_annotations": [
+    {
+      "object_id": 899,
+      "key": 7,
+      "name": "red",
+      "type": "int",
+      "reason": "no inherited Broma field annotation; no automatic confidence promotion"
+    },
+    {
+      "object_id": 899,
+      "key": 8,
+      "name": "green",
+      "type": "int",
+      "reason": "no inherited Broma field annotation; no automatic confidence promotion"
+    },
+    {
+      "object_id": 899,
+      "key": 9,
+      "name": "blue",
+      "type": "int",
+      "reason": "no inherited Broma field annotation; no automatic confidence promotion"
+    },
+    {
+      "object_id": 1006,
+      "key": 7,
+      "name": "red",
+      "type": "int",
+      "reason": "no inherited Broma field annotation; no automatic confidence promotion"
+    },
+    {
+      "object_id": 1006,
+      "key": 8,
+      "name": "green",
+      "type": "int",
+      "reason": "no inherited Broma field annotation; no automatic confidence promotion"
+    },
+    {
+      "object_id": 1006,
+      "key": 9,
+      "name": "blue",
+      "type": "int",
+      "reason": "no inherited Broma field annotation; no automatic confidence promotion"
+    },
+    {
+      "object_id": 3033,
+      "key": 373,
+      "name": "animation_group",
+      "type": "group_id",
+      "reason": "no inherited Broma field annotation; no automatic confidence promotion"
+    }
+  ],
+  "policy": "Class-level union of parser accesses does not establish per-Object-ID property support; no schema confidence is promoted automatically."
+}

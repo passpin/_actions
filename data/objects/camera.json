@@ -1,0 +1,359 @@
+{
+  "$schema": "../schema/object-catalog.schema.json",
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": 1913,
+      "name": "Zoom Camera Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "zoom",
+          "key": 371,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "trigger_channel",
+          "key": 170,
+          "type": "int",
+          "aliases": [
+            "channel"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "aliases": [
+            "time"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1914,
+      "name": "Static Camera Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "target_group",
+          "key": 71,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "exit_static",
+          "key": 110,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "free_mode",
+          "key": 111,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "edit_camera_settings",
+          "key": 112,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "camera_easing",
+          "key": 113,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "camera_padding",
+          "key": 114,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow",
+          "key": 212,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "follow_easing",
+          "key": 213,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "disable_grid_snap",
+          "key": 370,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "smooth_velocity",
+          "key": 453,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "smooth_velocity_modifier",
+          "key": 454,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "exit_instant",
+          "key": 465,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "preview_opacity",
+          "key": 506,
+          "type": "real",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 1916,
+      "name": "Offset Camera Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "offset_x",
+          "key": 28,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "offset_y",
+          "key": 29,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "xy_only",
+          "key": 101,
+          "type": "enum",
+          "enum": "MoveTargetType",
+          "aliases": [
+            "target_mode"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 2015,
+      "name": "Rotate Camera Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "degrees",
+          "key": 68,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "add",
+          "key": 70,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "snap_360",
+          "key": 394,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "aliases": [
+            "move_time"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "easing",
+          "key": 30,
+          "type": "enum",
+          "enum": "EasingType",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "easing_rate",
+          "key": 85,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 2062,
+      "name": "Edge Camera Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "edge_direction",
+          "key": 164,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "preview_opacity",
+          "key": 506,
+          "type": "real",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    }
+  ],
+  "category": "camera"
+}

@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "base_properties": {
+    "object": [
+      {
+        "key": 2,
+        "name": "x",
+        "type": "real"
+      },
+      {
+        "key": 3,
+        "name": "y",
+        "type": "real"
+      },
+      {
+        "key": 4,
+        "name": "flip_x",
+        "type": "bool"
+      },
+      {
+        "key": 5,
+        "name": "flip_y",
+        "type": "bool"
+      },
+      {
+        "key": 6,
+        "name": "rotation",
+        "type": "real"
+      },
+      {
+        "key": 20,
+        "name": "editor_layer_1",
+        "type": "int"
+      },
+      {
+        "key": 21,
+        "name": "main_color_channel",
+        "type": "int",
+        "semantic": {
+          "kind": "reference",
+          "namespace": "color"
+        }
+      },
+      {
+        "key": 22,
+        "name": "secondary_color_channel",
+        "type": "int",
+        "semantic": {
+          "kind": "reference",
+          "namespace": "color"
+        }
+      },
+      {
+        "key": 24,
+        "name": "z_layer",
+        "type": "int"
+      },
+      {
+        "key": 25,
+        "name": "z_order",
+        "type": "int"
+      },
+      {
+        "key": 32,
+        "name": "scale",
+        "type": "real",
+        "aliases": [
+          "scaling"
+        ]
+      },
+      {
+        "key": 23,
+        "name": "target_color",
+        "type": "int",
+        "semantic": {
+          "kind": "reference",
+          "namespace": "color"
+        }
+      },
+      {
+        "key": 35,
+        "name": "opacity",
+        "type": "real"
+      },
+      {
+        "key": 57,
+        "name": "groups",
+        "type": "groups"
+      },
+      {
+        "key": 274,
+        "name": "parent_groups",
+        "type": "groups"
+      },
+      {
+        "key": 61,
+        "name": "editor_layer_2",
+        "type": "int"
+      },
+      {
+        "key": 108,
+        "name": "linked_group",
+        "type": "int",
+        "semantic": {
+          "kind": "reference",
+          "namespace": "group"
+        }
+      },
+      {
+        "key": 128,
+        "name": "scale_x",
+        "type": "real"
+      },
+      {
+        "key": 129,
+        "name": "scale_y",
+        "type": "real"
+      },
+      {
+        "key": 155,
+        "name": "color_1_index",
+        "type": "int",
+        "aliases": [
+          "editor_channel"
+        ]
+      },
+      {
+        "key": 156,
+        "name": "color_2_index",
+        "type": "int",
+        "aliases": [
+          "editor_channel_2"
+        ]
+      },
+      {
+        "key": 19,
+        "name": "legacy_color_channel",
+        "type": "int",
+        "semantic": {
+          "kind": "reference",
+          "namespace": "color"
+        },
+        "sources": [
+          "gd-docs"
+        ],
+        "confidence": "observed"
+      },
+      {
+        "key": 33,
+        "name": "single_group",
+        "type": "int",
+        "semantic": {
+          "kind": "membership",
+          "namespace": "group"
+        },
+        "sources": [
+          "gd-docs"
+        ],
+        "confidence": "observed"
+      },
+      {
+        "key": 343,
+        "name": "enter_channel",
+        "type": "int",
+        "semantic": {
+          "kind": "membership",
+          "namespace": "enter_channel"
+        },
+        "sources": [
+          "geode-2.2081",
+          "gdcs-ids"
+        ],
+        "confidence": "confirmed"
+      },
+      {
+        "key": 446,
+        "name": "material_id",
+        "type": "int",
+        "semantic": {
+          "kind": "membership",
+          "namespace": "material"
+        },
+        "sources": [
+          "geode-2.2081",
+          "gdcs-ids"
+        ],
+        "confidence": "confirmed"
+      }
+    ],
+    "trigger": [
+      {
+        "key": 62,
+        "name": "spawn_triggered",
+        "type": "bool"
+      },
+      {
+        "key": 11,
+        "name": "touch_triggered",
+        "type": "bool"
+      },
+      {
+        "key": 87,
+        "name": "multi_triggered",
+        "type": "bool",
+        "aliases": [
+          "multi_trigger"
+        ]
+      },
+      {
+        "key": 30,
+        "name": "easing",
+        "type": "enum",
+        "enum": "EasingType"
+      },
+      {
+        "key": 85,
+        "name": "easing_rate",
+        "type": "real"
+      },
+      {
+        "key": 281,
+        "name": "ignore_linked",
+        "type": "bool"
+      },
+      {
+        "key": 280,
+        "name": "ignore_group_parent",
+        "type": "bool"
+      },
+      {
+        "key": 170,
+        "name": "trigger_channel",
+        "type": "int",
+        "semantic": {
+          "kind": "membership",
+          "namespace": "trigger_channel"
+        },
+        "sources": [
+          "geode-2.2081",
+          "gdcs-ids"
+        ],
+        "confidence": "observed"
+      }
+    ]
+  },
+  "$schema": "schema/base-properties.schema.json"
+}

@@ -1,0 +1,224 @@
+{
+  "$schema": "../schema/object-catalog.schema.json",
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": 2999,
+      "name": "Edit Middleground Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "offset",
+          "key": 29,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "easing",
+          "key": 30,
+          "type": "enum",
+          "enum": "EasingType",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "easing_rate",
+          "key": 85,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 3029,
+      "name": "Change Background Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "background",
+          "key": 533,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 3030,
+      "name": "Change Ground Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "ground",
+          "key": 533,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 3031,
+      "name": "Change Middleground Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "middleground",
+          "key": 533,
+          "type": "int",
+          "aliases": [
+            "middle_ground"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    },
+    {
+      "id": 3033,
+      "name": "Keyframe Animation Trigger",
+      "base": "trigger",
+      "properties": [
+        {
+          "name": "time_mod",
+          "key": 520,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "position_x_mod",
+          "key": 521,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "position_y_mod",
+          "key": 545,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "rotation_mod",
+          "key": 522,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "scale_x_mod",
+          "key": 523,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "scale_y_mod",
+          "key": 546,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "animation_group",
+          "key": 373,
+          "type": "group_id",
+          "aliases": [
+            "keyframe_group"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "parent_group",
+          "key": 71,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "trigger"
+      ]
+    }
+  ],
+  "category": "environment_keyframes"
+}

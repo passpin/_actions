@@ -1,0 +1,1116 @@
+{
+  "$schema": "../schema/object-catalog.schema.json",
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": 1,
+      "name": "Block",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Blue Gravity Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Yellow Gravity Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Cube Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Ship Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Start Position",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Yellow Jump Pad",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Yellow Jump Orb",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Orange Mirror Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Blue Mirror Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Ball Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Blue Gravity Pad",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Blue Gravity Orb",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 99,
+      "name": "Green Size Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Pink Size Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 111,
+      "name": "UFO Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 140,
+      "name": "Pink Jump Pad",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 141,
+      "name": "Pink Jump Orb",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 200,
+      "name": "Yellow Slow Speed Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 201,
+      "name": "Blue Normal Speed Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 202,
+      "name": "Green Fast Speed Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 203,
+      "name": "Pink Fast Speed Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 211,
+      "name": "Colored Inner Square",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 286,
+      "name": "Dual Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 660,
+      "name": "Wave Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 745,
+      "name": "Robot Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 747,
+      "name": "Linked Teleport Portals",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 914,
+      "name": "Text",
+      "base": "object",
+      "properties": [
+        {
+          "name": "text",
+          "key": 31,
+          "type": "text",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "kerning",
+          "key": 488,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 916,
+      "name": "Quarter Colored Block",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 917,
+      "name": "One-Sixteenth Colored Block",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1022,
+      "name": "Green Gravity Orb",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1329,
+      "name": "User Coin",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1330,
+      "name": "Black Drop Orb",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1331,
+      "name": "Spider Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1332,
+      "name": "Red Jump Pad",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1333,
+      "name": "Red Jump Orb",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1334,
+      "name": "Red Fast Speed Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1615,
+      "name": "Counter Label",
+      "base": "object",
+      "properties": [
+        {
+          "name": "item_id",
+          "key": 80,
+          "type": "item_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "time_counter",
+          "key": 466,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "align",
+          "key": 391,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "seconds_only",
+          "key": 389,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "special",
+          "key": 390,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "kerning",
+          "key": 488,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1704,
+      "name": "Green Dash Orb",
+      "base": "object",
+      "properties": [
+        {
+          "name": "speed",
+          "key": 586,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "allow_collide",
+          "key": 587,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "end_boost",
+          "key": 588,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "stop_slide",
+          "key": 589,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_duration",
+          "key": 590,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1751,
+      "name": "Pink Gravity Dash Orb",
+      "base": "object",
+      "properties": [
+        {
+          "name": "speed",
+          "key": 586,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "allow_collide",
+          "key": 587,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "end_boost",
+          "key": 588,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "stop_slide",
+          "key": 589,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "max_duration",
+          "key": 590,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1816,
+      "name": "Collision Block",
+      "base": "object",
+      "properties": [
+        {
+          "name": "block_id",
+          "key": 80,
+          "type": "int",
+          "semantic": {
+            "kind": "identifier",
+            "namespace": "block"
+          },
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "dynamic",
+          "key": 94,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1838,
+      "name": "Small Quarter Circle",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 1933,
+      "name": "Swing Portal",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 2016,
+      "name": "Camera Guide",
+      "base": "object",
+      "properties": [
+        {
+          "name": "zoom",
+          "key": 371,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "offset_x",
+          "key": 28,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "offset_y",
+          "key": 29,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "preview_opacity",
+          "key": 506,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 2065,
+      "name": "Custom Particles",
+      "base": "object",
+      "properties": [
+        {
+          "name": "particle",
+          "key": 145,
+          "type": "particle",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "use_obj_color",
+          "key": 146,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "uniform_obj_color",
+          "key": 147,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 3004,
+      "name": "Spider Orb",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 3005,
+      "name": "Spider Pad",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 3027,
+      "name": "Teleport Orb",
+      "base": "object",
+      "properties": [
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "aliases": [
+            "target_group_id"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "smooth_ease",
+          "key": 55,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "static_force_enabled",
+          "key": 345,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "static_force",
+          "key": 346,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_force_enabled",
+          "key": 347,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_force_min",
+          "key": 348,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_force_max",
+          "key": 349,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_force_mod",
+          "key": 350,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "save_offset",
+          "key": 351,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "ignore_x",
+          "key": 352,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "ignore_y",
+          "key": 353,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "gravity_mode",
+          "key": 354,
+          "type": "enum",
+          "enum": "TeleportGravity",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "static_force_additive",
+          "key": 443,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "instant_camera",
+          "key": 464,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "snap_ground",
+          "key": 510,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "redirect_dash",
+          "key": 591,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 3032,
+      "name": "Keyframe Point",
+      "base": "object",
+      "properties": [
+        {
+          "name": "duration",
+          "key": 10,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "animation_group",
+          "key": 373,
+          "type": "group_id",
+          "aliases": [
+            "keyframe_group"
+          ],
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "keyframe_index",
+          "key": 374,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "reference_only",
+          "key": 375,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "close_loop",
+          "key": 376,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "proximity",
+          "key": 377,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "curve",
+          "key": 378,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "time_mode",
+          "key": 379,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "preview_art",
+          "key": 380,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "auto_layer",
+          "key": 459,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "line_opacity",
+          "key": 524,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "direction",
+          "key": 536,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "revolutions",
+          "key": 537,
+          "type": "int",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "spawn_delay",
+          "key": 557,
+          "type": "real",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 3640,
+      "name": "Collision State Block",
+      "base": "object",
+      "properties": [
+        {
+          "name": "state_on_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "state_off_group",
+          "key": 71,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 3643,
+      "name": "Player Touch Toggle Block",
+      "base": "object",
+      "properties": [
+        {
+          "name": "target_group",
+          "key": 51,
+          "type": "group_id",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        },
+        {
+          "name": "activate_group",
+          "key": 56,
+          "type": "bool",
+          "sources": [
+            "geode-2.2081",
+            "executable-2.2081"
+          ],
+          "confidence": "observed"
+        }
+      ],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 3805,
+      "name": "Hollow Square Particle",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": 3807,
+      "name": "Hollow Circle Particle",
+      "base": "object",
+      "properties": [],
+      "tags": [
+        "object"
+      ]
+    }
+  ],
+  "category": "objects"
+}

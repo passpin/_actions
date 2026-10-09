@@ -1,0 +1,12 @@
+{
+  "format": "gmdtool-ghidra-analysis-v1",
+  "function_count": 88,
+  "object_id_class_candidates": {
+    "899": [
+      "TextGameObject"
+    ],
+    "900": [
+      "TextGameObject"
+    ]
+  }
+}

@@ -1,0 +1,4964 @@
+{
+  "$schema": "schema/properties.schema.json",
+  "properties": {
+    "1": {
+      "confidence": "observed",
+      "name": "object_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "10": {
+      "confidence": "observed",
+      "name": "duration",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "100": {
+      "confidence": "observed",
+      "name": "use_move_target",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "101": {
+      "confidence": "observed",
+      "name": "move_target_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "102": {
+      "confidence": "observed",
+      "name": "editor_disable",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "103": {
+      "confidence": "observed",
+      "name": "high_detail",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "104": {
+      "confidence": "observed",
+      "name": "multi_activate_trigger",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "105": {
+      "confidence": "observed",
+      "name": "max_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "106": {
+      "confidence": "observed",
+      "name": "randomize_start",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "107": {
+      "confidence": "observed",
+      "name": "animation_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "108": {
+      "confidence": "observed",
+      "name": "linked_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "11": {
+      "confidence": "observed",
+      "name": "touch_triggered",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "110": {
+      "confidence": "observed",
+      "name": "exit_static",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "111": {
+      "confidence": "observed",
+      "name": "camera_free_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "112": {
+      "confidence": "observed",
+      "name": "camera_edit_settings",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "113": {
+      "confidence": "observed",
+      "name": "camera_easing",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "114": {
+      "confidence": "observed",
+      "name": "camera_padding",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "115": {
+      "confidence": "observed",
+      "name": "order_value",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "116": {
+      "confidence": "observed",
+      "name": "no_effects",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "117": {
+      "confidence": "observed",
+      "name": "reverse",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "118": {
+      "confidence": "observed",
+      "name": "old_end_reversed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "12": {
+      "confidence": "observed",
+      "name": "secret_coin_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "120": {
+      "confidence": "observed",
+      "name": "time_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "121": {
+      "confidence": "observed",
+      "name": "no_touch",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "122": {
+      "confidence": "observed",
+      "name": "animation_should_use_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "123": {
+      "confidence": "observed",
+      "name": "animate_on_trigger",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "126": {
+      "confidence": "observed",
+      "name": "disable_delayed_loop",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "127": {
+      "confidence": "observed",
+      "name": "disable_animation_shine",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "128": {
+      "confidence": "observed",
+      "name": "scale_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "129": {
+      "confidence": "observed",
+      "name": "scale_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "13": {
+      "confidence": "observed",
+      "name": "special_checked",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "133": {
+      "confidence": "observed",
+      "name": "scale_only_move",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "134": {
+      "confidence": "observed",
+      "name": "passable",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "135": {
+      "confidence": "observed",
+      "name": "hide",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "136": {
+      "confidence": "observed",
+      "name": "non_stick_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "137": {
+      "confidence": "observed",
+      "name": "ice_block",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "138": {
+      "confidence": "observed",
+      "name": "player_1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "139": {
+      "confidence": "observed",
+      "name": "pickup_override",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "14": {
+      "confidence": "observed",
+      "name": "tint_ground",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "141": {
+      "confidence": "observed",
+      "name": "lock_to_camera_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "142": {
+      "confidence": "observed",
+      "name": "lock_to_camera_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "143": {
+      "confidence": "observed",
+      "name": "move_mod_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "144": {
+      "confidence": "observed",
+      "name": "move_mod_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "145": {
+      "confidence": "observed",
+      "name": "particle_data",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "particle"
+    },
+    "146": {
+      "confidence": "observed",
+      "name": "use_obj_color",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "147": {
+      "confidence": "observed",
+      "name": "uniform_obj_color",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "148": {
+      "confidence": "observed",
+      "name": "gravity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "149": {
+      "confidence": "observed",
+      "name": "force",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "15": {
+      "confidence": "observed",
+      "name": "player_color_1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "150": {
+      "confidence": "observed",
+      "name": "trigger_scale_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "151": {
+      "confidence": "observed",
+      "name": "trigger_scale_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "152": {
+      "confidence": "observed",
+      "name": "advanced_random_list",
+      "sources": [
+        "fixture-2048"
+      ],
+      "type": "weighted_groups"
+    },
+    "153": {
+      "confidence": "observed",
+      "name": "scale_div_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "154": {
+      "confidence": "observed",
+      "name": "scale_div_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "155": {
+      "confidence": "observed",
+      "name": "color_1_index",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "156": {
+      "confidence": "observed",
+      "name": "color_2_index",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "157": {
+      "confidence": "observed",
+      "name": "reference_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "159": {
+      "confidence": "observed",
+      "name": "streak_additive",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "16": {
+      "confidence": "observed",
+      "name": "player_color_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "160": {
+      "confidence": "observed",
+      "name": "unlink_dual_gravity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "161": {
+      "confidence": "observed",
+      "name": "hide_ground",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "162": {
+      "confidence": "observed",
+      "name": "hide_p1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "163": {
+      "confidence": "observed",
+      "name": "hide_p2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "164": {
+      "confidence": "observed",
+      "name": "camera_edge_direction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "165": {
+      "confidence": "observed",
+      "name": "disable_p1_controls",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "166": {
+      "confidence": "observed",
+      "name": "gameplay_move_direction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "167": {
+      "confidence": "observed",
+      "name": "gameplay_ground_direction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "169": {
+      "confidence": "observed",
+      "name": "gameplay_edit_velocity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "17": {
+      "confidence": "observed",
+      "name": "blending",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "170": {
+      "confidence": "observed",
+      "name": "trigger_channel",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "171": {
+      "confidence": "observed",
+      "name": "gameplay_change_channel",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "172": {
+      "confidence": "observed",
+      "name": "gameplay_channel_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "173": {
+      "confidence": "observed",
+      "name": "gameplay_target_channel",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "174": {
+      "confidence": "observed",
+      "name": "gradient_blending_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "175": {
+      "confidence": "observed",
+      "name": "shader_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "176": {
+      "confidence": "observed",
+      "name": "shader_strength",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "177": {
+      "confidence": "observed",
+      "name": "shader_time_offset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "179": {
+      "confidence": "observed",
+      "name": "shader_wave_width",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "180": {
+      "confidence": "observed",
+      "name": "shader_target_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "181": {
+      "confidence": "observed",
+      "name": "shader_fade_in",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "182": {
+      "confidence": "observed",
+      "name": "shader_fade_out",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "183": {
+      "confidence": "observed",
+      "name": "shader_inner",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "184": {
+      "confidence": "observed",
+      "name": "shader_invert",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "185": {
+      "confidence": "observed",
+      "name": "shader_flip",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "186": {
+      "confidence": "observed",
+      "name": "shader_rotate",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "187": {
+      "confidence": "observed",
+      "name": "shader_dual",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "188": {
+      "confidence": "observed",
+      "name": "shader_use_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "189": {
+      "confidence": "observed",
+      "name": "shader_target_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "19": {
+      "confidence": "observed",
+      "name": "legacy_color_channel",
+      "semantic": {
+        "kind": "reference",
+        "namespace": "color"
+      },
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "int",
+      "universal_semantic": true
+    },
+    "190": {
+      "confidence": "observed",
+      "name": "shader_use_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "191": {
+      "confidence": "observed",
+      "name": "shader_outer",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "192": {
+      "confidence": "observed",
+      "name": "shader_disable_all",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "193": {
+      "confidence": "observed",
+      "name": "grip_slope",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "194": {
+      "confidence": "observed",
+      "name": "shader_snap_grid",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "195": {
+      "confidence": "observed",
+      "name": "hide_mg",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "196": {
+      "confidence": "observed",
+      "name": "shader_z_layer_min",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "197": {
+      "confidence": "observed",
+      "name": "shader_z_layer_max",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "198": {
+      "confidence": "observed",
+      "name": "touch_player_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "199": {
+      "confidence": "observed",
+      "name": "disable_p2_controls",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "2": {
+      "confidence": "observed",
+      "name": "x",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "20": {
+      "confidence": "observed",
+      "name": "editor_layer_1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "200": {
+      "confidence": "observed",
+      "name": "player_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "201": {
+      "confidence": "observed",
+      "name": "player_touch",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "202": {
+      "confidence": "observed",
+      "name": "gradient_blending_layer",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "203": {
+      "confidence": "observed",
+      "name": "gradient_bottom_left_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "204": {
+      "confidence": "observed",
+      "name": "gradient_bottom_right_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "205": {
+      "confidence": "observed",
+      "name": "gradient_top_left_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "206": {
+      "confidence": "observed",
+      "name": "gradient_top_right_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "207": {
+      "confidence": "observed",
+      "name": "gradient_vertex_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "208": {
+      "confidence": "observed",
+      "name": "gradient_disable",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "209": {
+      "confidence": "observed",
+      "name": "gradient_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "21": {
+      "confidence": "observed",
+      "name": "main_color_channel",
+      "semantic": {
+        "kind": "reference",
+        "namespace": "color"
+      },
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int",
+      "universal_semantic": true
+    },
+    "210": {
+      "confidence": "observed",
+      "name": "legacy_hsv",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "211": {
+      "confidence": "observed",
+      "name": "quick_start",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "212": {
+      "confidence": "observed",
+      "name": "camera_follow",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "213": {
+      "confidence": "observed",
+      "name": "camera_follow_easing",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "214": {
+      "confidence": "observed",
+      "name": "animate_only_when_active",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "217": {
+      "confidence": "observed",
+      "name": "enter_type",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "218": {
+      "confidence": "observed",
+      "name": "move_distance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "219": {
+      "confidence": "observed",
+      "name": "move_distance_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "22": {
+      "confidence": "observed",
+      "name": "secondary_color_channel",
+      "semantic": {
+        "kind": "reference",
+        "namespace": "color"
+      },
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int",
+      "universal_semantic": true
+    },
+    "220": {
+      "confidence": "observed",
+      "name": "enter_offset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "221": {
+      "confidence": "observed",
+      "name": "enter_offset_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "222": {
+      "confidence": "observed",
+      "name": "enter_length",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "223": {
+      "confidence": "observed",
+      "name": "enter_length_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "224": {
+      "confidence": "observed",
+      "name": "enter_property_224",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "225": {
+      "confidence": "observed",
+      "name": "enter_effect_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "23": {
+      "confidence": "observed",
+      "name": "target_color",
+      "semantic": {
+        "kind": "reference",
+        "namespace": "color"
+      },
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int",
+      "universal_semantic": true
+    },
+    "231": {
+      "confidence": "observed",
+      "name": "move_angle",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "232": {
+      "confidence": "observed",
+      "name": "move_angle_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "233": {
+      "confidence": "observed",
+      "name": "area_scale_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "234": {
+      "confidence": "observed",
+      "name": "area_scale_x_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "235": {
+      "confidence": "observed",
+      "name": "area_scale_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "236": {
+      "confidence": "observed",
+      "name": "area_scale_y_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "237": {
+      "confidence": "observed",
+      "name": "area_move_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "238": {
+      "confidence": "observed",
+      "name": "area_move_x_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "239": {
+      "confidence": "observed",
+      "name": "area_move_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "24": {
+      "confidence": "observed",
+      "name": "z_layer",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "240": {
+      "confidence": "observed",
+      "name": "area_move_y_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "241": {
+      "confidence": "observed",
+      "name": "area_xy_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "242": {
+      "confidence": "observed",
+      "name": "area_easing_in",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "243": {
+      "confidence": "observed",
+      "name": "area_easing_in_rate",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "248": {
+      "confidence": "observed",
+      "name": "area_easing_out",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "249": {
+      "confidence": "observed",
+      "name": "area_easing_out_rate",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "25": {
+      "confidence": "observed",
+      "name": "z_order",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "252": {
+      "confidence": "observed",
+      "name": "enter_offset_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "253": {
+      "confidence": "observed",
+      "name": "enter_offset_y_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "260": {
+      "confidence": "observed",
+      "name": "area_tint_channel_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "261": {
+      "confidence": "observed",
+      "name": "area_ease_out_enabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "262": {
+      "confidence": "observed",
+      "name": "area_direction_type",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "263": {
+      "confidence": "observed",
+      "name": "area_mod_front",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "264": {
+      "confidence": "observed",
+      "name": "area_mod_back",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "265": {
+      "confidence": "observed",
+      "name": "area_tint",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "270": {
+      "confidence": "observed",
+      "name": "area_rotation",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "271": {
+      "confidence": "observed",
+      "name": "area_rotation_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "274": {
+      "confidence": "observed",
+      "name": "parent_groups",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "groups"
+    },
+    "275": {
+      "confidence": "observed",
+      "name": "area_to_opacity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "276": {
+      "confidence": "observed",
+      "name": "area_inbound",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "278": {
+      "confidence": "observed",
+      "name": "area_hsv_enabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "279": {
+      "confidence": "observed",
+      "name": "has_area_parent",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "28": {
+      "confidence": "observed",
+      "name": "offset_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "280": {
+      "confidence": "observed",
+      "name": "ignore_group_parent",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "281": {
+      "confidence": "observed",
+      "name": "ignore_linked",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "282": {
+      "confidence": "observed",
+      "name": "area_deadzone",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "283": {
+      "confidence": "observed",
+      "name": "area_two_directions",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "284": {
+      "confidence": "observed",
+      "name": "single_player_touch",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "285": {
+      "confidence": "observed",
+      "name": "enter_property_285",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "286": {
+      "confidence": "observed",
+      "name": "area_from_opacity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "287": {
+      "confidence": "observed",
+      "name": "area_relative",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "288": {
+      "confidence": "observed",
+      "name": "area_relative_fade",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "289": {
+      "confidence": "observed",
+      "name": "non_stick_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "29": {
+      "confidence": "observed",
+      "name": "offset_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "290": {
+      "confidence": "observed",
+      "name": "shader_screen_offset_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "291": {
+      "confidence": "observed",
+      "name": "shader_screen_offset_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "292": {
+      "confidence": "observed",
+      "name": "adv_follow_delay",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "293": {
+      "confidence": "observed",
+      "name": "adv_follow_delay_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "298": {
+      "confidence": "observed",
+      "name": "adv_follow_max_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "299": {
+      "confidence": "observed",
+      "name": "adv_follow_max_speed_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "3": {
+      "confidence": "observed",
+      "name": "y",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "30": {
+      "confidence": "observed",
+      "name": "easing",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "300": {
+      "confidence": "observed",
+      "name": "adv_follow_start_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "301": {
+      "confidence": "observed",
+      "name": "adv_follow_start_speed_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "305": {
+      "confidence": "observed",
+      "name": "adv_follow_target_direction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "306": {
+      "confidence": "observed",
+      "name": "x_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "307": {
+      "confidence": "observed",
+      "name": "y_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "308": {
+      "confidence": "observed",
+      "name": "adv_follow_max_range",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "309": {
+      "confidence": "observed",
+      "name": "adv_follow_max_range_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "31": {
+      "confidence": "observed",
+      "name": "text",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "text"
+    },
+    "310": {
+      "confidence": "observed",
+      "name": "adv_follow_property_310",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "311": {
+      "confidence": "observed",
+      "name": "adv_follow_property_311",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "312": {
+      "confidence": "observed",
+      "name": "adv_follow_property_312",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "313": {
+      "confidence": "observed",
+      "name": "adv_follow_property_313",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "314": {
+      "confidence": "observed",
+      "name": "adv_follow_property_314",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "315": {
+      "confidence": "observed",
+      "name": "adv_follow_property_315",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "316": {
+      "confidence": "observed",
+      "name": "adv_follow_steer_force",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "317": {
+      "confidence": "observed",
+      "name": "adv_follow_steer_force_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "318": {
+      "confidence": "observed",
+      "name": "adv_follow_steer_force_low",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "319": {
+      "confidence": "observed",
+      "name": "adv_follow_steer_force_low_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "32": {
+      "confidence": "observed",
+      "name": "scaling",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "320": {
+      "confidence": "observed",
+      "name": "adv_follow_steer_force_high",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "321": {
+      "confidence": "observed",
+      "name": "adv_follow_steer_force_high_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "322": {
+      "confidence": "observed",
+      "name": "adv_follow_speed_range_low",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "323": {
+      "confidence": "observed",
+      "name": "adv_follow_speed_range_low_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "324": {
+      "confidence": "observed",
+      "name": "adv_follow_speed_range_high",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "325": {
+      "confidence": "observed",
+      "name": "adv_follow_speed_range_high_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "326": {
+      "confidence": "observed",
+      "name": "adv_follow_break_force",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "327": {
+      "confidence": "observed",
+      "name": "adv_follow_break_force_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "328": {
+      "confidence": "observed",
+      "name": "adv_follow_break_angle",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "329": {
+      "confidence": "observed",
+      "name": "adv_follow_break_angle_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "33": {
+      "confidence": "observed",
+      "name": "single_group",
+      "semantic": {
+        "kind": "membership",
+        "namespace": "group"
+      },
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "int",
+      "universal_semantic": true
+    },
+    "330": {
+      "confidence": "observed",
+      "name": "adv_follow_break_steer_force",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "331": {
+      "confidence": "observed",
+      "name": "adv_follow_break_steer_force_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "332": {
+      "confidence": "observed",
+      "name": "adv_follow_break_steer_speed_limit",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "333": {
+      "confidence": "observed",
+      "name": "adv_follow_break_steer_speed_limit_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "334": {
+      "confidence": "observed",
+      "name": "adv_follow_acceleration",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "335": {
+      "confidence": "observed",
+      "name": "adv_follow_acceleration_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "336": {
+      "confidence": "observed",
+      "name": "adv_follow_ignore_disabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "337": {
+      "confidence": "observed",
+      "name": "adv_follow_steer_force_low_enabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "338": {
+      "confidence": "observed",
+      "name": "adv_follow_steer_force_high_enabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "339": {
+      "confidence": "observed",
+      "name": "adv_follow_rotate_direction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "34": {
+      "confidence": "observed",
+      "name": "group_parent",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "340": {
+      "confidence": "observed",
+      "name": "rotation_offset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "341": {
+      "confidence": "observed",
+      "name": "area_priority",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "343": {
+      "confidence": "observed",
+      "name": "enter_channel",
+      "semantic": {
+        "kind": "membership",
+        "namespace": "enter_channel"
+      },
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int",
+      "universal_semantic": true
+    },
+    "344": {
+      "confidence": "observed",
+      "name": "area_enter_channel",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "345": {
+      "confidence": "observed",
+      "name": "teleport_static_force_enabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "346": {
+      "confidence": "observed",
+      "name": "teleport_static_force_value",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "347": {
+      "confidence": "observed",
+      "name": "teleport_redirect_force_enabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "348": {
+      "confidence": "observed",
+      "name": "teleport_redirect_force_min",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "349": {
+      "confidence": "observed",
+      "name": "teleport_redirect_force_max",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "35": {
+      "confidence": "observed",
+      "name": "opacity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "350": {
+      "confidence": "observed",
+      "name": "teleport_redirect_force_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "351": {
+      "confidence": "observed",
+      "name": "teleport_save_offset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "352": {
+      "confidence": "observed",
+      "name": "teleport_ignore_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "353": {
+      "confidence": "observed",
+      "name": "teleport_ignore_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "354": {
+      "confidence": "observed",
+      "name": "teleport_gravity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "355": {
+      "confidence": "observed",
+      "name": "area_use_effect_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "356": {
+      "confidence": "observed",
+      "name": "scale_stick",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "357": {
+      "confidence": "observed",
+      "name": "adv_follow_near_acceleration",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "358": {
+      "confidence": "observed",
+      "name": "adv_follow_near_acceleration_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "359": {
+      "confidence": "observed",
+      "name": "adv_follow_near_distance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "36": {
+      "confidence": "observed",
+      "name": "interactible",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "360": {
+      "confidence": "observed",
+      "name": "adv_follow_near_distance_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "361": {
+      "confidence": "observed",
+      "name": "adv_follow_easing",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "362": {
+      "confidence": "observed",
+      "name": "adv_follow_easing_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "363": {
+      "confidence": "observed",
+      "name": "rotation_easing",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "364": {
+      "confidence": "observed",
+      "name": "rotation_deadzone",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "365": {
+      "confidence": "observed",
+      "name": "priority",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "366": {
+      "confidence": "observed",
+      "name": "adv_follow_max_range_reference",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "367": {
+      "confidence": "observed",
+      "name": "adv_follow_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "368": {
+      "confidence": "observed",
+      "name": "gameplay_instant_offset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "369": {
+      "confidence": "observed",
+      "name": "center_effect",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "370": {
+      "confidence": "observed",
+      "name": "camera_disable_grid_snap",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "371": {
+      "confidence": "observed",
+      "name": "camera_zoom",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "372": {
+      "confidence": "observed",
+      "name": "no_audio_scale",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "373": {
+      "confidence": "observed",
+      "name": "keyframe_animation_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "374": {
+      "confidence": "observed",
+      "name": "keyframe_index",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "375": {
+      "confidence": "observed",
+      "name": "keyframe_reference_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "376": {
+      "confidence": "observed",
+      "name": "keyframe_close_loop",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "377": {
+      "confidence": "observed",
+      "name": "keyframe_proximity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "378": {
+      "confidence": "observed",
+      "name": "keyframe_curve",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "379": {
+      "confidence": "observed",
+      "name": "keyframe_time_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "380": {
+      "confidence": "observed",
+      "name": "keyframe_preview_art",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "381": {
+      "confidence": "observed",
+      "name": "collectible_is_pickup_item",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "382": {
+      "confidence": "observed",
+      "name": "collectible_is_toggle_trigger",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "383": {
+      "confidence": "observed",
+      "name": "collectible_points",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "385": {
+      "confidence": "observed",
+      "name": "ui_x_reference",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "386": {
+      "confidence": "observed",
+      "name": "ui_y_reference",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "387": {
+      "confidence": "observed",
+      "name": "ui_x_relative",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "388": {
+      "confidence": "observed",
+      "name": "ui_y_relative",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "389": {
+      "confidence": "observed",
+      "name": "counter_seconds_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "390": {
+      "confidence": "observed",
+      "name": "counter_special",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "391": {
+      "confidence": "observed",
+      "name": "counter_align",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "392": {
+      "confidence": "observed",
+      "name": "audio_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "393": {
+      "confidence": "observed",
+      "name": "small_step",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "394": {
+      "confidence": "observed",
+      "name": "direction_follow_snap_360",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "395": {
+      "confidence": "observed",
+      "name": "target_mod_center_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "396": {
+      "confidence": "observed",
+      "name": "direction_mode_distance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "397": {
+      "confidence": "observed",
+      "name": "dynamic_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "399": {
+      "confidence": "observed",
+      "name": "song_prep",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "4": {
+      "confidence": "observed",
+      "name": "flip_x",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "400": {
+      "confidence": "observed",
+      "name": "song_load_prep",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "401": {
+      "confidence": "observed",
+      "name": "rotation_target_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "402": {
+      "confidence": "observed",
+      "name": "rotation_offset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "403": {
+      "confidence": "observed",
+      "name": "dynamic_mode_easing",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "404": {
+      "confidence": "observed",
+      "name": "audio_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "405": {
+      "confidence": "observed",
+      "name": "pitch",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "406": {
+      "confidence": "observed",
+      "name": "audio_volume",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "407": {
+      "confidence": "observed",
+      "name": "reverb",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "408": {
+      "confidence": "observed",
+      "name": "audio_start",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "409": {
+      "confidence": "observed",
+      "name": "audio_fade_in",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "41": {
+      "confidence": "observed",
+      "name": "main_hsv_enabled",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "410": {
+      "confidence": "observed",
+      "name": "audio_end",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "411": {
+      "confidence": "observed",
+      "name": "audio_fade_out",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "412": {
+      "confidence": "observed",
+      "name": "fft",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "413": {
+      "confidence": "observed",
+      "name": "loop",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "414": {
+      "confidence": "observed",
+      "name": "sfx_stop_loop",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "415": {
+      "confidence": "observed",
+      "name": "sfx_unique",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "416": {
+      "confidence": "observed",
+      "name": "unique_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "417": {
+      "confidence": "observed",
+      "name": "sfx_stop",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "418": {
+      "confidence": "observed",
+      "name": "sfx_change_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "419": {
+      "confidence": "observed",
+      "name": "sfx_change_volume",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "42": {
+      "confidence": "observed",
+      "name": "secondary_hsv_enabled",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "420": {
+      "confidence": "observed",
+      "name": "sfx_override",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "421": {
+      "confidence": "observed",
+      "name": "volume_near",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "422": {
+      "confidence": "observed",
+      "name": "volume_medium",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "423": {
+      "confidence": "observed",
+      "name": "volume_far",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "424": {
+      "confidence": "observed",
+      "name": "sfx_min_distance_near",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "425": {
+      "confidence": "observed",
+      "name": "sfx_min_distance_medium",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "426": {
+      "confidence": "observed",
+      "name": "sfx_min_distance_far",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "428": {
+      "confidence": "observed",
+      "name": "sfx_camera_distance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "43": {
+      "confidence": "observed",
+      "name": "main_hsv",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "str"
+    },
+    "430": {
+      "confidence": "observed",
+      "name": "event_list",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "str"
+    },
+    "431": {
+      "confidence": "observed",
+      "name": "event_reset_remap",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "432": {
+      "confidence": "observed",
+      "name": "song_channel",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "433": {
+      "confidence": "observed",
+      "name": "sfx_preload",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "434": {
+      "confidence": "observed",
+      "name": "sfx_min_interval",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "435": {
+      "confidence": "observed",
+      "name": "sequence",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "sequence"
+    },
+    "436": {
+      "confidence": "observed",
+      "name": "sequence_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "437": {
+      "confidence": "observed",
+      "name": "sequence_min_interval",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "438": {
+      "confidence": "observed",
+      "name": "sequence_reset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "439": {
+      "confidence": "observed",
+      "name": "reset_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "44": {
+      "confidence": "observed",
+      "name": "secondary_hsv",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "str"
+    },
+    "440": {
+      "confidence": "observed",
+      "name": "collectible_particle_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "441": {
+      "confidence": "observed",
+      "name": "spawn_ordered",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "442": {
+      "confidence": "observed",
+      "name": "group_remaps",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "remap_list"
+    },
+    "443": {
+      "confidence": "observed",
+      "name": "teleport_static_force_additive",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "444": {
+      "confidence": "observed",
+      "name": "no_multi_activate",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "446": {
+      "confidence": "observed",
+      "name": "material_id",
+      "semantic": {
+        "kind": "membership",
+        "namespace": "material"
+      },
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int",
+      "universal_semantic": true
+    },
+    "447": {
+      "confidence": "observed",
+      "name": "event_extra_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "448": {
+      "confidence": "observed",
+      "name": "respawn_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "449": {
+      "confidence": "observed",
+      "name": "pickup_modifier",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "45": {
+      "confidence": "observed",
+      "name": "fade_in",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "450": {
+      "confidence": "observed",
+      "name": "transform_property_450",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "451": {
+      "confidence": "observed",
+      "name": "transform_property_451",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "452": {
+      "confidence": "observed",
+      "name": "relative_rotation",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "453": {
+      "confidence": "observed",
+      "name": "smooth_velocity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "454": {
+      "confidence": "observed",
+      "name": "smooth_velocity_modifier",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "455": {
+      "confidence": "observed",
+      "name": "sfx_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "456": {
+      "confidence": "observed",
+      "name": "gradient_preview_opacity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "457": {
+      "confidence": "observed",
+      "name": "sfx_group_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "458": {
+      "confidence": "observed",
+      "name": "sfx_proximity_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "459": {
+      "confidence": "observed",
+      "name": "keyframe_auto_layer",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "46": {
+      "confidence": "observed",
+      "name": "hold",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "460": {
+      "confidence": "observed",
+      "name": "no_end_effects",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "461": {
+      "confidence": "observed",
+      "name": "no_sfx",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "462": {
+      "confidence": "observed",
+      "name": "single_frame",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "463": {
+      "confidence": "observed",
+      "name": "no_animation",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "464": {
+      "confidence": "observed",
+      "name": "teleport_instant_camera",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "465": {
+      "confidence": "observed",
+      "name": "exit_instant",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "466": {
+      "confidence": "observed",
+      "name": "counter_time_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "467": {
+      "confidence": "observed",
+      "name": "start_time",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "468": {
+      "confidence": "observed",
+      "name": "dont_override",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "469": {
+      "confidence": "observed",
+      "name": "ignore_timewarp",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "47": {
+      "confidence": "observed",
+      "name": "fade_out",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "470": {
+      "confidence": "observed",
+      "name": "time_modifier",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "471": {
+      "confidence": "observed",
+      "name": "start_paused",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "472": {
+      "confidence": "observed",
+      "name": "control_type",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "473": {
+      "confidence": "observed",
+      "name": "target_or_stop_time",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "474": {
+      "confidence": "observed",
+      "name": "stop_checked",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "475": {
+      "confidence": "observed",
+      "name": "time_event_multi_activate",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "476": {
+      "confidence": "observed",
+      "name": "item_type_1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "477": {
+      "confidence": "observed",
+      "name": "item_type_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "478": {
+      "confidence": "observed",
+      "name": "item_target_type",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "479": {
+      "confidence": "observed",
+      "name": "item_modifier_1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "48": {
+      "confidence": "observed",
+      "name": "pulse_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "480": {
+      "confidence": "observed",
+      "name": "assign_op",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "481": {
+      "confidence": "observed",
+      "name": "op_1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "482": {
+      "confidence": "observed",
+      "name": "op_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "483": {
+      "confidence": "observed",
+      "name": "item_tolerance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "484": {
+      "confidence": "observed",
+      "name": "item_modifier_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "485": {
+      "confidence": "observed",
+      "name": "item_rounding_1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "486": {
+      "confidence": "observed",
+      "name": "item_rounding_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "487": {
+      "confidence": "observed",
+      "name": "instant",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "488": {
+      "confidence": "observed",
+      "name": "text_kerning",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "489": {
+      "confidence": "observed",
+      "name": "sfx_ignore_volume_test",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "49": {
+      "confidence": "observed",
+      "name": "copied_color_hsv",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "str"
+    },
+    "490": {
+      "confidence": "observed",
+      "name": "sound_duration",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "491": {
+      "confidence": "observed",
+      "name": "persistent",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "492": {
+      "confidence": "observed",
+      "name": "persistent_target_all",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "493": {
+      "confidence": "observed",
+      "name": "persistent_reset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "494": {
+      "confidence": "observed",
+      "name": "persistent_timer",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "495": {
+      "confidence": "observed",
+      "name": "extra_sticky",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "496": {
+      "confidence": "observed",
+      "name": "dont_boost_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "497": {
+      "confidence": "observed",
+      "name": "custom_color_type",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "498": {
+      "confidence": "observed",
+      "name": "bpm",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "499": {
+      "confidence": "observed",
+      "name": "bpm_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "5": {
+      "confidence": "observed",
+      "name": "flip_y",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "50": {
+      "confidence": "observed",
+      "name": "copied_color_id",
+      "semantic": {
+        "kind": "reference",
+        "namespace": "color"
+      },
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int",
+      "universal_semantic": true
+    },
+    "500": {
+      "confidence": "observed",
+      "name": "bpm_disabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "501": {
+      "confidence": "observed",
+      "name": "beats_per_bar",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "502": {
+      "confidence": "observed",
+      "name": "reverb_type",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "503": {
+      "confidence": "observed",
+      "name": "reverb_enable",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "504": {
+      "confidence": "observed",
+      "name": "spawn_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "505": {
+      "confidence": "observed",
+      "name": "unique_remap",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "506": {
+      "confidence": "observed",
+      "name": "camera_preview_opacity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "507": {
+      "confidence": "observed",
+      "name": "no_particles",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "508": {
+      "confidence": "observed",
+      "name": "gradient_disable_all",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "509": {
+      "confidence": "observed",
+      "name": "dont_boost_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "51": {
+      "confidence": "observed",
+      "name": "property_51",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "510": {
+      "confidence": "observed",
+      "name": "teleport_snap_ground",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "511": {
+      "confidence": "observed",
+      "name": "extended_collision",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "512": {
+      "confidence": "observed",
+      "name": "shader_max_size",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "513": {
+      "confidence": "observed",
+      "name": "shader_animate",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "514": {
+      "confidence": "observed",
+      "name": "shader_relative",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "515": {
+      "confidence": "observed",
+      "name": "shader_hard_edges",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "516": {
+      "confidence": "observed",
+      "name": "min_x_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "517": {
+      "confidence": "observed",
+      "name": "min_y_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "518": {
+      "confidence": "observed",
+      "name": "max_x_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "519": {
+      "confidence": "observed",
+      "name": "max_y_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "52": {
+      "confidence": "observed",
+      "name": "pulse_target_type",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "520": {
+      "confidence": "observed",
+      "name": "keyframe_time_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "521": {
+      "confidence": "observed",
+      "name": "keyframe_position_x_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "522": {
+      "confidence": "observed",
+      "name": "keyframe_rotation_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "523": {
+      "confidence": "observed",
+      "name": "keyframe_scale_x_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "524": {
+      "confidence": "observed",
+      "name": "keyframe_line_opacity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "525": {
+      "confidence": "observed",
+      "name": "event_extra_id_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "526": {
+      "confidence": "observed",
+      "name": "min_force",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "527": {
+      "confidence": "observed",
+      "name": "max_force",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "528": {
+      "confidence": "observed",
+      "name": "relative_force",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "529": {
+      "confidence": "observed",
+      "name": "force_range",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "53": {
+      "confidence": "observed",
+      "name": "property_53",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "530": {
+      "confidence": "observed",
+      "name": "force_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "531": {
+      "confidence": "observed",
+      "name": "shader_editor_disabled",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "532": {
+      "confidence": "observed",
+      "name": "hide_attempts",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "533": {
+      "confidence": "observed",
+      "name": "environment_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "534": {
+      "confidence": "observed",
+      "name": "control_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "535": {
+      "confidence": "observed",
+      "name": "target_control_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "536": {
+      "confidence": "observed",
+      "name": "keyframe_direction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "537": {
+      "confidence": "observed",
+      "name": "keyframe_revolutions",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "538": {
+      "confidence": "observed",
+      "name": "special_target",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "539": {
+      "confidence": "observed",
+      "name": "area_dont_edit_parent",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "54": {
+      "confidence": "observed",
+      "name": "teleport_y_offset",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "540": {
+      "confidence": "observed",
+      "name": "stop_jump",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "541": {
+      "confidence": "observed",
+      "name": "stop_move",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "542": {
+      "confidence": "observed",
+      "name": "stop_rotation",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "543": {
+      "confidence": "observed",
+      "name": "stop_slide",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "544": {
+      "confidence": "observed",
+      "name": "move_silent",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "545": {
+      "confidence": "observed",
+      "name": "keyframe_position_y_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "546": {
+      "confidence": "observed",
+      "name": "keyframe_scale_y_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "547": {
+      "confidence": "observed",
+      "name": "particle_offset_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "548": {
+      "confidence": "observed",
+      "name": "particle_offset_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "549": {
+      "confidence": "observed",
+      "name": "particle_offset_var_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "55": {
+      "confidence": "observed",
+      "name": "teleport_ease",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "550": {
+      "confidence": "observed",
+      "name": "particle_offset_var_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "551": {
+      "confidence": "observed",
+      "name": "particle_match_rotation",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "552": {
+      "confidence": "observed",
+      "name": "particle_rotation",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "553": {
+      "confidence": "observed",
+      "name": "particle_rotation_pm",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "554": {
+      "confidence": "observed",
+      "name": "particle_scale",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "555": {
+      "confidence": "observed",
+      "name": "particle_scale_pm",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "556": {
+      "confidence": "observed",
+      "name": "spawn_delay_pm",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "557": {
+      "confidence": "observed",
+      "name": "keyframe_spawn_delay",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "558": {
+      "confidence": "observed",
+      "name": "adv_follow_friction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "559": {
+      "confidence": "observed",
+      "name": "adv_follow_friction_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "56": {
+      "confidence": "observed",
+      "name": "activate_group",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "560": {
+      "confidence": "observed",
+      "name": "adv_follow_start_speed_reference",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "561": {
+      "confidence": "observed",
+      "name": "adv_follow_near_friction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "562": {
+      "confidence": "observed",
+      "name": "adv_follow_near_friction_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "563": {
+      "confidence": "observed",
+      "name": "adv_follow_start_direction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "564": {
+      "confidence": "observed",
+      "name": "adv_follow_start_direction_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "565": {
+      "confidence": "observed",
+      "name": "adv_follow_start_direction_reference",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "566": {
+      "confidence": "observed",
+      "name": "adv_follow_mod_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "567": {
+      "confidence": "observed",
+      "name": "adv_follow_mod_x_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "568": {
+      "confidence": "observed",
+      "name": "adv_follow_mod_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "569": {
+      "confidence": "observed",
+      "name": "adv_follow_mod_y_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "57": {
+      "confidence": "observed",
+      "name": "groups",
+      "semantic": {
+        "kind": "membership",
+        "namespace": "group"
+      },
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "groups",
+      "universal_semantic": true
+    },
+    "570": {
+      "confidence": "observed",
+      "name": "adv_follow_redirect_direction",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "571": {
+      "confidence": "observed",
+      "name": "adv_follow_exclusive",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "572": {
+      "confidence": "observed",
+      "name": "adv_follow_start_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "573": {
+      "confidence": "observed",
+      "name": "edit_respawn_time",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "574": {
+      "confidence": "observed",
+      "name": "respawn_time",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "575": {
+      "confidence": "observed",
+      "name": "audio_on_death",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "576": {
+      "confidence": "observed",
+      "name": "no_death_sfx",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "577": {
+      "confidence": "observed",
+      "name": "scale_relative",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "578": {
+      "confidence": "observed",
+      "name": "item_abs_neg_1",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "579": {
+      "confidence": "observed",
+      "name": "item_abs_neg_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "58": {
+      "confidence": "observed",
+      "name": "lock_to_player_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "580": {
+      "confidence": "observed",
+      "name": "command",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "581": {
+      "confidence": "observed",
+      "name": "spawn_reset_remap",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "582": {
+      "confidence": "observed",
+      "name": "gameplay_velocity_mod_x",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "583": {
+      "confidence": "observed",
+      "name": "gameplay_velocity_mod_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "584": {
+      "confidence": "observed",
+      "name": "gameplay_override_velocity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "585": {
+      "confidence": "observed",
+      "name": "gameplay_dont_slide",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "586": {
+      "confidence": "observed",
+      "name": "dash_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "587": {
+      "confidence": "observed",
+      "name": "dash_allow_collide",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "588": {
+      "confidence": "observed",
+      "name": "dash_end_boost",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "589": {
+      "confidence": "observed",
+      "name": "dash_stop_slide",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "59": {
+      "confidence": "observed",
+      "name": "lock_to_player_y",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "590": {
+      "confidence": "observed",
+      "name": "dash_max_duration",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "591": {
+      "confidence": "observed",
+      "name": "teleport_redirect_dash",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "592": {
+      "confidence": "observed",
+      "name": "animation_offset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "593": {
+      "confidence": "observed",
+      "name": "boost_slide",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "595": {
+      "confidence": "observed",
+      "name": "sfx_dont_reset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "596": {
+      "confidence": "observed",
+      "name": "sfx_speed_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "597": {
+      "confidence": "observed",
+      "name": "sfx_pitch_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "int"
+    },
+    "598": {
+      "confidence": "observed",
+      "name": "sfx_volume_variance",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "real"
+    },
+    "599": {
+      "confidence": "observed",
+      "name": "sfx_pitch_steps",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081"
+      ],
+      "type": "bool"
+    },
+    "6": {
+      "confidence": "observed",
+      "name": "rotation",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "60": {
+      "confidence": "observed",
+      "name": "copy_opacity",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "61": {
+      "confidence": "observed",
+      "name": "editor_layer_2",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "62": {
+      "confidence": "observed",
+      "name": "spawn_triggered",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "63": {
+      "confidence": "observed",
+      "name": "spawn_delay",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "64": {
+      "confidence": "observed",
+      "name": "dont_fade",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "65": {
+      "confidence": "observed",
+      "name": "main_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "66": {
+      "confidence": "observed",
+      "name": "detail_only",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "67": {
+      "confidence": "observed",
+      "name": "dont_enter",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "68": {
+      "confidence": "observed",
+      "name": "degrees",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "69": {
+      "confidence": "observed",
+      "name": "times_360",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "7": {
+      "confidence": "observed",
+      "name": "red",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "70": {
+      "confidence": "observed",
+      "name": "lock_object_rotation",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "71": {
+      "confidence": "observed",
+      "name": "property_71",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "72": {
+      "confidence": "observed",
+      "name": "x_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "73": {
+      "confidence": "observed",
+      "name": "y_mod",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "75": {
+      "confidence": "observed",
+      "name": "strength",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "76": {
+      "confidence": "observed",
+      "name": "animation_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "77": {
+      "confidence": "observed",
+      "name": "count",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "78": {
+      "confidence": "observed",
+      "name": "subtract_count",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "79": {
+      "confidence": "observed",
+      "name": "pickup_mode",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "8": {
+      "confidence": "observed",
+      "name": "green",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "80": {
+      "confidence": "observed",
+      "name": "property_80",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "81": {
+      "confidence": "observed",
+      "name": "hold_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "82": {
+      "confidence": "observed",
+      "name": "toggle_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "84": {
+      "confidence": "observed",
+      "name": "interval",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "85": {
+      "confidence": "observed",
+      "name": "easing_rate",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "86": {
+      "confidence": "observed",
+      "name": "exclusive",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "87": {
+      "confidence": "observed",
+      "name": "multi_trigger",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "88": {
+      "confidence": "observed",
+      "name": "pickup_trigger_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "89": {
+      "confidence": "observed",
+      "name": "dual_mode",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "9": {
+      "confidence": "observed",
+      "name": "blue",
+      "sources": [
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "90": {
+      "confidence": "observed",
+      "name": "speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "91": {
+      "confidence": "observed",
+      "name": "follow_delay",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "92": {
+      "confidence": "observed",
+      "name": "follow_y_offset",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "93": {
+      "confidence": "observed",
+      "name": "trigger_on_exit",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "94": {
+      "confidence": "observed",
+      "name": "dynamic_block",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "95": {
+      "confidence": "observed",
+      "name": "block_b_id",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "int"
+    },
+    "96": {
+      "confidence": "observed",
+      "name": "disable_glow",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "97": {
+      "confidence": "observed",
+      "name": "custom_rotation_speed",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "real"
+    },
+    "98": {
+      "confidence": "observed",
+      "name": "disable_rotation",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    },
+    "99": {
+      "confidence": "observed",
+      "name": "multi_activate_orb",
+      "sources": [
+        "geode-2.2081",
+        "executable-2.2081",
+        "gd-docs"
+      ],
+      "type": "bool"
+    }
+  },
+  "schema_version": 1
+}

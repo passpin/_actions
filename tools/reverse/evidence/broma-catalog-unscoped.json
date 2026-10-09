@@ -1,0 +1,4710 @@
+{
+  "format": "gmdtool-broma-catalog-report-v1",
+  "broma_property_keys": 520,
+  "catalog_property_keys": 468,
+  "type_conflict_count": 0,
+  "type_conflicts": [],
+  "broma_keys": {
+    "1": [
+      {
+        "class": "GameObject",
+        "field": "m_objectID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 6529
+      }
+    ],
+    "10": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_duration",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4056
+      }
+    ],
+    "11": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isTouchTriggered",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4065
+      }
+    ],
+    "12": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_secretCoinID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4255
+      }
+    ],
+    "13": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_shouldPreview",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4245
+      }
+    ],
+    "14": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_tintGround",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4075
+      }
+    ],
+    "15": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_usesPlayerColor1",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4077
+      }
+    ],
+    "16": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_usesPlayerColor2",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4079
+      }
+    ],
+    "17": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_usesBlending",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4081
+      }
+    ],
+    "20": [
+      {
+        "class": "GameObject",
+        "field": "m_editorLayer",
+        "cpp_type": "short",
+        "broma_kind": "int_or_enum",
+        "line": 6602
+      }
+    ],
+    "21": [
+      {
+        "class": "GameObject",
+        "field": "m_baseColor",
+        "cpp_type": "GJSpriteColor*",
+        "broma_kind": "unknown",
+        "line": 6567
+      }
+    ],
+    "22": [
+      {
+        "class": "GameObject",
+        "field": "m_detailColor",
+        "cpp_type": "GJSpriteColor*",
+        "broma_kind": "unknown",
+        "line": 6569
+      }
+    ],
+    "23": [
+      {
+        "class": "GameObject",
+        "field": "m_targetColor",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 6527
+      }
+    ],
+    "24": [
+      {
+        "class": "GameObject",
+        "field": "m_zLayer",
+        "cpp_type": "ZLayer",
+        "broma_kind": "int_or_enum",
+        "line": 6574
+      }
+    ],
+    "25": [
+      {
+        "class": "GameObject",
+        "field": "m_zOrder",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 6576
+      }
+    ],
+    "28": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_moveOffset",
+        "cpp_type": "cocos2d::CCPoint",
+        "broma_kind": "point",
+        "line": 4083
+      }
+    ],
+    "29": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_moveOffset",
+        "cpp_type": "cocos2d::CCPoint",
+        "broma_kind": "point",
+        "line": 4083
+      }
+    ],
+    "30": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_easingType",
+        "cpp_type": "EasingType",
+        "broma_kind": "int_or_enum",
+        "line": 4085
+      }
+    ],
+    "31": [
+      {
+        "class": "TextGameObject",
+        "field": "m_text",
+        "cpp_type": "gd::string",
+        "broma_kind": "string",
+        "line": 19927
+      }
+    ],
+    "34": [
+      {
+        "class": "GameObject",
+        "field": "m_hasGroupParent",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6584
+      }
+    ],
+    "35": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_opacity",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4058
+      }
+    ],
+    "45": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_fadeInDuration",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4143
+      }
+    ],
+    "46": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_holdDuration",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4145
+      }
+    ],
+    "47": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_fadeOutDuration",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4147
+      }
+    ],
+    "48": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_pulseMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4149
+      }
+    ],
+    "49": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_hsvValue",
+        "cpp_type": "cocos2d::ccHSVValue",
+        "broma_kind": "hsv",
+        "line": 4153
+      }
+    ],
+    "50": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_copyColorID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4155
+      }
+    ],
+    "51": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_targetGroupID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4061
+      }
+    ],
+    "52": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_pulseTargetType",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4151
+      }
+    ],
+    "53": [
+      {
+        "class": "GameObject",
+        "field": "m_property53",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 6556
+      }
+    ],
+    "55": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_teleportEase",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19813
+      }
+    ],
+    "56": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_activateGroup",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4167
+      }
+    ],
+    "57": [
+      {
+        "class": "GameObject",
+        "field": "m_groups",
+        "cpp_type": "std::array<short, 10>*",
+        "broma_kind": "unknown",
+        "line": 6592
+      },
+      {
+        "class": "GameObject",
+        "field": "m_groupCount",
+        "cpp_type": "short",
+        "broma_kind": "int_or_enum",
+        "line": 6594
+      }
+    ],
+    "58": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_lockToPlayerX",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4089
+      }
+    ],
+    "59": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_lockToPlayerY",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4091
+      }
+    ],
+    "60": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_copyOpacity",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4157
+      }
+    ],
+    "61": [
+      {
+        "class": "GameObject",
+        "field": "m_editorLayer2",
+        "cpp_type": "short",
+        "broma_kind": "int_or_enum",
+        "line": 6604
+      }
+    ],
+    "62": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isSpawnTriggered",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4067
+      }
+    ],
+    "63": [
+      {
+        "class": "SpawnTriggerGameObject",
+        "field": "m_spawnDelay",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19485
+      }
+    ],
+    "64": [
+      {
+        "class": "GameObject",
+        "field": "m_isDontFade",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6543
+      }
+    ],
+    "65": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_pulseMainOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4159
+      }
+    ],
+    "66": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_pulseDetailOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4161
+      }
+    ],
+    "67": [
+      {
+        "class": "GameObject",
+        "field": "m_isDontEnter",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6541
+      }
+    ],
+    "68": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_rotationDegrees",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4119
+      }
+    ],
+    "69": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_times360",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4121
+      }
+    ],
+    "70": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_lockObjectRotation",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4123
+      }
+    ],
+    "71": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_centerGroupID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4063
+      }
+    ],
+    "72": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_followXMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4131
+      }
+    ],
+    "73": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_followYMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4133
+      }
+    ],
+    "75": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_shakeStrength",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4071
+      }
+    ],
+    "76": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_animationID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4177
+      }
+    ],
+    "77": [
+      {
+        "class": "CountTriggerGameObject",
+        "field": "m_pickupCount",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 2423
+      }
+    ],
+    "78": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_subtractCount",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4205
+      }
+    ],
+    "80": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_itemID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4197
+      }
+    ],
+    "81": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_touchHoldMode",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4169
+      }
+    ],
+    "82": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_touchToggleMode",
+        "cpp_type": "TouchTriggerType",
+        "broma_kind": "int_or_enum",
+        "line": 4171
+      }
+    ],
+    "84": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_shakeInterval",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4073
+      }
+    ],
+    "85": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_easingRate",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4087
+      }
+    ],
+    "86": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_pulseExclusive",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4163
+      }
+    ],
+    "87": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isMultiTriggered",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4181
+      }
+    ],
+    "88": [
+      {
+        "class": "CountTriggerGameObject",
+        "field": "m_pickupTriggerMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 2425
+      }
+    ],
+    "89": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isDualMode",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4175
+      }
+    ],
+    "90": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_followYSpeed",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4135
+      }
+    ],
+    "91": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_followYDelay",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4137
+      }
+    ],
+    "92": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_followYOffset",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4139
+      }
+    ],
+    "93": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_triggerOnExit",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4187
+      }
+    ],
+    "94": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isDynamicBlock",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4195
+      }
+    ],
+    "95": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_itemID2",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4189
+      }
+    ],
+    "96": [
+      {
+        "class": "GameObject",
+        "field": "m_hasNoGlow",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6525
+      }
+    ],
+    "97": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_rotationSpeed",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4454
+      }
+    ],
+    "98": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_disableRotation",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4452
+      }
+    ],
+    "99": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_isMultiActivate",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4483
+      }
+    ],
+    "100": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_useMoveTarget",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4097
+      }
+    ],
+    "101": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_moveTargetMode",
+        "cpp_type": "MoveTargetType",
+        "broma_kind": "int_or_enum",
+        "line": 4099
+      }
+    ],
+    "102": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_previewDisable",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4183
+      }
+    ],
+    "103": [
+      {
+        "class": "GameObject",
+        "field": "m_isHighDetail",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6625
+      }
+    ],
+    "104": [
+      {
+        "class": "CountTriggerGameObject",
+        "field": "m_multiActivate",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 2427
+      }
+    ],
+    "105": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_followYMaxSpeed",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4141
+      }
+    ],
+    "106": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_animationRandomizedStart",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4459
+      }
+    ],
+    "107": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_animationSpeed",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4461
+      }
+    ],
+    "108": [
+      {
+        "class": "GameObject",
+        "field": "m_linkedGroup",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 6475
+      }
+    ],
+    "110": [
+      {
+        "class": "CameraTriggerGameObject",
+        "field": "m_exitStatic",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 984
+      }
+    ],
+    "111": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_cameraIsFreeMode",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4231
+      }
+    ],
+    "112": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_cameraEditCameraSettings",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4233
+      }
+    ],
+    "113": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_cameraEasingValue",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4235
+      }
+    ],
+    "114": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_cameraPaddingValue",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4237
+      }
+    ],
+    "115": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_ordValue",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4247
+      }
+    ],
+    "116": [
+      {
+        "class": "GameObject",
+        "field": "m_hasNoEffects",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6545
+      }
+    ],
+    "117": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isReverse",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4251
+      }
+    ],
+    "118": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_endReversed",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4241
+      }
+    ],
+    "120": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_timeWarpTimeMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4243
+      }
+    ],
+    "121": [
+      {
+        "class": "GameObject",
+        "field": "m_isNoTouch",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6609
+      }
+    ],
+    "122": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_animationShouldUseSpeed",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4463
+      }
+    ],
+    "123": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_animateOnTrigger",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4465
+      }
+    ],
+    "126": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_disableDelayedLoop",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4467
+      }
+    ],
+    "127": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_disableAnimShine",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4469
+      }
+    ],
+    "128": [
+      {
+        "class": "GameObject",
+        "field": "m_scaleX",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 6588
+      }
+    ],
+    "129": [
+      {
+        "class": "GameObject",
+        "field": "m_scaleY",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 6590
+      }
+    ],
+    "133": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_onlyMove",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20117
+      }
+    ],
+    "134": [
+      {
+        "class": "GameObject",
+        "field": "m_isPassable",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6635
+      }
+    ],
+    "135": [
+      {
+        "class": "GameObject",
+        "field": "m_isHide",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6637
+      }
+    ],
+    "136": [
+      {
+        "class": "GameObject",
+        "field": "m_isNonStickX",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6639
+      }
+    ],
+    "137": [
+      {
+        "class": "GameObject",
+        "field": "m_isIceBlock",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6643
+      }
+    ],
+    "138": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_targetPlayer1",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4199
+      }
+    ],
+    "139": [
+      {
+        "class": "CountTriggerGameObject",
+        "field": "m_isOverride",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 2429
+      }
+    ],
+    "141": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_lockToCameraX",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4093
+      }
+    ],
+    "142": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_lockToCameraY",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4095
+      }
+    ],
+    "143": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_moveModX",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4101
+      }
+    ],
+    "144": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_moveModY",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4103
+      }
+    ],
+    "145": [
+      {
+        "class": "ParticleGameObject",
+        "field": "m_particleData",
+        "cpp_type": "gd::string",
+        "broma_kind": "string",
+        "line": 14050
+      }
+    ],
+    "146": [
+      {
+        "class": "GameObject",
+        "field": "m_particleUseObjectColor",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6458
+      }
+    ],
+    "147": [
+      {
+        "class": "ParticleGameObject",
+        "field": "m_hasUniformObjectColor",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 14054
+      }
+    ],
+    "148": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_gravityValue",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4225
+      }
+    ],
+    "149": [
+      {
+        "class": "ForceBlockGameObject",
+        "field": "m_force",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 5162
+      }
+    ],
+    "150": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_objectScaleX",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 20109
+      }
+    ],
+    "151": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_objectScaleY",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 20111
+      }
+    ],
+    "153": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_divideX",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20119
+      }
+    ],
+    "154": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_divideY",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20121
+      }
+    ],
+    "155": [
+      {
+        "class": "GameObject",
+        "field": "m_activeMainColorID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 6425
+      },
+      {
+        "class": "GameObject",
+        "field": "m_mainColorKeyIndex",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 6660
+      }
+    ],
+    "156": [
+      {
+        "class": "GameObject",
+        "field": "m_detailColorKeyIndex",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 6662
+      }
+    ],
+    "157": [
+      {
+        "class": "SmartGameObject",
+        "field": "m_referenceOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19190
+      }
+    ],
+    "159": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_streakAdditive",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6735
+      }
+    ],
+    "160": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_unlinkDualGravity",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6737
+      }
+    ],
+    "161": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_hideGround",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6739
+      }
+    ],
+    "162": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_hideP1",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6741
+      }
+    ],
+    "163": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_hideP2",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6743
+      }
+    ],
+    "164": [
+      {
+        "class": "CameraTriggerGameObject",
+        "field": "m_edgeDirection",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 990
+      }
+    ],
+    "165": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_disableP1Controls",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6745
+      }
+    ],
+    "166": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_moveDirection",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 15634
+      }
+    ],
+    "167": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_groundDirection",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 15636
+      }
+    ],
+    "169": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_editVelocity",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 15638
+      }
+    ],
+    "170": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_channelValue",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4249
+      }
+    ],
+    "171": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_changeChannel",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 15646
+      }
+    ],
+    "172": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_channelOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 15648
+      }
+    ],
+    "173": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_targetChannelID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 15650
+      }
+    ],
+    "174": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_blendingMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11010
+      }
+    ],
+    "175": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_speed",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18604
+      }
+    ],
+    "176": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_strength",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18606
+      }
+    ],
+    "177": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_timeOff",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18610
+      }
+    ],
+    "179": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_waveWidth",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18612
+      }
+    ],
+    "180": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_targetX",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18614
+      }
+    ],
+    "181": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_fadeIn",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18618
+      }
+    ],
+    "182": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_fadeOut",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18620
+      }
+    ],
+    "183": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_inner",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18628
+      }
+    ],
+    "184": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_invert",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18626
+      }
+    ],
+    "185": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_flip",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18632
+      }
+    ],
+    "186": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_rotate",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18634
+      }
+    ],
+    "187": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_dual",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18636
+      }
+    ],
+    "188": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_useX",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18638
+      }
+    ],
+    "189": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_targetY",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18616
+      }
+    ],
+    "190": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_useY",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18640
+      }
+    ],
+    "191": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_outer",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18608
+      }
+    ],
+    "192": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_disableAll",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18646
+      }
+    ],
+    "193": [
+      {
+        "class": "GameObject",
+        "field": "m_isGripSlope",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6645
+      }
+    ],
+    "194": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_snapGrid",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18642
+      }
+    ],
+    "195": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_hideMG",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6749
+      }
+    ],
+    "196": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_zLayerMin",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18648
+      }
+    ],
+    "197": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_zLayerMax",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18650
+      }
+    ],
+    "198": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_touchPlayerMode",
+        "cpp_type": "TouchTriggerControl",
+        "broma_kind": "int_or_enum",
+        "line": 4173
+      }
+    ],
+    "199": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_disableP2Controls",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6747
+      }
+    ],
+    "200": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_targetPlayer2",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4201
+      }
+    ],
+    "201": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_followCPP",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4203
+      }
+    ],
+    "202": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_blendingLayer",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11008
+      }
+    ],
+    "203": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_upBottomLeftID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11014
+      }
+    ],
+    "204": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_downBottomRightID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11016
+      }
+    ],
+    "205": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_leftTopLeftID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11018
+      }
+    ],
+    "206": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_rightTopRightID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11020
+      }
+    ],
+    "207": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_vertexMode",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11022
+      }
+    ],
+    "208": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_disable",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11024
+      }
+    ],
+    "209": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_gradientID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11012
+      }
+    ],
+    "210": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_legacyHSV",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4165
+      }
+    ],
+    "211": [
+      {
+        "class": "ParticleGameObject",
+        "field": "m_shouldQuickStart",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 14057
+      }
+    ],
+    "212": [
+      {
+        "class": "CameraTriggerGameObject",
+        "field": "m_followObject",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 986
+      }
+    ],
+    "213": [
+      {
+        "class": "CameraTriggerGameObject",
+        "field": "m_followEasing",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 988
+      }
+    ],
+    "214": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_animateOnlyWhenActive",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4479
+      }
+    ],
+    "217": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_enterType",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4591
+      }
+    ],
+    "218": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_moveDistance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4605
+      }
+    ],
+    "219": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_moveDistanceVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4607
+      }
+    ],
+    "220": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_offset",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4597
+      }
+    ],
+    "221": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_offsetVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4599
+      }
+    ],
+    "222": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_length",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4593
+      }
+    ],
+    "223": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_lengthVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4595
+      }
+    ],
+    "224": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_property224",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4647
+      }
+    ],
+    "225": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_effectID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4663
+      }
+    ],
+    "231": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_moveAngle",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4617
+      }
+    ],
+    "232": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_moveAngleVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4619
+      }
+    ],
+    "233": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_areaScaleX",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4609
+      }
+    ],
+    "234": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_areaScaleXVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4611
+      }
+    ],
+    "235": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_areaScaleY",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4613
+      }
+    ],
+    "236": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_areaScaleYVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4615
+      }
+    ],
+    "237": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_moveX",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4637
+      }
+    ],
+    "238": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_moveXVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4639
+      }
+    ],
+    "239": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_moveY",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4641
+      }
+    ],
+    "240": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_moveYVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4643
+      }
+    ],
+    "241": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_xyMode",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4651
+      }
+    ],
+    "242": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_easingInType",
+        "cpp_type": "EasingType",
+        "broma_kind": "int_or_enum",
+        "line": 4627
+      }
+    ],
+    "243": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_easingInRate",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4629
+      }
+    ],
+    "248": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_easingOutType",
+        "cpp_type": "EasingType",
+        "broma_kind": "int_or_enum",
+        "line": 4632
+      }
+    ],
+    "249": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_easingOutRate",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4634
+      }
+    ],
+    "252": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_offsetY",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4601
+      }
+    ],
+    "253": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_offsetYVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4603
+      }
+    ],
+    "260": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_tintChannelID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4645
+      }
+    ],
+    "261": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_easeOutEnabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4653
+      }
+    ],
+    "262": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_directionType",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4649
+      }
+    ],
+    "263": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_modFront",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4655
+      }
+    ],
+    "264": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_modBack",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4657
+      }
+    ],
+    "265": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_areaTint",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4659
+      }
+    ],
+    "270": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_areaRotation",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4665
+      }
+    ],
+    "271": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_areaRotationVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4667
+      }
+    ],
+    "274": [
+      {
+        "class": "GameObject",
+        "field": "m_hasGroupParentsString",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6596
+      }
+    ],
+    "275": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_toOpacity",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4669
+      }
+    ],
+    "276": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_inbound",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4673
+      }
+    ],
+    "278": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_hsvEnabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4675
+      }
+    ],
+    "279": [
+      {
+        "class": "GameObject",
+        "field": "m_hasAreaParent",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6586
+      }
+    ],
+    "280": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_ignoreGroupParent",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4265
+      }
+    ],
+    "281": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_ignoreLinkedObjects",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4267
+      }
+    ],
+    "282": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_deadzone",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4677
+      }
+    ],
+    "283": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_twoDirections",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4679
+      }
+    ],
+    "284": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isSinglePTouch",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4227
+      }
+    ],
+    "285": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_property285",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4661
+      }
+    ],
+    "286": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_fromOpacity",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4671
+      }
+    ],
+    "287": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_relative",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4623
+      }
+    ],
+    "288": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_relativeFade",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4625
+      }
+    ],
+    "289": [
+      {
+        "class": "GameObject",
+        "field": "m_isNonStickY",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6641
+      }
+    ],
+    "290": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_screenOffsetX",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18622
+      }
+    ],
+    "291": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_screenOffsetY",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18624
+      }
+    ],
+    "292": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_delay",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 338
+      }
+    ],
+    "293": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_delayVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 340
+      }
+    ],
+    "298": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_maxSpeed",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 354
+      }
+    ],
+    "299": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_maxSpeedVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 356
+      }
+    ],
+    "300": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_startSpeed",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 342
+      }
+    ],
+    "301": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_startSpeedVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 344
+      }
+    ],
+    "305": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_targetDirection",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 422
+      }
+    ],
+    "306": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_xOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 358
+      }
+    ],
+    "307": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_yOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 360
+      }
+    ],
+    "308": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_maxRange",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 362
+      }
+    ],
+    "309": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_maxRangeVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 364
+      }
+    ],
+    "310": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_property310",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 366
+      }
+    ],
+    "311": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_property311",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 368
+      }
+    ],
+    "312": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_property312",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 374
+      }
+    ],
+    "313": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_property313",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 376
+      }
+    ],
+    "314": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_property314",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 378
+      }
+    ],
+    "315": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_property315",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 380
+      }
+    ],
+    "316": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_steerForce",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 382
+      }
+    ],
+    "317": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_steerForceVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 384
+      }
+    ],
+    "318": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_steerForceLow",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 388
+      }
+    ],
+    "319": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_steerForceLowVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 390
+      }
+    ],
+    "320": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_steerForceHigh",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 394
+      }
+    ],
+    "321": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_steerFroceHighVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 396
+      }
+    ],
+    "322": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_speedRangeLow",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 398
+      }
+    ],
+    "323": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_speedRangeLowVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 400
+      }
+    ],
+    "324": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_speedRangeHigh",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 402
+      }
+    ],
+    "325": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_speedRangeHighVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 404
+      }
+    ],
+    "326": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_breakForce",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 406
+      }
+    ],
+    "327": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_breakForceVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 408
+      }
+    ],
+    "328": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_breakAngle",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 410
+      }
+    ],
+    "329": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_breakAngleVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 412
+      }
+    ],
+    "330": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_breakSteerForce",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 414
+      }
+    ],
+    "331": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_breakSteerForceVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 416
+      }
+    ],
+    "332": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_breakSteerSpeedLimit",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 418
+      }
+    ],
+    "333": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_breakSteerSpeedLimitVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 420
+      }
+    ],
+    "334": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_acceleration",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 370
+      }
+    ],
+    "335": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_accelerationVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 372
+      }
+    ],
+    "336": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_ignoreDisabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 424
+      }
+    ],
+    "337": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_steerForceLowEnabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 386
+      }
+    ],
+    "338": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_steerForceHighEnabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 392
+      }
+    ],
+    "339": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_rotateDirection",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 426
+      }
+    ],
+    "340": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_rotationOffset",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 428
+      }
+    ],
+    "341": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_priority",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4683
+      }
+    ],
+    "343": [
+      {
+        "class": "GameObject",
+        "field": "m_enterChannel",
+        "cpp_type": "short",
+        "broma_kind": "int_or_enum",
+        "line": 6519
+      }
+    ],
+    "344": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_enterChannel",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4686
+      }
+    ],
+    "345": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_staticForceEnabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19815
+      }
+    ],
+    "346": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_staticForce",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19817
+      }
+    ],
+    "347": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_redirectForceEnabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19819
+      }
+    ],
+    "348": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_redirectForceMin",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19823
+      }
+    ],
+    "349": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_redirectForceMax",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19825
+      }
+    ],
+    "350": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_redirectForceMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19821
+      }
+    ],
+    "351": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_saveOffset",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19827
+      }
+    ],
+    "352": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_ignoreX",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19829
+      }
+    ],
+    "353": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_ignoreY",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19831
+      }
+    ],
+    "354": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_gravityMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 19833
+      }
+    ],
+    "355": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_useEffectID",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4688
+      }
+    ],
+    "356": [
+      {
+        "class": "GameObject",
+        "field": "m_isScaleStick",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6647
+      }
+    ],
+    "357": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_nearAcceleration",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 430
+      }
+    ],
+    "358": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_nearAccelerationVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 432
+      }
+    ],
+    "359": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_nearDistance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 434
+      }
+    ],
+    "360": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_nearDistanceVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 436
+      }
+    ],
+    "361": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_easing",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 446
+      }
+    ],
+    "362": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_easingVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 448
+      }
+    ],
+    "363": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_rotateEasing",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 450
+      }
+    ],
+    "364": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_rotateDeadZ",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 452
+      }
+    ],
+    "365": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_priority",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 454
+      }
+    ],
+    "366": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_maxRangeReference",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 457
+      }
+    ],
+    "367": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_followMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 459
+      }
+    ],
+    "368": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_instantOffset",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 15652
+      }
+    ],
+    "369": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_hasCenterEffect",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4069
+      }
+    ],
+    "370": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_cameraDisableGridSnap",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4239
+      }
+    ],
+    "371": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_zoomValue",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4229
+      }
+    ],
+    "372": [
+      {
+        "class": "GameObject",
+        "field": "m_hasNoAudioScale",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6501
+      }
+    ],
+    "373": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_keyframeGroup",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11511
+      }
+    ],
+    "374": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_keyframeIndex",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11513
+      }
+    ],
+    "375": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_referenceOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11515
+      }
+    ],
+    "376": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_closeLoop",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11521
+      }
+    ],
+    "377": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_proximity",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11517
+      }
+    ],
+    "378": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_curve",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11519
+      }
+    ],
+    "379": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_timeMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11523
+      }
+    ],
+    "380": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_previewArt",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11528
+      }
+    ],
+    "381": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_collectibleIsPickupItem",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4207
+      }
+    ],
+    "382": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_collectibleIsToggleTrigger",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4209
+      }
+    ],
+    "383": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_collectiblePoints",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4213
+      }
+    ],
+    "385": [
+      {
+        "class": "UISettingsGameObject",
+        "field": "m_xRef",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 20377
+      }
+    ],
+    "386": [
+      {
+        "class": "UISettingsGameObject",
+        "field": "m_yRef",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 20379
+      }
+    ],
+    "387": [
+      {
+        "class": "UISettingsGameObject",
+        "field": "m_xRelative",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20381
+      }
+    ],
+    "388": [
+      {
+        "class": "UISettingsGameObject",
+        "field": "m_yRelative",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20383
+      }
+    ],
+    "389": [
+      {
+        "class": "LabelGameObject",
+        "field": "m_showSecondsOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11606
+      }
+    ],
+    "390": [
+      {
+        "class": "LabelGameObject",
+        "field": "m_shownSpecial",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11608
+      }
+    ],
+    "391": [
+      {
+        "class": "LabelGameObject",
+        "field": "m_alignment",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11604
+      }
+    ],
+    "392": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_soundID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18508
+      }
+    ],
+    "393": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_smallStep",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4105
+      }
+    ],
+    "394": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isDirectionFollowSnap360",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4107
+      }
+    ],
+    "395": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_targetModCenterID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4109
+      }
+    ],
+    "396": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_directionModeDistance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4111
+      }
+    ],
+    "397": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isDynamicMode",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4113
+      }
+    ],
+    "399": [
+      {
+        "class": "SongTriggerGameObject",
+        "field": "m_prep",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19405
+      }
+    ],
+    "400": [
+      {
+        "class": "SongTriggerGameObject",
+        "field": "m_loadPrep",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19407
+      }
+    ],
+    "401": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_rotationTargetID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4125
+      }
+    ],
+    "402": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_rotationOffset",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 4127
+      }
+    ],
+    "403": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_dynamicModeEasing",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4129
+      }
+    ],
+    "404": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_speed",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18511
+      }
+    ],
+    "405": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_pitchIndex",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18513
+      }
+    ],
+    "406": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_volume",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18515
+      }
+    ],
+    "407": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_reverb",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18525
+      }
+    ],
+    "408": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_start",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18517
+      }
+    ],
+    "409": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_fadeIn",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18519
+      }
+    ],
+    "410": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_end",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18521
+      }
+    ],
+    "411": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_fadeOut",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18523
+      }
+    ],
+    "412": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_fastFourierTransform",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18527
+      }
+    ],
+    "413": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_loop",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18529
+      }
+    ],
+    "414": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_stopLoop",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18531
+      }
+    ],
+    "415": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_unique",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18535
+      }
+    ],
+    "416": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_sfxUniqueID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18539
+      }
+    ],
+    "417": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_stop",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18565
+      }
+    ],
+    "418": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_changeSpeed",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18567
+      }
+    ],
+    "419": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_changeVolume",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18569
+      }
+    ],
+    "420": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_override",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18537
+      }
+    ],
+    "421": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_volumeNear",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18541
+      }
+    ],
+    "422": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_volumeMedium",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18543
+      }
+    ],
+    "423": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_volumeFar",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18545
+      }
+    ],
+    "424": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_minDistNear",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18547
+      }
+    ],
+    "425": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_minDistMedium",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18549
+      }
+    ],
+    "426": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_minDistFar",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18551
+      }
+    ],
+    "428": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_cameraDistance",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18555
+      }
+    ],
+    "430": [
+      {
+        "class": "EventLinkTrigger",
+        "field": "m_eventIDs",
+        "cpp_type": "gd::set<int>",
+        "broma_kind": "unknown",
+        "line": 4709
+      }
+    ],
+    "431": [
+      {
+        "class": "EventLinkTrigger",
+        "field": "m_resetRemap",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4711
+      }
+    ],
+    "432": [
+      {
+        "class": "SongTriggerGameObject",
+        "field": "m_songChannel",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 19409
+      }
+    ],
+    "433": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_preload",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18557
+      }
+    ],
+    "434": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_minInterval",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18561
+      }
+    ],
+    "435": [
+      {
+        "class": "ChanceTriggerGameObject",
+        "field": "m_chanceObjects",
+        "cpp_type": "gd::vector<ChanceObject>",
+        "broma_kind": "unknown",
+        "line": 1815
+      }
+    ],
+    "436": [
+      {
+        "class": "SequenceTriggerGameObject",
+        "field": "m_sequenceMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 16268
+      }
+    ],
+    "437": [
+      {
+        "class": "SequenceTriggerGameObject",
+        "field": "m_minInt",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 16266
+      }
+    ],
+    "438": [
+      {
+        "class": "SequenceTriggerGameObject",
+        "field": "m_reset",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 16272
+      }
+    ],
+    "439": [
+      {
+        "class": "SequenceTriggerGameObject",
+        "field": "m_resetMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 16270
+      }
+    ],
+    "440": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_collectibleParticleID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4211
+      }
+    ],
+    "441": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_spawnOrdered",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4185
+      }
+    ],
+    "442": [
+      {
+        "class": "SpawnTriggerGameObject",
+        "field": "m_remapObjects",
+        "cpp_type": "gd::vector<ChanceObject>",
+        "broma_kind": "unknown",
+        "line": 19480
+      }
+    ],
+    "443": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_staticForceAdditive",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19835
+      }
+    ],
+    "444": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_isNoMultiActivate",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4481
+      }
+    ],
+    "446": [
+      {
+        "class": "GameObject",
+        "field": "m_objectMaterial",
+        "cpp_type": "short",
+        "broma_kind": "int_or_enum",
+        "line": 6521
+      }
+    ],
+    "447": [
+      {
+        "class": "EventLinkTrigger",
+        "field": "m_extraID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4713
+      }
+    ],
+    "448": [
+      {
+        "class": "CheckpointGameObject",
+        "field": "m_respawnID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 1885
+      }
+    ],
+    "449": [
+      {
+        "class": "CountTriggerGameObject",
+        "field": "m_pickupTriggerMultiplier",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 2431
+      }
+    ],
+    "450": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_property450",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 20113
+      }
+    ],
+    "451": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_property451",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 20115
+      }
+    ],
+    "452": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_relativeRotation",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20123
+      }
+    ],
+    "453": [
+      {
+        "class": "CameraTriggerGameObject",
+        "field": "m_smoothVelocity",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 992
+      }
+    ],
+    "454": [
+      {
+        "class": "CameraTriggerGameObject",
+        "field": "m_velocityModifier",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 994
+      }
+    ],
+    "455": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_sfxGroup",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18563
+      }
+    ],
+    "456": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_previewOpacity",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11028
+      }
+    ],
+    "457": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_groupID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18571
+      }
+    ],
+    "458": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_proximityMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18553
+      }
+    ],
+    "459": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_autoLayer",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11531
+      }
+    ],
+    "460": [
+      {
+        "class": "EndTriggerGameObject",
+        "field": "m_noEffects",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4388
+      }
+    ],
+    "461": [
+      {
+        "class": "EndTriggerGameObject",
+        "field": "m_noSFX",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4390
+      }
+    ],
+    "462": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_singleFrame",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4471
+      }
+    ],
+    "463": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_hasNoAnimation",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4215
+      }
+    ],
+    "464": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_instantCamera",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19837
+      }
+    ],
+    "465": [
+      {
+        "class": "CameraTriggerGameObject",
+        "field": "m_exitInstant",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 996
+      }
+    ],
+    "466": [
+      {
+        "class": "LabelGameObject",
+        "field": "m_isTimeCounter",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11610
+      }
+    ],
+    "467": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_startTime",
+        "cpp_type": "double",
+        "broma_kind": "real",
+        "line": 19995
+      }
+    ],
+    "468": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_dontOverride",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20001
+      }
+    ],
+    "469": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_ignoreTimeWarp",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20003
+      }
+    ],
+    "470": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_timeMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 20005
+      }
+    ],
+    "471": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_startPaused",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20007
+      }
+    ],
+    "472": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_controlType",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 20011
+      }
+    ],
+    "473": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_targetTime",
+        "cpp_type": "double",
+        "broma_kind": "real",
+        "line": 19997
+      }
+    ],
+    "474": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_stopTimeEnabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19999
+      }
+    ],
+    "475": [
+      {
+        "class": "TimerTriggerGameObject",
+        "field": "m_multiActivate",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20009
+      }
+    ],
+    "476": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_item1Mode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11376
+      }
+    ],
+    "477": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_item2Mode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11378
+      }
+    ],
+    "478": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_targetItemMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11380
+      }
+    ],
+    "479": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_mod1",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11382
+      }
+    ],
+    "480": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_resultType1",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11386
+      }
+    ],
+    "481": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_resultType2",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11388
+      }
+    ],
+    "482": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_resultType3",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11390
+      }
+    ],
+    "483": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_tolerance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11392
+      }
+    ],
+    "484": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_mod2",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11384
+      }
+    ],
+    "485": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_roundType1",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11394
+      }
+    ],
+    "486": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_roundType2",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11396
+      }
+    ],
+    "487": [
+      {
+        "class": "EndTriggerGameObject",
+        "field": "m_instant",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4392
+      }
+    ],
+    "488": [
+      {
+        "class": "LabelGameObject",
+        "field": "m_kerning",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11612
+      },
+      {
+        "class": "TextGameObject",
+        "field": "m_kerning",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 19929
+      }
+    ],
+    "489": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_ignoreVolumeTest",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18559
+      }
+    ],
+    "490": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_soundDuration",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18578
+      }
+    ],
+    "491": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_persistent",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11402
+      }
+    ],
+    "492": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_targetAll",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11404
+      }
+    ],
+    "493": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_reset",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11406
+      }
+    ],
+    "494": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_timer",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11408
+      }
+    ],
+    "495": [
+      {
+        "class": "GameObject",
+        "field": "m_isExtraSticky",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6649
+      }
+    ],
+    "496": [
+      {
+        "class": "GameObject",
+        "field": "m_isDontBoostY",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6651
+      }
+    ],
+    "497": [
+      {
+        "class": "GameObject",
+        "field": "m_customColorType",
+        "cpp_type": "short",
+        "broma_kind": "int_or_enum",
+        "line": 6539
+      }
+    ],
+    "498": [
+      {
+        "class": "AudioLineGuideGameObject",
+        "field": "m_beatsPerMinute",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 680
+      }
+    ],
+    "499": [
+      {
+        "class": "AudioLineGuideGameObject",
+        "field": "m_speed",
+        "cpp_type": "Speed",
+        "broma_kind": "int_or_enum",
+        "line": 684
+      }
+    ],
+    "500": [
+      {
+        "class": "AudioLineGuideGameObject",
+        "field": "m_disabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 686
+      }
+    ],
+    "501": [
+      {
+        "class": "AudioLineGuideGameObject",
+        "field": "m_beatsPerBar",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 682
+      }
+    ],
+    "502": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_reverbPreset",
+        "cpp_type": "FMODReverbPreset",
+        "broma_kind": "int_or_enum",
+        "line": 18574
+      }
+    ],
+    "503": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_reverbEnabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18576
+      }
+    ],
+    "504": [
+      {
+        "class": "RingObject",
+        "field": "m_isSpawnOnly",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 15616
+      }
+    ],
+    "505": [
+      {
+        "class": "SequenceTriggerGameObject",
+        "field": "m_uniqueRemap",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 16275
+      }
+    ],
+    "506": [
+      {
+        "class": "CameraTriggerGameObject",
+        "field": "m_previewOpacity",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 998
+      }
+    ],
+    "507": [
+      {
+        "class": "GameObject",
+        "field": "m_hasNoParticles",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6547
+      }
+    ],
+    "508": [
+      {
+        "class": "GradientTriggerObject",
+        "field": "m_disableAll",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 11026
+      }
+    ],
+    "509": [
+      {
+        "class": "GameObject",
+        "field": "m_isDontBoostX",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6653
+      }
+    ],
+    "510": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_snapGround",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19839
+      }
+    ],
+    "511": [
+      {
+        "class": "GameObject",
+        "field": "m_hasExtendedCollision",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 6414
+      }
+    ],
+    "512": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_maxSize",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18630
+      }
+    ],
+    "513": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_animate",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18652
+      }
+    ],
+    "514": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_relative",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18654
+      }
+    ],
+    "515": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_hardEdges",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18644
+      }
+    ],
+    "516": [
+      {
+        "class": "EnhancedTriggerObject",
+        "field": "m_minXID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4503
+      }
+    ],
+    "517": [
+      {
+        "class": "EnhancedTriggerObject",
+        "field": "m_minYID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4505
+      }
+    ],
+    "518": [
+      {
+        "class": "EnhancedTriggerObject",
+        "field": "m_maxXID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4507
+      }
+    ],
+    "519": [
+      {
+        "class": "EnhancedTriggerObject",
+        "field": "m_maxYID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4509
+      }
+    ],
+    "520": [
+      {
+        "class": "KeyframeAnimTriggerObject",
+        "field": "m_timeMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11481
+      }
+    ],
+    "521": [
+      {
+        "class": "KeyframeAnimTriggerObject",
+        "field": "m_positionXMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11483
+      }
+    ],
+    "522": [
+      {
+        "class": "KeyframeAnimTriggerObject",
+        "field": "m_rotationMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11487
+      }
+    ],
+    "523": [
+      {
+        "class": "KeyframeAnimTriggerObject",
+        "field": "m_scaleXMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11489
+      }
+    ],
+    "524": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_lineOpacity",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11537
+      }
+    ],
+    "525": [
+      {
+        "class": "EventLinkTrigger",
+        "field": "m_extraID2",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4715
+      }
+    ],
+    "526": [
+      {
+        "class": "ForceBlockGameObject",
+        "field": "m_minForce",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 5164
+      }
+    ],
+    "527": [
+      {
+        "class": "ForceBlockGameObject",
+        "field": "m_maxForce",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 5166
+      }
+    ],
+    "528": [
+      {
+        "class": "ForceBlockGameObject",
+        "field": "m_relativeForce",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 5168
+      }
+    ],
+    "529": [
+      {
+        "class": "ForceBlockGameObject",
+        "field": "m_forceRange",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 5170
+      }
+    ],
+    "530": [
+      {
+        "class": "ForceBlockGameObject",
+        "field": "m_forceID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 5172
+      }
+    ],
+    "531": [
+      {
+        "class": "ShaderGameObject",
+        "field": "m_editorDisabled",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18656
+      }
+    ],
+    "532": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_hideAttempts",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6751
+      }
+    ],
+    "533": [
+      {
+        "class": "ArtTriggerGameObject",
+        "field": "m_artIndex",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 607
+      }
+    ],
+    "534": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_controlID",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4191
+      }
+    ],
+    "535": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_targetControlID",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4193
+      }
+    ],
+    "536": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_direction",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11533
+      }
+    ],
+    "537": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_revolutions",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11535
+      }
+    ],
+    "538": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_specialTarget",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 4117
+      }
+    ],
+    "539": [
+      {
+        "class": "EnterEffectObject",
+        "field": "m_dontEditAreaParent",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4681
+      }
+    ],
+    "540": [
+      {
+        "class": "PlayerControlGameObject",
+        "field": "m_stopJump",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 14403
+      }
+    ],
+    "541": [
+      {
+        "class": "PlayerControlGameObject",
+        "field": "m_stopMove",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 14405
+      }
+    ],
+    "542": [
+      {
+        "class": "PlayerControlGameObject",
+        "field": "m_stopRotation",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 14407
+      }
+    ],
+    "543": [
+      {
+        "class": "PlayerControlGameObject",
+        "field": "m_stopSlide",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 14409
+      }
+    ],
+    "544": [
+      {
+        "class": "EffectGameObject",
+        "field": "m_isSilent",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4115
+      }
+    ],
+    "545": [
+      {
+        "class": "KeyframeAnimTriggerObject",
+        "field": "m_positionYMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11485
+      }
+    ],
+    "546": [
+      {
+        "class": "KeyframeAnimTriggerObject",
+        "field": "m_scaleYMod",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11491
+      }
+    ],
+    "547": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_offset",
+        "cpp_type": "cocos2d::CCPoint",
+        "broma_kind": "point",
+        "line": 19424
+      }
+    ],
+    "548": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_offset",
+        "cpp_type": "cocos2d::CCPoint",
+        "broma_kind": "point",
+        "line": 19424
+      }
+    ],
+    "549": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_offsetVariance",
+        "cpp_type": "cocos2d::CCPoint",
+        "broma_kind": "point",
+        "line": 19426
+      }
+    ],
+    "550": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_offsetVariance",
+        "cpp_type": "cocos2d::CCPoint",
+        "broma_kind": "point",
+        "line": 19426
+      }
+    ],
+    "551": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_matchRotation",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19428
+      }
+    ],
+    "552": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_rotation",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19430
+      }
+    ],
+    "553": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_rotationVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19432
+      }
+    ],
+    "554": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_scale",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19434
+      }
+    ],
+    "555": [
+      {
+        "class": "SpawnParticleGameObject",
+        "field": "m_scaleVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19436
+      }
+    ],
+    "556": [
+      {
+        "class": "SpawnTriggerGameObject",
+        "field": "m_delayRange",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 19487
+      }
+    ],
+    "557": [
+      {
+        "class": "KeyframeGameObject",
+        "field": "m_spawnDelay",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 11526
+      }
+    ],
+    "558": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_friction",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 442
+      }
+    ],
+    "559": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_frictionVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 444
+      }
+    ],
+    "560": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_startSpeedReference",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 346
+      }
+    ],
+    "561": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_nearFriction",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 438
+      }
+    ],
+    "562": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_nearFrictionVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 440
+      }
+    ],
+    "563": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_startDirection",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 348
+      }
+    ],
+    "564": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_startDirectionVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 350
+      }
+    ],
+    "565": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_startDirectionReference",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 352
+      }
+    ],
+    "566": [
+      {
+        "class": "AdvancedFollowEditObject",
+        "field": "m_modX",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 313
+      }
+    ],
+    "567": [
+      {
+        "class": "AdvancedFollowEditObject",
+        "field": "m_modXVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 315
+      }
+    ],
+    "568": [
+      {
+        "class": "AdvancedFollowEditObject",
+        "field": "m_modY",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 317
+      }
+    ],
+    "569": [
+      {
+        "class": "AdvancedFollowEditObject",
+        "field": "m_modYVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 319
+      }
+    ],
+    "570": [
+      {
+        "class": "AdvancedFollowEditObject",
+        "field": "m_redirectDirection",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 321
+      }
+    ],
+    "571": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_exclusive",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 461
+      }
+    ],
+    "572": [
+      {
+        "class": "AdvancedFollowTriggerObject",
+        "field": "m_startMode",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 463
+      }
+    ],
+    "573": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_editRespawnTime",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6753
+      }
+    ],
+    "574": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_respawnTime",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 6755
+      }
+    ],
+    "575": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_audioOnDeath",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6757
+      }
+    ],
+    "576": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_noDeathSFX",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6759
+      }
+    ],
+    "577": [
+      {
+        "class": "TransformTriggerGameObject",
+        "field": "m_relativeScale",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 20125
+      }
+    ],
+    "578": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_signType1",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11398
+      }
+    ],
+    "579": [
+      {
+        "class": "ItemTriggerGameObject",
+        "field": "m_signType2",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 11400
+      }
+    ],
+    "580": [
+      {
+        "class": "TriggerControlGameObject",
+        "field": "m_customTriggerValue",
+        "cpp_type": "GJActionCommand",
+        "broma_kind": "int_or_enum",
+        "line": 20144
+      }
+    ],
+    "581": [
+      {
+        "class": "SpawnTriggerGameObject",
+        "field": "m_resetRemap",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19489
+      }
+    ],
+    "582": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_velocityModX",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 15642
+      }
+    ],
+    "583": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_velocityModY",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 15644
+      }
+    ],
+    "584": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_overrideVelocity",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 15640
+      }
+    ],
+    "585": [
+      {
+        "class": "RotateGameplayGameObject",
+        "field": "m_dontSlide",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 15654
+      }
+    ],
+    "586": [
+      {
+        "class": "DashRingObject",
+        "field": "m_dashSpeed",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 3183
+      }
+    ],
+    "587": [
+      {
+        "class": "DashRingObject",
+        "field": "m_allowCollide",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 3189
+      }
+    ],
+    "588": [
+      {
+        "class": "DashRingObject",
+        "field": "m_endBoost",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 3185
+      }
+    ],
+    "589": [
+      {
+        "class": "DashRingObject",
+        "field": "m_stopSlide",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 3191
+      }
+    ],
+    "590": [
+      {
+        "class": "DashRingObject",
+        "field": "m_maxDuration",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 3187
+      }
+    ],
+    "591": [
+      {
+        "class": "TeleportPortalObject",
+        "field": "m_redirectDash",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 19841
+      }
+    ],
+    "592": [
+      {
+        "class": "EnhancedGameObject",
+        "field": "m_animationOffset",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 4473
+      }
+    ],
+    "593": [
+      {
+        "class": "GameOptionsTrigger",
+        "field": "m_boostSlide",
+        "cpp_type": "GameOptionsSetting",
+        "broma_kind": "int_or_enum",
+        "line": 6761
+      }
+    ],
+    "595": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_dontReset",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18533
+      }
+    ],
+    "596": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_speedVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18581
+      }
+    ],
+    "597": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_pitchVariance",
+        "cpp_type": "int",
+        "broma_kind": "int_or_enum",
+        "line": 18583
+      }
+    ],
+    "598": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_volumeVariance",
+        "cpp_type": "float",
+        "broma_kind": "real",
+        "line": 18585
+      }
+    ],
+    "599": [
+      {
+        "class": "SFXTriggerGameObject",
+        "field": "m_pitchSteps",
+        "cpp_type": "bool",
+        "broma_kind": "bool",
+        "line": 18587
+      }
+    ]
+  }
+}

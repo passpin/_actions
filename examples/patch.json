@@ -1,0 +1,18 @@
+{
+  "format": "gmdtool.patch",
+  "version": 1,
+  "operations": [
+    {
+      "op": "update",
+      "select": {
+        "object_id": 901,
+        "properties": {
+          "target_group": 42
+        }
+      },
+      "set": {
+        "move_x": 120
+      }
+    }
+  ]
+}
