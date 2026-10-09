@@ -24,7 +24,7 @@ jobs:
           target: Win64
           build-config: RelWithDebInfo
 
-      - name: Locate and rename built package
+      - name: Locate built package
         id: locate
         shell: pwsh
         run: |
@@ -38,11 +38,13 @@ jobs:
           }
           if (-not $pkg) { throw "No .geode package produced" }
           Write-Host "package: $($pkg.FullName)"
-          # The auto-updater requires the exact asset name.
-          $renamed = Join-Path $pkg.DirectoryName "gmdtool.runtime-bridge.geode"
-          if (Test-Path $renamed) { Remove-Item $renamed -Force }
-          Copy-Item $pkg.FullName $renamed -Force
-          "path=$renamed" | Out-File -Encoding utf8 $env:GITHUB_OUTPUT
+          # The auto-updater requires the exact asset name gmdtool.runtime-bridge.geode.
+          # Copy to the workspace root under the required name (the build output may
+          # already carry that name; copying to a distinct target avoids same-path errors).
+          $target = Join-Path $env:GITHUB_WORKSPACE "gmdtool.runtime-bridge.geode"
+          if (Test-Path $target) { Remove-Item $target -Force }
+          Copy-Item $pkg.FullName $target -Force
+          "path=$target" | Out-File -Encoding utf8 $env:GITHUB_OUTPUT
           "version=$env:GITHUB_REF_NAME" | Out-File -Encoding utf8 -Append $env:GITHUB_OUTPUT
 
       - name: Verify package version matches tag
