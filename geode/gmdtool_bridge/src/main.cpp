@@ -251,9 +251,63 @@ struct RuntimeState {
 };
 RuntimeState state;
 
+// Lightweight, bounded Item-ID change tracing for AI debugging.
+// Every access is on the game thread. Tracing never steps the simulation.
+// A sample belongs to the PlayLayer postUpdate CALLBACK counter, NOT a physics tick.
+constexpr std::size_t MAX_TRACE_IDS = 8;
+constexpr std::size_t MAX_TRACE_SAMPLES = 256;
+struct TraceSample {
+    std::uint64_t update = 0;
+    std::vector<int> values;
+};
+struct TraceState {
+    bool active = false;
+    std::uint64_t everyUpdates = 1;
+    std::vector<int> ids;
+    std::vector<int> lastValues;
+    bool hasBaseline = false;
+    std::deque<TraceSample> samples;
+    std::uint64_t discarded = 0;
+    std::uint64_t observedUpdates = 0;
+};
+TraceState trace;
+
+void collectItemTrace(PlayLayer* play) {
+    if (!trace.active || !play->m_effectManager ||
+        (state.updates % trace.everyUpdates) != 0) return;
+    ++trace.observedUpdates;
+    std::vector<int> values;
+    values.reserve(trace.ids.size());
+    for (auto id : trace.ids) values.push_back(play->m_effectManager->countForItem(id));
+    if (trace.hasBaseline && values == trace.lastValues) return;
+    trace.lastValues = values;
+    trace.hasBaseline = true;
+    if (trace.samples.size() == MAX_TRACE_SAMPLES) {
+        trace.samples.pop_front();
+        ++trace.discarded;
+    }
+    trace.samples.push_back(TraceSample{state.updates, std::move(values)});
+}
+
+matjson::Value traceSummary() {
+    matjson::Value ids = matjson::Value::array();
+    for (auto id : trace.ids) ids.push(id);
+    return matjson::makeObject({
+        {"active", trace.active},
+        {"ids", std::move(ids)},
+        {"every_updates", static_cast<std::int64_t>(trace.everyUpdates)},
+        {"observed_updates", static_cast<std::int64_t>(trace.observedUpdates)},
+        {"buffered_changes", static_cast<int>(trace.samples.size())},
+        {"discarded_changes", static_cast<std::int64_t>(trace.discarded)},
+        {"level_update_callbacks", static_cast<std::int64_t>(state.updates)},
+        {"samples_are_physics_ticks", false}
+    });
+}
+
 void syncLevel(PlayLayer* layer) {
     if (state.owner != layer) {
         state = RuntimeState{};
+        trace = TraceState{};
         state.owner = layer;
     }
 }
@@ -273,6 +327,11 @@ class $modify(GmdtoolBridgePlayLayer, PlayLayer) {
             it = state.inputs.erase(it);
             this->handleButton(event.down, event.button, event.player1);
         }
+        // Snapshot immediately BEFORE the original postUpdate call. Item
+        // changes in that call are observed on the next eligible callback.
+        // Never read PlayLayer after calling its original update method:
+        // some transitions may destroy/replace the active layer.
+        collectItemTrace(this);
         PlayLayer::postUpdate(dt);
     }
 
@@ -300,13 +359,17 @@ class $modify(GmdtoolBridgePlayLayer, PlayLayer) {
         syncLevel(this);
         state.updates = 0;
         state.inputs.clear(); // A reset invalidates any queued attempt inputs.
+        trace = TraceState{}; // No stale values from the previous attempt.
         PlayLayer::resetLevel();
     }
 
     void onExit() {
         // Never let an experimental setting silently leak into the next level.
         backgroundPlayRequested.store(false);
-        if (state.owner == this) state = RuntimeState{};
+        if (state.owner == this) {
+            trace = TraceState{};
+            state = RuntimeState{};
+        }
         PlayLayer::onExit();
     }
 };
@@ -431,9 +494,62 @@ matjson::Value resultFor(matjson::Value const& request) {
     if (!play) {
         return matjson::makeObject({{"_bridge_error", "No active PlayLayer; open a level first"}});
     }
+    // Initialize the per-layer state even before the first postUpdate callback.
+    // In particular, trace_start must survive a subsequent status() call.
+    syncLevel(play);
     if (method == "reset_level") {
         play->resetLevel();
         return matjson::makeObject({{"requested", true}});
+    }
+    if (method == "trace_start") {
+        // A bounded, all-or-nothing validation pass; reject duplicate IDs.
+        auto const& params = request["params"];
+        auto ids = params["ids"].asArray();
+        auto interval = params["every_updates"].asInt();
+        auto step = params["every_updates"].isNull() ? std::int64_t(1)
+             : interval ? static_cast<std::int64_t>(interval.unwrap()) : std::int64_t(-1);
+        if (!ids || ids.unwrap().empty() || ids.unwrap().size() > MAX_TRACE_IDS ||
+            step < 1 || step > 600) {
+            return matjson::makeObject({{"_bridge_error", "trace_start: ids must be 1..8 IDs; every_updates must be 1..600"}});
+        }
+        std::vector<int> selected;
+        for (auto const& element : ids.unwrap()) {
+            auto value = element.asInt();
+            if (!value || value.unwrap() < 1 || value.unwrap() > 9999 ||
+                std::find(selected.begin(), selected.end(), static_cast<int>(value.unwrap())) != selected.end()) {
+                return matjson::makeObject({{"_bridge_error", "trace_start: IDs must be unique integers in 1..9999"}});
+            }
+            selected.push_back(static_cast<int>(value.unwrap()));
+        }
+        if (!play->m_effectManager)
+            return matjson::makeObject({{"_bridge_error", "effect manager is not ready"}});
+        trace = TraceState{};
+        trace.active = true;
+        trace.everyUpdates = static_cast<std::uint64_t>(step);
+        trace.ids = std::move(selected);
+        return traceSummary();
+    }
+    if (method == "trace_status") return traceSummary();
+    if (method == "trace_stop") {
+        trace.active = false; // Keep buffered changes for a final read.
+        return traceSummary();
+    }
+    if (method == "trace_read") {
+        bool drain = request["params"]["drain"].asBool().unwrapOr(false);
+        matjson::Value entries = matjson::Value::array();
+        for (auto const& sample : trace.samples) {
+            auto values = matjson::Value::object();
+            for (std::size_t i = 0; i < trace.ids.size(); ++i)
+                values[std::to_string(trace.ids[i])] = sample.values[i];
+            entries.push(matjson::makeObject({
+                {"update", static_cast<std::int64_t>(sample.update)},
+                {"values", std::move(values)}
+            }));
+        }
+        auto result = traceSummary();
+        result["changes"] = std::move(entries);
+        if (drain) trace.samples.clear();
+        return result;
     }
     if (method == "input_queue_status") {
         syncLevel(play);

@@ -5,9 +5,9 @@
   },
   "id": "gmdtool.runtime-bridge",
   "name": "gmdtool Runtime Bridge",
-  "version": "v0.1.9",
+  "version": "v0.10.0",
   "developer": "passpin",
-  "description": "Opt-in localhost runtime bridge, resilient GitHub Releases auto-updates, and experimental background pause controls.",
+  "description": "Opt-in localhost runtime bridge, bounded Item change tracing, resilient GitHub Releases updates, and experimental background pause controls.",
   "settings": {
     "enabled": {
       "type": "bool",
