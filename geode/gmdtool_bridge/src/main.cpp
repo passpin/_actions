@@ -50,6 +50,16 @@ struct DispatchCounters {
 };
 DispatchCounters counters;
 
+
+// Background play is experimental and opt-in TWICE: Geode setting + authenticated
+// RPC switch. Keep the decision on the UI thread; network thread only sends JSON.
+// Crucially, this does not restart a minimized renderer or synthesize frames.
+std::atomic_bool backgroundPlayRequested{false};
+std::atomic<std::uint64_t> unfocusPauseRequests{0};
+std::atomic<std::uint64_t> unfocusPauseSuppressed{0};
+// A non-unfocus pause may come from the user OR another mod. Never bypass it.
+std::atomic<std::uint64_t> nonUnfocusPauseRequests{0};
+
 // The Geode main-thread task queue normally runs from Cocos's frame loop.
 // GD can suspend that loop while not focused, even while the Win32 window
 // thread continues processing messages. Install a Windows window subclass
@@ -216,7 +226,11 @@ matjson::Value transportDiagnostics() {
     result["window_pump_deliveries"] = static_cast<std::int64_t>(pumpDeliveries.load());
     result["window_pump_commands"] = static_cast<std::int64_t>(pumpCommands.load());
     result["main_thread_dispatch"] = "Geode queue + Win32 UI-thread message (at-most-once)";
-    result["background_behavior"] = "no foreground focus; no forced game-loop";
+    result["background_behavior"] = "opt-in unfocus-pause bypass; no forced game-loop";
+    result["background_play_requested"] = backgroundPlayRequested.load();
+    result["unfocus_pause_requests"] = static_cast<std::int64_t>(unfocusPauseRequests.load());
+    result["unfocus_pause_suppressed"] = static_cast<std::int64_t>(unfocusPauseSuppressed.load());
+    result["non_unfocus_pause_requests"] = static_cast<std::int64_t>(nonUnfocusPauseRequests.load());
     result["last_completed_ago_ms"] = completedAt ? matjson::Value(now - completedAt) : matjson::Value(nullptr);
     result["last_post_update_ago_ms"] = updatedAt ? matjson::Value(now - updatedAt) : matjson::Value(nullptr);
     return result;
@@ -262,6 +276,26 @@ class $modify(GmdtoolBridgePlayLayer, PlayLayer) {
         PlayLayer::postUpdate(dt);
     }
 
+
+    // Pause requests from other mods must not be mistaken for "manual" input.
+    // Unless BOTH opt-ins are active, call the original unchanged. If active,
+    // only pauseGame(true) (the unfocus flag) is bypassed. A hook that stops
+    // the chain can still conflict with another pause mod, so do not enable
+    // this during normal gameplay or alongside a competing unfocus mod.
+    void pauseGame(bool unfocused) {
+        if (unfocused) {
+            ++unfocusPauseRequests;
+            if (backgroundPlayRequested.load() &&
+                Mod::get()->getSettingValue<bool>("allow-background-play")) {
+                ++unfocusPauseSuppressed;
+                return;
+            }
+        } else {
+            ++nonUnfocusPauseRequests;
+        }
+        PlayLayer::pauseGame(unfocused);
+    }
+
     void resetLevel() {
         syncLevel(this);
         state.updates = 0;
@@ -270,6 +304,8 @@ class $modify(GmdtoolBridgePlayLayer, PlayLayer) {
     }
 
     void onExit() {
+        // Never let an experimental setting silently leak into the next level.
+        backgroundPlayRequested.store(false);
         if (state.owner == this) state = RuntimeState{};
         PlayLayer::onExit();
     }
@@ -295,10 +331,38 @@ std::string makeToken() {
     return stream.str();
 }
 
+
+// Inspect focus/pause/tick state using only supported Geode / Cocos APIs.
+// This is NOT an assertion that the minimized renderer is still advancing.
+matjson::Value readBackgroundStatus(PlayLayer* play) {
+    if (play) syncLevel(play);  // keep per-level counters accurate even before first postUpdate
+    auto director = cocos2d::CCDirector::sharedDirector();
+    auto last = counters.lastPostUpdateMs.load();
+    auto now = monotonicMilliseconds();
+    auto window = probeWindow();
+    return matjson::makeObject({
+        {"playing", play != nullptr},
+        {"setting_allowed", Mod::get()->getSettingValue<bool>("allow-background-play")},
+        {"requested", backgroundPlayRequested.load()},
+        {"director_paused", director ? director->isPaused() : false},
+        {"window", windowAsJson(window)},
+        {"unfocus_pause_requests", static_cast<std::int64_t>(unfocusPauseRequests.load())},
+        {"unfocus_pause_suppressed", static_cast<std::int64_t>(unfocusPauseSuppressed.load())},
+        {"non_unfocus_pause_requests", static_cast<std::int64_t>(nonUnfocusPauseRequests.load())},
+        {"level_update_callbacks", static_cast<std::int64_t>(play ? state.updates : 0)},
+        {"game_updates_recent", play && last > 0 && now >= last && now - last < 2000},
+        {"post_update_count", static_cast<std::int64_t>(counters.postUpdates.load())},
+        {"last_post_update_ago_ms", last ? matjson::Value(now - last) : matjson::Value(nullptr)},
+        {"forces_game_loop", false},
+        {"note", "Unfocus pause bypass only; if the engine stops frames, simulation still stops"}
+    });
+}
+
 matjson::Value readStatus(PlayLayer* play) {
     auto result = matjson::makeObject({{"playing", play != nullptr}});
     if (!play) return result;
     syncLevel(play);
+    result["background"] = readBackgroundStatus(play);
     result["update_callbacks"] = static_cast<std::int64_t>(state.updates);
     result["queued_inputs"] = static_cast<int>(state.inputs.size());
     result["percent"] = play->getCurrentPercent();
@@ -338,6 +402,24 @@ matjson::Value readItems(PlayLayer* play, matjson::Value const& params, bool all
 matjson::Value resultFor(matjson::Value const& request) {
     auto method = request["method"].asString().unwrapOr("");
     auto play = PlayLayer::get();
+    if (method == "background_status") {
+        return readBackgroundStatus(play);
+    }
+    if (method == "background_control") {
+        // Main-thread only. Must explicitly opt in through Geode Settings too.
+        auto enabled = request["params"]["enabled"].asBool();
+        if (!enabled) {
+            return matjson::makeObject({{"_bridge_error", "expected enabled:bool"}});
+        }
+        if (enabled.unwrap() && !play) {
+            return matjson::makeObject({{"_bridge_error", "Start a level before enabling background play"}});
+        }
+        if (enabled.unwrap() && !Mod::get()->getSettingValue<bool>("allow-background-play")) {
+            return matjson::makeObject({{"_bridge_error", "Enable 'Allow background level play (experimental)' in Geode mod settings first"}});
+        }
+        backgroundPlayRequested.store(enabled.unwrap());
+        return readBackgroundStatus(play);
+    }
     if (method == "status") {
         return readStatus(play);
     }
