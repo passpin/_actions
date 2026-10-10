@@ -247,6 +247,7 @@ struct InputEvent {
 struct RuntimeState {
     PlayLayer* owner = nullptr;
     std::uint64_t updates = 0;
+    std::int64_t lastUpdateMs = 0; // per-level, unlike global transport health
     std::vector<InputEvent> inputs;
 };
 RuntimeState state;
@@ -269,6 +270,9 @@ struct TraceState {
     std::deque<TraceSample> samples;
     std::uint64_t discarded = 0;
     std::uint64_t observedUpdates = 0;
+    std::uint64_t lastSampleUpdate = 0;
+    std::int64_t lastSampleMs = 0;
+    std::int64_t lastChangeMs = 0;
 };
 TraceState trace;
 
@@ -276,12 +280,15 @@ void collectItemTrace(PlayLayer* play) {
     if (!trace.active || !play->m_effectManager ||
         (state.updates % trace.everyUpdates) != 0) return;
     ++trace.observedUpdates;
+    trace.lastSampleUpdate = state.updates;
+    trace.lastSampleMs = monotonicMilliseconds();
     std::vector<int> values;
     values.reserve(trace.ids.size());
     for (auto id : trace.ids) values.push_back(play->m_effectManager->countForItem(id));
     if (trace.hasBaseline && values == trace.lastValues) return;
     trace.lastValues = values;
     trace.hasBaseline = true;
+    trace.lastChangeMs = trace.lastSampleMs;
     if (trace.samples.size() == MAX_TRACE_SAMPLES) {
         trace.samples.pop_front();
         ++trace.discarded;
@@ -292,7 +299,13 @@ void collectItemTrace(PlayLayer* play) {
 matjson::Value traceSummary() {
     matjson::Value ids = matjson::Value::array();
     for (auto id : trace.ids) ids.push(id);
-    return matjson::makeObject({
+    matjson::Value lastValues = matjson::Value::object();
+    if (trace.hasBaseline) {
+        for (std::size_t i = 0; i < trace.ids.size(); ++i)
+            lastValues[std::to_string(trace.ids[i])] = trace.lastValues[i];
+    }
+    const auto now = monotonicMilliseconds();
+    auto summary = matjson::makeObject({
         {"active", trace.active},
         {"ids", std::move(ids)},
         {"every_updates", static_cast<std::int64_t>(trace.everyUpdates)},
@@ -302,6 +315,16 @@ matjson::Value traceSummary() {
         {"level_update_callbacks", static_cast<std::int64_t>(state.updates)},
         {"samples_are_physics_ticks", false}
     });
+    summary["has_baseline"] = trace.hasBaseline;
+    summary["last_values"] = std::move(lastValues);
+    summary["last_sample_update"] = trace.lastSampleMs
+        ? matjson::Value(static_cast<std::int64_t>(trace.lastSampleUpdate)) : matjson::Value(nullptr);
+    summary["last_sample_ago_ms"] = trace.lastSampleMs
+        ? matjson::Value(now - trace.lastSampleMs) : matjson::Value(nullptr);
+    summary["last_change_ago_ms"] = trace.lastChangeMs
+        ? matjson::Value(now - trace.lastChangeMs) : matjson::Value(nullptr);
+    summary["sampling_phase"] = "before_original_post_update";
+    return summary;
 }
 
 void syncLevel(PlayLayer* layer) {
@@ -319,7 +342,9 @@ class $modify(GmdtoolBridgePlayLayer, PlayLayer) {
         syncLevel(this);
         ++state.updates;
         ++counters.postUpdates;
-        counters.lastPostUpdateMs.store(monotonicMilliseconds());
+        const auto observedAt = monotonicMilliseconds();
+        state.lastUpdateMs = observedAt;
+        counters.lastPostUpdateMs.store(observedAt);
         auto it = state.inputs.begin();
         // Already sorted by requested update number; equal steps are stable.
         while (it != state.inputs.end() && it->update <= state.updates) {
@@ -400,7 +425,10 @@ std::string makeToken() {
 matjson::Value readBackgroundStatus(PlayLayer* play) {
     if (play) syncLevel(play);  // keep per-level counters accurate even before first postUpdate
     auto director = cocos2d::CCDirector::sharedDirector();
-    auto last = counters.lastPostUpdateMs.load();
+    // Use a per-PlayLayer timestamp for gameplay freshness. Global counters
+    // may refer to a previous level and otherwise give false positives.
+    const auto lastLevel = play ? state.lastUpdateMs : std::int64_t(0);
+    const auto lastGlobal = counters.lastPostUpdateMs.load();
     auto now = monotonicMilliseconds();
     auto window = probeWindow();
     return matjson::makeObject({
@@ -413,9 +441,10 @@ matjson::Value readBackgroundStatus(PlayLayer* play) {
         {"unfocus_pause_suppressed", static_cast<std::int64_t>(unfocusPauseSuppressed.load())},
         {"non_unfocus_pause_requests", static_cast<std::int64_t>(nonUnfocusPauseRequests.load())},
         {"level_update_callbacks", static_cast<std::int64_t>(play ? state.updates : 0)},
-        {"game_updates_recent", play && last > 0 && now >= last && now - last < 2000},
+        {"game_updates_recent", play && lastLevel > 0 && now >= lastLevel && now - lastLevel < 2000},
         {"post_update_count", static_cast<std::int64_t>(counters.postUpdates.load())},
-        {"last_post_update_ago_ms", last ? matjson::Value(now - last) : matjson::Value(nullptr)},
+        {"last_level_update_ago_ms", lastLevel ? matjson::Value(now - lastLevel) : matjson::Value(nullptr)},
+        {"last_post_update_ago_ms", lastGlobal ? matjson::Value(now - lastGlobal) : matjson::Value(nullptr)},
         {"forces_game_loop", false},
         {"note", "Unfocus pause bypass only; if the engine stops frames, simulation still stops"}
     });
@@ -485,6 +514,35 @@ matjson::Value resultFor(matjson::Value const& request) {
     }
     if (method == "status") {
         return readStatus(play);
+    }
+    if (method == "runtime_probe") {
+        // One read-only, main-thread-consistent observation for diagnostics.
+        // Never advance frames, invoke inputs, or infer physics ticks.
+        const auto& idValue = request["params"]["ids"];
+        auto ids = idValue.asArray();
+        if (!idValue.isNull() && (!ids || ids.unwrap().size() > MAX_TRACE_IDS))
+            return matjson::makeObject({{"_bridge_error", "runtime_probe: ids must be an array of up to 8 items"}});
+        if (ids) {
+            std::vector<int> seen;
+            for (auto const& value : ids.unwrap()) {
+                auto id = value.asInt();
+                if (!id || id.unwrap() < 1 || id.unwrap() > 9999 ||
+                    std::find(seen.begin(), seen.end(), static_cast<int>(id.unwrap())) != seen.end())
+                    return matjson::makeObject({{"_bridge_error", "runtime_probe: ids must be unique integers in 1..9999"}});
+                seen.push_back(static_cast<int>(id.unwrap()));
+            }
+        }
+        auto probe = readStatus(play);
+        probe["probe_monotonic_ms"] = monotonicMilliseconds();
+        probe["trace"] = play ? traceSummary() : matjson::makeObject({{"active", false}});
+        probe["values"] = matjson::Value::object();
+        if (play && ids && !ids.unwrap().empty()) {
+            auto itemResult = readItems(play, request["params"], false);
+            if (itemResult.contains("_bridge_error")) return itemResult;
+            probe["values"] = itemResult["values"];
+        }
+        probe["consistency"] = "single_main_thread_request_not_physics_tick";
+        return probe;
     }
     if (method == "snapshot" && !play) {
         auto result = readStatus(play);
