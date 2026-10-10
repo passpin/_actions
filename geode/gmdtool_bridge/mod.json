@@ -5,9 +5,9 @@
   },
   "id": "gmdtool.runtime-bridge",
   "name": "gmdtool Runtime Bridge",
-  "version": "v0.11.0",
+  "version": "v0.12.0",
   "developer": "passpin",
-  "description": "Opt-in localhost runtime bridge, bounded Item tracing, event-driven GitHub release checks, and experimental background pause controls.",
+  "description": "Opt-in localhost runtime bridge, Item tracing, in-game main-menu update button, automatic GitHub update checks, and experimental background pause controls.",
   "settings": {
     "enabled": {
       "type": "bool",
@@ -27,5 +27,8 @@
       "description": "Opt in to the authenticated background_control pause bypass. Other pause mods may conflict; does not keep a minimized game loop running. Default off.",
       "default": false
     }
+  },
+  "dependencies": {
+    "geode.node-ids": ">=v1.23.3"
   }
 }

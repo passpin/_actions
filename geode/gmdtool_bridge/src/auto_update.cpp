@@ -5,8 +5,11 @@
 #include <Geode/DefaultInclude.hpp>
 #include <Geode/binding/MenuLayer.hpp>
 #include <Geode/binding/GameManager.hpp>
+#include <Geode/binding/ButtonSprite.hpp>
+#include <Geode/binding/CCMenuItemSpriteExtra.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/ui/Popup.hpp>
+#include <Geode/ui/Notification.hpp>
 #include <Geode/ui/GeodeUI.hpp>
 #include <Geode/utils/web.hpp>
 #include <Geode/utils/file.hpp>
@@ -47,13 +50,14 @@ constexpr auto UI_EVENT_DEBOUNCE = std::chrono::seconds(5);
 constexpr auto MAIN_MENU_ENTRY_DEBOUNCE = std::chrono::seconds(10);
 constexpr auto PROMPT_SNOOZE = std::chrono::minutes(10);
 
-enum class CheckReason { MainMenuEntry, ModsListItem, ModsPopup, Idle };
+enum class CheckReason { MainMenuEntry, ModsListItem, ModsPopup, Idle, Manual };
 constexpr char const* reasonName(CheckReason reason) {
     switch (reason) {
         case CheckReason::MainMenuEntry: return "main_menu_entry";
         case CheckReason::ModsListItem: return "mods_list_item";
         case CheckReason::ModsPopup: return "mods_popup";
         case CheckReason::Idle: return "idle_5min";
+        case CheckReason::Manual: return "manual_button";
     }
     return "unknown";
 }
@@ -264,15 +268,24 @@ public:
     // Geode currently has no public "mods browser opened" event: these
     // supported events indicate browser activity, not guaranteed entry.
     void onMenu(CheckReason reason) {
-        if (!Mod::get()->getSettingValue<bool>("auto-update")) return;
-        if (!m_staged.empty() && fs::exists(m_staged)) {
+        bool manual = (reason == CheckReason::Manual);
+        // Manual checks are explicit user actions; they work independently of
+        // the auto-update toggle, idle cooldown, and navigation debounces.
+        if (!manual && !Mod::get()->getSettingValue<bool>("auto-update")) return;
+        if (!manual && !m_staged.empty() && fs::exists(m_staged)) {
             log::debug("Updater: staged update available (reason={})", reasonName(reason));
             geode::queueInMainThread([this] { this->showRestartPrompt(); });
             return;
         }
         if (m_checking || m_busy) {
             log::debug("Updater: check already in progress (reason={})", reasonName(reason));
+            if (manual) {
+                FLAlertLayer::create("gmdtool Update", "A check or download is already running.", "OK")->show();
+            }
             return;
+        }
+        if (manual) {
+            Notification::create("Checking GitHub Releases...", NotificationIcon::None, 2.0f)->show();
         }
         auto now = std::chrono::steady_clock::now();
         auto within = [now](std::chrono::steady_clock::time_point last, auto interval) {
@@ -297,16 +310,25 @@ public:
         req.userAgent("gmdtool-runtime-bridge/passpin")
             .header("Accept", "application/vnd.github+json")
             .timeout(std::chrono::seconds(15));
-        m_check.spawn(req.get(API_URL), [this](web::WebResponse response) {
+        m_check.spawn(req.get(API_URL), [this, manual](web::WebResponse response) {
             m_checking = false;
             if (!response.ok() || response.data().size() > 1024 * 1024) {
                 log::warn("Updater: GitHub release check failed (HTTP {})", response.code());
+                if (manual) FLAlertLayer::create("gmdtool Update", "GitHub check failed. Try again later.", "OK")->show();
                 return;
             }
             auto parsed = response.json();
-            if (!parsed) { log::warn("Updater: response was not JSON"); return; }
+            if (!parsed) {
+                log::warn("Updater: response was not JSON");
+                if (manual) FLAlertLayer::create("gmdtool Update", "Invalid GitHub response.", "OK")->show();
+                return;
+            }
             auto release = parseRelease(parsed.unwrap());
-            if (!release) { log::info("Updater: no supported newer release"); return; }
+            if (!release) {
+                log::info("Updater: no supported newer release");
+                if (manual) FLAlertLayer::create("gmdtool Update", "No newer compatible release found.", "OK")->show();
+                return;
+            }
             m_release = std::move(release);
             // A previous run may have verified the package but exited before
             // the user accepted the restart prompt. Recover that .part file,
@@ -316,7 +338,11 @@ public:
                 if (verifyStagedPackage(existingStage, *m_release)) {
                     m_staged = std::move(existingStage);
                     log::info("Updater: recovered verified staged update {}", m_release->version);
+                    if (manual) this->m_promptAfter = {};
                     this->showRestartPrompt();
+                    if (manual && !this->isSafePromptScene()) {
+                        FLAlertLayer::create("gmdtool Update", "Update ready. Return to a menu to restart.", "OK")->show();
+                    }
                     return;
                 }
                 log::warn("Updater: removing incomplete or outdated staged file");
@@ -324,22 +350,28 @@ public:
                 fs::remove(existingStage, ec);
                 if (ec) {
                     log::error("Updater: cannot remove invalid staged file: {}", ec.message());
+                    if (manual) FLAlertLayer::create("gmdtool Update", "Cannot clear the old download.", "OK")->show();
                     return;
                 }
             }
             log::info("Updater: downloading {}", m_release->version);
+            if (manual) Notification::create("Downloading update...", NotificationIcon::None, 2.0f)->show();
             m_busy = true;
             auto download = web::WebRequest();
             download.userAgent("gmdtool-runtime-bridge/passpin")
                 .timeout(std::chrono::seconds(90));
-            m_download.spawn(download.get(m_release->url), [this](web::WebResponse body) {
+            m_download.spawn(download.get(m_release->url), [this, manual](web::WebResponse body) {
                 m_busy = false;
                 if (!m_release || !body.ok() || body.data().size() != m_release->size ||
                     body.data().size() > MAX_BYTES) {
-                    log::error("Updater: download failed or size mismatch"); return;
+                    log::error("Updater: download failed or size mismatch");
+                    if (manual) FLAlertLayer::create("gmdtool Update", "Download failed or invalid size.", "OK")->show();
+                    return;
                 }
                 if (sha256(body.data()) != m_release->digest) {
-                    log::error("Updater: SHA256 mismatch; update rejected"); return;
+                    log::error("Updater: SHA256 mismatch; update rejected");
+                    if (manual) FLAlertLayer::create("gmdtool Update", "SHA-256 mismatch. Update rejected.", "OK")->show();
+                    return;
                 }
                 auto staged = Mod::get()->getSaveDir() / "update-staged.geode.part";
                 auto written = geode::utils::file::writeBinarySafe(staged, body.data());
@@ -347,14 +379,19 @@ public:
                     std::error_code ignored;
                     fs::remove(staged, ignored);
                     log::error("Updater: package write or metadata validation failed");
+                    if (manual) FLAlertLayer::create("gmdtool Update", "Package validation failed.", "OK")->show();
                     return;
                 }
                 m_staged = std::move(staged);
                 log::info("Updater: {} verified and staged", m_release->version);
+                if (manual) this->m_promptAfter = {};
                 // The callback runs on Geode's async/main-thread continuation.
                 // If currently in a level, onMenu() will offer the prompt at
                 // the next navigation event without re-downloading.
                 this->showRestartPrompt();
+                if (manual && !this->isSafePromptScene()) {
+                    FLAlertLayer::create("gmdtool Update", "Update ready. Return to a menu to restart.", "OK")->show();
+                }
             });
         });
     }
@@ -366,8 +403,45 @@ class $modify(GmdtoolUpdateMenuLayer, MenuLayer) {
         updater().onMenu(CheckReason::Idle);
     }
 
+    void onCheckUpdates(CCObject*) {
+        // Explicit user interaction: run the existing verified updater without
+        // the idle/navigation cooldown or the auto-update setting.
+        updater().onMenu(CheckReason::Manual);
+    }
+
     bool init() {
         if (!MenuLayer::init()) return false;
+
+        // Node IDs is a required mod dependency. Ask Geode to supply the
+        // canonical IDs now, independent of the order of other menu hooks.
+        NodeIDs::provideFor(this);
+        if (auto* bottomMenu = this->getChildByID("bottom-menu")) {
+            // Avoid duplicates if another mod reconfigures or recreates UI.
+            if (!bottomMenu->getChildByID("gmdtool.runtime-bridge/check-updates")) {
+                auto* label = ButtonSprite::create(
+                    "Updates", "goldFont.fnt", "GJ_button_01.png", .8f
+                );
+                if (label) {
+                    label->setScale(.55f);
+                    auto* button = CCMenuItemSpriteExtra::create(
+                        label, this,
+                        menu_selector(GmdtoolUpdateMenuLayer::onCheckUpdates)
+                    );
+                    if (button) {
+                        button->setID("gmdtool.runtime-bridge/check-updates");
+                        bottomMenu->addChild(button);
+                        // Respect the same layout used by other Geode mods.
+                        bottomMenu->updateLayout();
+                        log::info("Updater: installed main-menu Updates button");
+                    }
+                }
+            }
+        } else {
+            // Never assume a fixed child index/position if another mod has
+            // customized the main menu; automatic checks still work.
+            log::warn("Updater: bottom-menu ID unavailable; main-menu button not installed");
+        }
+
         // Menu entry and browser UI events have independent throttles.
         // The scheduler is only a fallback while the main menu is active.
         this->schedule(schedule_selector(GmdtoolUpdateMenuLayer::pollForUpdates), 30.0f);
@@ -392,4 +466,11 @@ $on_mod(Loaded) {
     }).leak();
 }
 } // namespace
+
+// Shared entry point for the Geode settings button. Not part of the RPC API.
+namespace gmdtool::update {
+    void checkNow() {
+        updater().onMenu(CheckReason::Manual);
+    }
+}
 #endif
