@@ -6,6 +6,7 @@
 #include <Geode/binding/MenuLayer.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/ui/Popup.hpp>
+#include <Geode/ui/GeodeUI.hpp>
 #include <Geode/utils/web.hpp>
 #include <Geode/utils/file.hpp>
 #include <Geode/utils/general.hpp>
@@ -36,10 +37,12 @@ constexpr auto ASSET_BASE = "https://github.com/passpin/for_build/releases/downl
 constexpr auto MOD_ID = "gmdtool.runtime-bridge";
 constexpr std::size_t MAX_BYTES = 32 * 1024 * 1024;
 constexpr std::size_t MIN_BYTES = 1024;
-// An open main menu checks for new releases again without restarting GD.
-// The menu polls cheaply every 30 seconds; at most one GitHub API request
-// is made every five minutes while it is open.
+// A navigation event (entering the GD main menu or creating Geode mod
+// list entries) initiates an early check. The Geode mod-item event may fire
+// hundreds of times for one visit, so navigation has its own short throttle.
+// Idle main-menu polling remains a 5-minute fallback.
 constexpr auto CHECK_INTERVAL = std::chrono::minutes(5);
+constexpr auto NAVIGATION_CHECK_INTERVAL = std::chrono::seconds(30);
 constexpr auto PROMPT_SNOOZE = std::chrono::minutes(10);
 
 // Return only canonical stable semvers: we explicitly do not install prereleases.
@@ -211,7 +214,9 @@ class Updater {
     }
 
 public:
-    void onMenu() {
+    // Navigation events bypass the long idle-poll cooldown, but not the
+    // 30-second anti-spam limit or an already-running network operation.
+    void onMenu(bool navigation = false) {
         if (!Mod::get()->getSettingValue<bool>("auto-update")) return;
         if (!m_staged.empty() && fs::exists(m_staged)) {
             geode::queueInMainThread([this] { this->showRestartPrompt(); });
@@ -219,8 +224,9 @@ public:
         }
         if (m_checking || m_busy) return;
         auto now = std::chrono::steady_clock::now();
+        auto interval = navigation ? NAVIGATION_CHECK_INTERVAL : CHECK_INTERVAL;
         if (m_lastCheck.time_since_epoch().count() != 0 &&
-            now - m_lastCheck < CHECK_INTERVAL) return;
+            now - m_lastCheck < interval) return;
         m_lastCheck = now;
         m_checking = true;
         auto req = web::WebRequest();
@@ -270,17 +276,30 @@ public:
 Updater& updater() { static Updater u; return u; }
 class $modify(GmdtoolUpdateMenuLayer, MenuLayer) {
     void pollForUpdates(float) {
-        updater().onMenu();
+        updater().onMenu(false);
     }
 
     bool init() {
         if (!MenuLayer::init()) return false;
-        // The original one-shot check meant GD had to be restarted to detect
-        // releases published after menu creation. Re-check while it is open.
+        // Check on each main-menu entry (at most once per 30 seconds), while
+        // keeping slow idle polling as a fallback.
         this->schedule(schedule_selector(GmdtoolUpdateMenuLayer::pollForUpdates), 30.0f);
-        geode::queueInMainThread([] { updater().onMenu(); });
+        geode::queueInMainThread([] { updater().onMenu(true); });
         return true;
     }
 };
+
+// Geode's ModsLayer is loader-internal, not a GD binding suitable for $modify.
+// The public UI event fires as the mod listing fills with items. It can be
+// emitted repeatedly for a single visit or refreshed item; the updater's
+// navigation cooldown prevents repeated GitHub API calls.
+// Geode SDK 5.9.0 listens through the event's .listen(...).leak() API; the
+// older EventListener<EventFilter<...>> form is not part of this SDK.
+$on_mod(Loaded) {
+    ModItemUIEvent().listen([](cocos2d::CCNode*, std::string_view, std::optional<Mod*>) {
+        updater().onMenu(true);
+        return ListenerResult::Propagate;
+    }).leak();
+}
 } // namespace
 #endif
