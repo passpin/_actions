@@ -42,21 +42,17 @@ constexpr auto ASSET_BASE = "https://github.com/passpin/for_build/releases/downl
 constexpr auto MOD_ID = "gmdtool.runtime-bridge";
 constexpr std::size_t MAX_BYTES = 32 * 1024 * 1024;
 constexpr std::size_t MIN_BYTES = 1024;
-// The 5-minute interval is ONLY for idle polling. UI events are separate:
-// sharing a timestamp with startup/idle checks caused mod-list navigation
-// to be silently skipped shortly after startup or an idle poll.
-constexpr auto IDLE_CHECK_INTERVAL = std::chrono::minutes(5);
+// UI events are independently debounced; no idle timer checks for updates.
 constexpr auto UI_EVENT_DEBOUNCE = std::chrono::seconds(5);
 constexpr auto MAIN_MENU_ENTRY_DEBOUNCE = std::chrono::seconds(10);
 constexpr auto PROMPT_SNOOZE = std::chrono::minutes(10);
 
-enum class CheckReason { MainMenuEntry, ModsListItem, ModsPopup, Idle, Manual };
+enum class CheckReason { MainMenuEntry, ModsListItem, ModsPopup, Manual };
 constexpr char const* reasonName(CheckReason reason) {
     switch (reason) {
         case CheckReason::MainMenuEntry: return "main_menu_entry";
         case CheckReason::ModsListItem: return "mods_list_item";
         case CheckReason::ModsPopup: return "mods_popup";
-        case CheckReason::Idle: return "idle_5min";
         case CheckReason::Manual: return "manual_button";
     }
     return "unknown";
@@ -179,8 +175,7 @@ class Updater {
     bool m_checking = false;
     bool m_busy = false;
     bool m_prompted = false;
-    // Do not conflate UI navigation debounce with the network/idle timer.
-    std::chrono::steady_clock::time_point m_lastNetworkCheck{};
+    // UI navigation event debounces remain independent.
     std::chrono::steady_clock::time_point m_lastMainMenuEntryCheck{};
     std::chrono::steady_clock::time_point m_lastModsUiCheck{};
     std::chrono::steady_clock::time_point m_promptAfter{};
@@ -263,14 +258,12 @@ class Updater {
     }
 
 public:
-    // Immediate UI events bypass the idle 5-minute cooldown. Only repeated
-    // item/popup events are throttled, and only relative to other UI events.
+    // Repeated UI events are throttled only relative to the same UI event type.
     // Geode currently has no public "mods browser opened" event: these
     // supported events indicate browser activity, not guaranteed entry.
     void onMenu(CheckReason reason) {
         bool manual = (reason == CheckReason::Manual);
-        // Manual checks are explicit user actions; they work independently of
-        // the auto-update toggle, idle cooldown, and navigation debounces.
+        // Manual checks ignore the auto-update toggle and navigation debounces.
         if (!manual && !Mod::get()->getSettingValue<bool>("auto-update")) return;
         if (!manual && !m_staged.empty() && fs::exists(m_staged)) {
             log::debug("Updater: staged update available (reason={})", reasonName(reason));
@@ -291,19 +284,16 @@ public:
         auto within = [now](std::chrono::steady_clock::time_point last, auto interval) {
             return last.time_since_epoch().count() != 0 && now - last < interval;
         };
-        if (reason == CheckReason::Idle &&
-            within(m_lastNetworkCheck, IDLE_CHECK_INTERVAL)) return;
         if (reason == CheckReason::MainMenuEntry &&
             within(m_lastMainMenuEntryCheck, MAIN_MENU_ENTRY_DEBOUNCE)) return;
         if ((reason == CheckReason::ModsListItem || reason == CheckReason::ModsPopup) &&
             within(m_lastModsUiCheck, UI_EVENT_DEBOUNCE)) return;
 
-        // Stamp only the cause being checked: an idle/startup poll must not
-        // suppress the user's later visit to the Geode browser.
+        // UI debounces are independent, so main menu checks do not suppress
+        // Geode browser checks.
         if (reason == CheckReason::MainMenuEntry) m_lastMainMenuEntryCheck = now;
         if (reason == CheckReason::ModsListItem || reason == CheckReason::ModsPopup)
             m_lastModsUiCheck = now;
-        m_lastNetworkCheck = now;
         m_checking = true;
         log::info("Updater: checking latest release (reason={})", reasonName(reason));
         auto req = web::WebRequest();
@@ -399,13 +389,8 @@ public:
 
 Updater& updater() { static Updater u; return u; }
 class $modify(GmdtoolUpdateMenuLayer, MenuLayer) {
-    void pollForUpdates(float) {
-        updater().onMenu(CheckReason::Idle);
-    }
-
     void onCheckUpdates(CCObject*) {
-        // Explicit user interaction: run the existing verified updater without
-        // the idle/navigation cooldown or the auto-update setting.
+        // Explicit user interaction: bypass UI debounce and auto-update setting.
         updater().onMenu(CheckReason::Manual);
     }
 
@@ -442,9 +427,7 @@ class $modify(GmdtoolUpdateMenuLayer, MenuLayer) {
             log::warn("Updater: bottom-menu ID unavailable; main-menu button not installed");
         }
 
-        // Menu entry and browser UI events have independent throttles.
-        // The scheduler is only a fallback while the main menu is active.
-        this->schedule(schedule_selector(GmdtoolUpdateMenuLayer::pollForUpdates), 30.0f);
+        // A one-shot main-menu check; no repeating idle timer.
         geode::queueInMainThread([] { updater().onMenu(CheckReason::MainMenuEntry); });
         return true;
     }

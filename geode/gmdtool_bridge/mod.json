@@ -5,9 +5,9 @@
   },
   "id": "gmdtool.runtime-bridge",
   "name": "gmdtool Runtime Bridge",
-  "version": "v0.13.0",
+  "version": "v0.13.1",
   "developer": "passpin",
-  "description": "Opt-in localhost bridge with runtime probes and Item tracing, menu Updates button, verified Releases updater, and experimental background pause control.",
+  "description": "Opt-in localhost bridge with runtime probes, Item tracing, manual Updates button, event-driven GitHub update checks, and experimental background pause control.",
   "settings": {
     "enabled": {
       "type": "bool",
@@ -18,7 +18,7 @@
     "auto-update": {
       "type": "bool",
       "name": "Check for updates automatically",
-      "description": "Checks at startup and on Geode mod-list/mod-popup activity (independent of the 5-minute idle fallback); validates and stages updates before prompting Restart.",
+      "description": "Checks once on main-menu entry and on Geode mod-item/mod-popup activity. No periodic idle checks; use the main-menu Updates button at any time.",
       "default": true
     },
     "allow-background-play": {
