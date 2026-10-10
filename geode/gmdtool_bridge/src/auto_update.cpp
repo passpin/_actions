@@ -39,13 +39,24 @@ constexpr auto ASSET_BASE = "https://github.com/passpin/for_build/releases/downl
 constexpr auto MOD_ID = "gmdtool.runtime-bridge";
 constexpr std::size_t MAX_BYTES = 32 * 1024 * 1024;
 constexpr std::size_t MIN_BYTES = 1024;
-// A navigation event (entering the GD main menu or creating Geode mod
-// list entries) initiates an early check. The Geode mod-item event may fire
-// hundreds of times for one visit, so navigation has its own short throttle.
-// Idle main-menu polling remains a 5-minute fallback.
-constexpr auto CHECK_INTERVAL = std::chrono::minutes(5);
-constexpr auto NAVIGATION_CHECK_INTERVAL = std::chrono::seconds(30);
+// The 5-minute interval is ONLY for idle polling. UI events are separate:
+// sharing a timestamp with startup/idle checks caused mod-list navigation
+// to be silently skipped shortly after startup or an idle poll.
+constexpr auto IDLE_CHECK_INTERVAL = std::chrono::minutes(5);
+constexpr auto UI_EVENT_DEBOUNCE = std::chrono::seconds(5);
+constexpr auto MAIN_MENU_ENTRY_DEBOUNCE = std::chrono::seconds(10);
 constexpr auto PROMPT_SNOOZE = std::chrono::minutes(10);
+
+enum class CheckReason { MainMenuEntry, ModsListItem, ModsPopup, Idle };
+constexpr char const* reasonName(CheckReason reason) {
+    switch (reason) {
+        case CheckReason::MainMenuEntry: return "main_menu_entry";
+        case CheckReason::ModsListItem: return "mods_list_item";
+        case CheckReason::ModsPopup: return "mods_popup";
+        case CheckReason::Idle: return "idle_5min";
+    }
+    return "unknown";
+}
 
 // Return only canonical stable semvers: we explicitly do not install prereleases.
 std::optional<std::array<int, 3>> parseVersion(std::string s) {
@@ -164,7 +175,10 @@ class Updater {
     bool m_checking = false;
     bool m_busy = false;
     bool m_prompted = false;
-    std::chrono::steady_clock::time_point m_lastCheck{};
+    // Do not conflate UI navigation debounce with the network/idle timer.
+    std::chrono::steady_clock::time_point m_lastNetworkCheck{};
+    std::chrono::steady_clock::time_point m_lastMainMenuEntryCheck{};
+    std::chrono::steady_clock::time_point m_lastModsUiCheck{};
     std::chrono::steady_clock::time_point m_promptAfter{};
     std::optional<Release> m_release;
     fs::path m_staged;
@@ -245,22 +259,40 @@ class Updater {
     }
 
 public:
-    // Navigation events bypass the long idle-poll cooldown, but not the
-    // 30-second anti-spam limit or an already-running network operation.
-    // Already staged updates bypass the network cooldown entirely.
-    void onMenu(bool navigation = false) {
+    // Immediate UI events bypass the idle 5-minute cooldown. Only repeated
+    // item/popup events are throttled, and only relative to other UI events.
+    // Geode currently has no public "mods browser opened" event: these
+    // supported events indicate browser activity, not guaranteed entry.
+    void onMenu(CheckReason reason) {
         if (!Mod::get()->getSettingValue<bool>("auto-update")) return;
         if (!m_staged.empty() && fs::exists(m_staged)) {
+            log::debug("Updater: staged update available (reason={})", reasonName(reason));
             geode::queueInMainThread([this] { this->showRestartPrompt(); });
             return;
         }
-        if (m_checking || m_busy) return;
+        if (m_checking || m_busy) {
+            log::debug("Updater: check already in progress (reason={})", reasonName(reason));
+            return;
+        }
         auto now = std::chrono::steady_clock::now();
-        auto interval = navigation ? NAVIGATION_CHECK_INTERVAL : CHECK_INTERVAL;
-        if (m_lastCheck.time_since_epoch().count() != 0 &&
-            now - m_lastCheck < interval) return;
-        m_lastCheck = now;
+        auto within = [now](std::chrono::steady_clock::time_point last, auto interval) {
+            return last.time_since_epoch().count() != 0 && now - last < interval;
+        };
+        if (reason == CheckReason::Idle &&
+            within(m_lastNetworkCheck, IDLE_CHECK_INTERVAL)) return;
+        if (reason == CheckReason::MainMenuEntry &&
+            within(m_lastMainMenuEntryCheck, MAIN_MENU_ENTRY_DEBOUNCE)) return;
+        if ((reason == CheckReason::ModsListItem || reason == CheckReason::ModsPopup) &&
+            within(m_lastModsUiCheck, UI_EVENT_DEBOUNCE)) return;
+
+        // Stamp only the cause being checked: an idle/startup poll must not
+        // suppress the user's later visit to the Geode browser.
+        if (reason == CheckReason::MainMenuEntry) m_lastMainMenuEntryCheck = now;
+        if (reason == CheckReason::ModsListItem || reason == CheckReason::ModsPopup)
+            m_lastModsUiCheck = now;
+        m_lastNetworkCheck = now;
         m_checking = true;
+        log::info("Updater: checking latest release (reason={})", reasonName(reason));
         auto req = web::WebRequest();
         req.userAgent("gmdtool-runtime-bridge/passpin")
             .header("Accept", "application/vnd.github+json")
@@ -331,28 +363,31 @@ public:
 Updater& updater() { static Updater u; return u; }
 class $modify(GmdtoolUpdateMenuLayer, MenuLayer) {
     void pollForUpdates(float) {
-        updater().onMenu(false);
+        updater().onMenu(CheckReason::Idle);
     }
 
     bool init() {
         if (!MenuLayer::init()) return false;
-        // Check on each main-menu entry (at most once per 30 seconds), while
-        // keeping slow idle polling as a fallback.
+        // Menu entry and browser UI events have independent throttles.
+        // The scheduler is only a fallback while the main menu is active.
         this->schedule(schedule_selector(GmdtoolUpdateMenuLayer::pollForUpdates), 30.0f);
-        geode::queueInMainThread([] { updater().onMenu(true); });
+        geode::queueInMainThread([] { updater().onMenu(CheckReason::MainMenuEntry); });
         return true;
     }
 };
 
-// Geode's ModsLayer is loader-internal, not a GD binding suitable for $modify.
-// The public UI event fires as the mod listing fills with items. It can be
-// emitted repeatedly for a single visit or refreshed item; the updater's
-// navigation cooldown prevents repeated GitHub API calls.
-// Geode SDK 5.9.0 listens through the event's .listen(...).leak() API; the
-// older EventListener<EventFilter<...>> form is not part of this SDK.
+// Geode 5.9 event API (not the removed EventListener<EventFilter<...>> form).
+// ModItemUIEvent is emitted during mod-list item creation / refresh, not
+// necessarily on *every* browser opening. A mod-details popup is a separate
+// additional opportunity to check, if list item events were reused/cached.
+// Both callbacks merely schedule a network check; they never edit Geode UI.
 $on_mod(Loaded) {
-    ModItemUIEvent().listen([](cocos2d::CCNode*, std::string_view, std::optional<Mod*>) {
-        updater().onMenu(true);
+    ModItemUIEvent().listen([](auto*, auto, auto) {
+        updater().onMenu(CheckReason::ModsListItem);
+        return ListenerResult::Propagate;
+    }).leak();
+    ModPopupUIEvent().listen([](auto*, auto, auto) {
+        updater().onMenu(CheckReason::ModsPopup);
         return ListenerResult::Propagate;
     }).leak();
 }
