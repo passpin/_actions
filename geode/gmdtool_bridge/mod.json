@@ -5,9 +5,9 @@
   },
   "id": "gmdtool.runtime-bridge",
   "name": "gmdtool Runtime Bridge",
-  "version": "v0.13.1",
+  "version": "v0.14.0",
   "developer": "passpin",
-  "description": "Opt-in localhost bridge with runtime probes, Item tracing, manual Updates button, event-driven GitHub update checks, and experimental background pause control.",
+  "description": "Opt-in localhost runtime bridge, Item tracing and probes, verified GitHub updater, and experimental background focus-loss recovery.",
   "settings": {
     "enabled": {
       "type": "bool",
@@ -24,7 +24,7 @@
     "allow-background-play": {
       "type": "bool",
       "name": "Allow background level play (experimental)",
-      "description": "Opt in to the authenticated background_control pause bypass. Other pause mods may conflict; does not keep a minimized game loop running. Default off.",
+      "description": "EXPERIMENTAL: With authenticated background_control, bypass unfocus pause and attempt one safe Cocos Director resume only if gameplay was running when focus was lost. Does not force minimized frames; may conflict with pause mods. Default off.",
       "default": false
     }
   },

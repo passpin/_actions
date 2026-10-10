@@ -60,6 +60,67 @@ std::atomic<std::uint64_t> unfocusPauseSuppressed{0};
 // A non-unfocus pause may come from the user OR another mod. Never bypass it.
 std::atomic<std::uint64_t> nonUnfocusPauseRequests{0};
 
+// A SECOND, independent pause mechanism may pause Cocos's Director when the
+// Win32 window deactivates, even when PlayLayer::pauseGame(true) was bypassed.
+// This recovery experiment runs ONLY on the already-verified game/UI thread.
+// It never calls drawScene/mainLoop or creates synthetic physics frames.
+// The feature requires BOTH existing user opt-ins and remembers whether the
+// Director was actively running BEFORE focus was lost, so an already-paused
+// game must remain paused. Each focus-loss transition gets at most one resume.
+struct FocusRecovery {
+    bool pending = false;
+    bool wasRunning = false;
+    bool attempted = false;
+    PlayLayer* level = nullptr; // identity only; NEVER dereference after transitions
+    std::uint64_t manualPauseEpoch = 0;
+    std::uint64_t focusLossEvents = 0;
+    std::uint64_t restoreEvents = 0;
+    std::uint64_t resumeAttempts = 0;
+    std::uint64_t resumeCallsUnpaused = 0;
+    std::int64_t lastResumeMs = 0;
+};
+// Exclusively accessed on game/UI thread via WndProc or authenticated RPC.
+FocusRecovery focusRecovery;
+
+bool backgroundControlArmed() {
+    return backgroundPlayRequested.load() &&
+        Mod::get()->getSettingValue<bool>("allow-background-play");
+}
+
+void markFocusLost() {
+    ++focusRecovery.focusLossEvents;
+    auto* director = cocos2d::CCDirector::sharedDirector();
+    auto* play = PlayLayer::get();
+    focusRecovery.level = play;
+    focusRecovery.wasRunning = play && director && !director->isPaused();
+    focusRecovery.manualPauseEpoch = nonUnfocusPauseRequests.load();
+    focusRecovery.pending = backgroundControlArmed() && focusRecovery.wasRunning;
+    focusRecovery.attempted = false;
+}
+
+void maybeRecoverDirectorPause() {
+    if (!focusRecovery.pending || focusRecovery.attempted) return;
+    if (!backgroundControlArmed() ||
+        focusRecovery.manualPauseEpoch != nonUnfocusPauseRequests.load() ||
+        !focusRecovery.level || PlayLayer::get() != focusRecovery.level) {
+        focusRecovery.pending = false;
+        return;
+    }
+    // No attempt when the Director is already running; keep the pending flag
+    // because a later WM_SIZE/minimize or background callback may pause it.
+    auto* director = cocos2d::CCDirector::sharedDirector();
+    if (!director || !director->isPaused()) return;
+    focusRecovery.attempted = true;
+    focusRecovery.pending = false;
+    ++focusRecovery.resumeAttempts;
+    // Official Cocos method. Calling resume() does NOT restart a stopped
+    // minimized window/render loop; the subsequent probe must confirm frames.
+    director->resume();
+    focusRecovery.lastResumeMs = std::chrono::duration_cast<std::chrono::milliseconds>(
+        std::chrono::steady_clock::now().time_since_epoch()).count();
+    if (!director->isPaused()) ++focusRecovery.resumeCallsUnpaused;
+}
+
 // The Geode main-thread task queue normally runs from Cocos's frame loop.
 // GD can suspend that loop while not focused, even while the Win32 window
 // thread continues processing messages. Install a Windows window subclass
@@ -91,21 +152,37 @@ void drainMailbox() {
 
 LRESULT CALLBACK bridgeSubclassProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp,
                                      UINT_PTR subclassId, DWORD_PTR) {
+    // WM_ACTIVATEAPP is a real window lifecycle signal, unlike guessing focus
+    // from a screenshot. Do not interfere with its default delivery to GD.
+    bool focusLost = msg == WM_ACTIVATEAPP && wp == FALSE;
+    bool focusRestored = msg == WM_ACTIVATEAPP && wp != FALSE;
+    bool minimized = msg == WM_SIZE && wp == SIZE_MINIMIZED;
+    if (focusLost) markFocusLost();
+    if (focusRestored) {
+        ++focusRecovery.restoreEvents;
+        focusRecovery.pending = false;
+    }
     if (msg && msg == pumpMessage.load()) {
-        // Never run game/Cocos code on a worker. The subclass is installed
-        // only after verifying the calling thread owns GD's HWND.
         if (::GetCurrentThreadId() == pumpThreadId.load()) {
             ++pumpDeliveries;
+            // The engine might pause AFTER WM_ACTIVATEAPP processing. Our
+            // existing UI-thread message also provides a deferred opportunity.
+            maybeRecoverDirectorPause();
             drainMailbox();
         }
         return 0;
     }
     if (msg == WM_NCDESTROY) {
+        focusRecovery.pending = false;
         pumpWindow.store(nullptr);
         pumpThreadId.store(0);
         ::RemoveWindowSubclass(hwnd, bridgeSubclassProc, subclassId);
     }
-    return ::DefSubclassProc(hwnd, msg, wp, lp);
+    auto result = ::DefSubclassProc(hwnd, msg, wp, lp);
+    // Wait until the game's original window handler has processed the event.
+    // Recover only an automatic Director pause, once per focus loss.
+    if (focusLost || minimized) maybeRecoverDirectorPause();
+    return result;
 }
 
 BOOL CALLBACK findOwnedThreadWindow(HWND hwnd, LPARAM value) {
@@ -376,6 +453,8 @@ class $modify(GmdtoolBridgePlayLayer, PlayLayer) {
             }
         } else {
             ++nonUnfocusPauseRequests;
+            // Never resume a pause explicitly requested after focus loss.
+            focusRecovery.pending = false;
         }
         PlayLayer::pauseGame(unfocused);
     }
@@ -385,12 +464,15 @@ class $modify(GmdtoolBridgePlayLayer, PlayLayer) {
         state.updates = 0;
         state.inputs.clear(); // A reset invalidates any queued attempt inputs.
         trace = TraceState{}; // No stale values from the previous attempt.
+        focusRecovery.pending = false;
         PlayLayer::resetLevel();
     }
 
     void onExit() {
         // Never let an experimental setting silently leak into the next level.
         backgroundPlayRequested.store(false);
+        focusRecovery.pending = false;
+        focusRecovery.level = nullptr;
         if (state.owner == this) {
             trace = TraceState{};
             state = RuntimeState{};
@@ -446,7 +528,14 @@ matjson::Value readBackgroundStatus(PlayLayer* play) {
         {"last_level_update_ago_ms", lastLevel ? matjson::Value(now - lastLevel) : matjson::Value(nullptr)},
         {"last_post_update_ago_ms", lastGlobal ? matjson::Value(now - lastGlobal) : matjson::Value(nullptr)},
         {"forces_game_loop", false},
-        {"note", "Unfocus pause bypass only; if the engine stops frames, simulation still stops"}
+        {"focus_loss_events", static_cast<std::int64_t>(focusRecovery.focusLossEvents)},
+        {"focus_restore_events", static_cast<std::int64_t>(focusRecovery.restoreEvents)},
+        {"director_resume_attempts", static_cast<std::int64_t>(focusRecovery.resumeAttempts)},
+        {"director_resume_unpaused", static_cast<std::int64_t>(focusRecovery.resumeCallsUnpaused)},
+        {"director_resume_pending", focusRecovery.pending},
+        {"last_director_resume_ago_ms", focusRecovery.lastResumeMs
+            ? matjson::Value(now - focusRecovery.lastResumeMs) : matjson::Value(nullptr)},
+        {"note", "Opt-in focus-loss recovery: one Director resume attempt if running before focus loss; no forced frames. Game progress must be measured separately."}
     });
 }
 
@@ -510,6 +599,7 @@ matjson::Value resultFor(matjson::Value const& request) {
             return matjson::makeObject({{"_bridge_error", "Enable 'Allow background level play (experimental)' in Geode mod settings first"}});
         }
         backgroundPlayRequested.store(enabled.unwrap());
+        if (!enabled.unwrap()) focusRecovery.pending = false;
         return readBackgroundStatus(play);
     }
     if (method == "status") {
