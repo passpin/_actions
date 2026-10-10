@@ -4,6 +4,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/DefaultInclude.hpp>
 #include <Geode/binding/MenuLayer.hpp>
+#include <Geode/binding/GameManager.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/ui/Popup.hpp>
 #include <Geode/ui/GeodeUI.hpp>
@@ -20,6 +21,7 @@
 #include <cctype>
 #include <cstdint>
 #include <filesystem>
+#include <fstream>
 #include <optional>
 #include <sstream>
 #include <string>
@@ -140,6 +142,22 @@ bool inspectPackage(fs::path const& staged, std::string const& version) {
         meta["geode"].asString().unwrapOr("") == "5.9.0";
 }
 
+// A leftover .part file is *not* proof that the download completed.
+// Recover it only after comparing size, SHA-256 and the embedded manifest
+// against the CURRENT GitHub Release. This also survives a game restart.
+bool verifyStagedPackage(fs::path const& path, Release const& release) {
+    std::error_code ec;
+    auto length = fs::file_size(path, ec);
+    if (ec || length != release.size || length < MIN_BYTES || length > MAX_BYTES) return false;
+
+    std::ifstream stream(path, std::ios::binary);
+    if (!stream) return false;
+    geode::ByteVector bytes(static_cast<std::size_t>(length));
+    if (!stream.read(reinterpret_cast<char*>(bytes.data()), static_cast<std::streamsize>(length))) return false;
+    if (sha256(bytes) != release.digest) return false;
+    return inspectPackage(path, release.version);
+}
+
 class Updater {
     geode::async::TaskHolder<web::WebResponse> m_check;
     geode::async::TaskHolder<web::WebResponse> m_download;
@@ -151,18 +169,28 @@ class Updater {
     std::optional<Release> m_release;
     fs::path m_staged;
 
-    bool isMainMenuActive() const {
-        auto* scene = cocos2d::CCDirector::sharedDirector()->getRunningScene();
-        return scene && scene->getChildByType<MenuLayer>(0) != nullptr;
+    // Geode's mod browser is an overlay, not a MenuLayer child. Requiring a
+    // MenuLayer in the running scene hid the prompt while browsing mods.
+    // Restrict prompts to scenes where neither gameplay nor the level editor
+    // is active; both checks use public GD/Geode API, not private UI offsets.
+    bool isSafePromptScene() const {
+        auto* director = cocos2d::CCDirector::sharedDirector();
+        if (!director || !director->getRunningScene()) return false;
+        auto* game = GameManager::sharedState();
+        return game && !game->getPlayLayer() && !game->getEditorLayer();
     }
 
     void showRestartPrompt() {
         if (m_prompted || !m_release || m_staged.empty() || !fs::exists(m_staged)) return;
-        // Don't interrupt a level if the asynchronous download finished after
-        // the player left the menu; the prompt appears on returning to it.
-        if (!isMainMenuActive()) return;
+        // Never interrupt gameplay or editing. Unlike v0.1.8, Geode's mod
+        // browser and other non-gameplay menus can show the ready prompt.
+        if (!isSafePromptScene()) {
+            log::info("Updater: verified update waiting for a non-gameplay UI");
+            return;
+        }
         if (std::chrono::steady_clock::now() < m_promptAfter) return;
         m_prompted = true;
+        log::info("Updater: showing restart prompt for {}", m_release->version);
         // One short line; do not include a literal \n or force manual wrapping.
         auto text = fmt::format("{} ready. Restart?", m_release->version);
         geode::createQuickPopup("gmdtool Update", text, "Later", "Restart", [this](auto, bool yes) {
@@ -188,7 +216,10 @@ class Updater {
         if (!m_release || m_staged.empty() || !fs::exists(m_staged)) return false;
         auto current = Mod::get()->getPackagePath();
         if (current.extension() != ".geode" || !fs::is_regular_file(current)) return false;
-        if (!inspectPackage(m_staged, m_release->version)) return false;
+        if (!verifyStagedPackage(m_staged, *m_release)) {
+            log::error("Updater: staged package changed or failed verification");
+            return false;
+        }
         // The backup is NOT inside the mods directory, so the loader will not
         // mistake it for another installed package.
         auto backup = Mod::get()->getSaveDir() / "previous-version.geode.backup";
@@ -216,6 +247,7 @@ class Updater {
 public:
     // Navigation events bypass the long idle-poll cooldown, but not the
     // 30-second anti-spam limit or an already-running network operation.
+    // Already staged updates bypass the network cooldown entirely.
     void onMenu(bool navigation = false) {
         if (!Mod::get()->getSettingValue<bool>("auto-update")) return;
         if (!m_staged.empty() && fs::exists(m_staged)) {
@@ -244,6 +276,26 @@ public:
             auto release = parseRelease(parsed.unwrap());
             if (!release) { log::info("Updater: no supported newer release"); return; }
             m_release = std::move(release);
+            // A previous run may have verified the package but exited before
+            // the user accepted the restart prompt. Recover that .part file,
+            // but NEVER install it based on existence alone.
+            auto existingStage = Mod::get()->getSaveDir() / "update-staged.geode.part";
+            if (fs::exists(existingStage)) {
+                if (verifyStagedPackage(existingStage, *m_release)) {
+                    m_staged = std::move(existingStage);
+                    log::info("Updater: recovered verified staged update {}", m_release->version);
+                    this->showRestartPrompt();
+                    return;
+                }
+                log::warn("Updater: removing incomplete or outdated staged file");
+                std::error_code ec;
+                fs::remove(existingStage, ec);
+                if (ec) {
+                    log::error("Updater: cannot remove invalid staged file: {}", ec.message());
+                    return;
+                }
+            }
+            log::info("Updater: downloading {}", m_release->version);
             m_busy = true;
             auto download = web::WebRequest();
             download.userAgent("gmdtool-runtime-bridge/passpin")
@@ -259,7 +311,7 @@ public:
                 }
                 auto staged = Mod::get()->getSaveDir() / "update-staged.geode.part";
                 auto written = geode::utils::file::writeBinarySafe(staged, body.data());
-                if (!written || !inspectPackage(staged, m_release->version)) {
+                if (!written || !verifyStagedPackage(staged, *m_release)) {
                     std::error_code ignored;
                     fs::remove(staged, ignored);
                     log::error("Updater: package write or metadata validation failed");
@@ -267,6 +319,9 @@ public:
                 }
                 m_staged = std::move(staged);
                 log::info("Updater: {} verified and staged", m_release->version);
+                // The callback runs on Geode's async/main-thread continuation.
+                // If currently in a level, onMenu() will offer the prompt at
+                // the next navigation event without re-downloading.
                 this->showRestartPrompt();
             });
         });
